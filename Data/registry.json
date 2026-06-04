@@ -41,7 +41,7 @@
       "tags": ["dashboard", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Git initialized and pushed to Mad-Tinker-MTW/TinkerOps. Bun confirmed as package manager. Docs layout deviation: BUGS/CHANGELOG/ROADMAP/SPEC/VISION live at project root instead of docs\\. WBS format needs reformatting for TinkerScheduler (wrong headers and column names). PMD-003 through PMD-006 exist in Obsidian vault only, not in project docs\\."
+      "notes": "All docs at MTW standard as of 2026-06-04. Full 6-doc PMP suite in project docs\\ and Obsidian vault. WBS parseable by TinkerScheduler. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts)."
     },
 
     {
