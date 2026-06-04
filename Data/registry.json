@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 40,
-    "active": 8,
+    "total": 41,
+    "active": 9,
     "dormant": 7,
     "pre_build": 3,
     "placeholder": 2,
@@ -1143,6 +1143,35 @@
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Organizational folder containing multiple sub-tools. Each sub-tool may warrant its own registry entry."
+    },
+
+    {
+      "id": "TinkerPipeline",
+      "name": "TinkerPipeline",
+      "status": "active",
+      "division": null,
+      "path": "Q:\\MTW\\TinkerPipeline",
+      "alt_path": null,
+      "stack": ["Python", "uv", "LM Studio", "Qwen3", "Git"],
+      "package_manager": "uv",
+      "deployment": ["local-only"],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": "Mad-Tinker-MTW/TinkerPipeline",
+      "docs": {
+        "readme": true, "claude_md": true, "status_md": true,
+        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": "TPIPE-PMD",
+      "launch": "start.ps1",
+      "launch_cmd": "uv run runner",
+      "port": null,
+      "last_worked": "2026-06-04",
+      "last_commit": "2026-06-04",
+      "summary": "Local LLM execution pipeline that splits Claude Code planning and auditing from Qwen3 boilerplate execution, using Git as the handoff layer. Claude Code writes PLAN.md, a local Qwen3 runner executes and commits each task, and Claude Code audits the diff. Born from TinkerOps to cut frontier token cost on boilerplate.",
+      "tags": ["pipeline", "llm", "local-execution", "internal", "dev-ops"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Stage 1 runner complete and live-validated 2026-06-04. 21.5h logged total (6h planning/scaffold/publish + 15.5h Stage 1). Runner package under runner/: config, llm, plan, git_ops, executor, main. PLAN.md contract spec in docs/PLAN_FORMAT.md. 16 unit tests passing. Live run against LM Studio (Qwen3-8B Q6_K) executed PLAN.example.md and committed examples/ files per task. RESOLVED 2026-06-04 (WBS 1.2.0): execution model is Qwen3-8B Q6_K; config and all docs reconciled, LM Studio exposes id qwen3-8b. BUG-001 still open: executor git add -A sweeps unrelated changes into task commits. config.toml gitignored, only config.example.toml committed. Pushed to Mad-Tinker-MTW/TinkerPipeline main. Next: resolve model mismatch, then Stage 2 (audit-diff, plan status writeback, error handling, dry-run)."
     }
 
   ]
