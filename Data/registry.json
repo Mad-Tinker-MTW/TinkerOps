@@ -29,9 +29,9 @@
       "github": "Mad-Tinker-MTW/TinkerOps",
       "docs": {
         "readme": true, "claude_md": true, "status_md": true,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
       },
-      "pmp_ids": null,
+      "pmp_ids": "TinkerOps-PMD",
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "port": 5175,

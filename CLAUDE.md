@@ -7,7 +7,7 @@ TinkerOps is the MTW Workshop Dev Console. A local React/Vite/TypeScript dashboa
 - React + Vite + TypeScript + Tailwind
 - Package manager: bun (never npm, never npx, use bunx)
 - No backend, no auth, local tool only
-- Data source: src/data/registry.json (or wherever it was placed during build)
+- Data source: Data/registry.json (project root, read at runtime)
 
 ## Launch
 ```
