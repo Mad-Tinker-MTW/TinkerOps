@@ -2,6 +2,21 @@
 
 ---
 
+## [1.0.2] — 2026-06-04
+
+### Changed
+
+- Merged PMD-002-WBS and PMD-003-WBS into a single authoritative PMD-002-WBS with TinkerScheduler-parseable stage headers, estimated hours per stage, and full role-separated Actual Hours Log
+- PMD-003-WBS deleted from project docs\ and Obsidian vault PMP\; Obsidian PMD-003 slot updated to mirror new merged WBS
+
+### Infrastructure
+
+- Session 2 hours logged: 19h across Project Manager, Solutions Architect, Technical Writer, Lead Developer, QA Engineer, and Deployment Engineer roles
+- Running total: 50h of 75-79h estimated
+- WBS 3.6 Documentation marked Complete
+
+---
+
 ## [1.0.1] — 2026-06-04
 
 ### Documentation pass
