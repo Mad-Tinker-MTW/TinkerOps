@@ -99,4 +99,19 @@ Stage 3: 13-17h (in progress)
 
 ---
 
-**Running Total: 50h of 75-79h estimated**
+### Session 3 — 2026-06-04
+
+| ID | Task | Role | Hours |
+|---|---|---|---|
+| — | Audit verification pass (coverage check, gap analysis) | QA Engineer | 0.5h |
+| — | Audit verification pass (coordination, report) | Project Manager | 0.5h |
+| 3.6 | Obsidian mirror sync (SPEC, ROADMAP, BUGS, VISION) | Technical Writer | 1.5h |
+| 3.6 | Frontmatter and source: field updates | Technical Writer | 0.5h |
+| — | docs\PMP\ structure decision and planning | Project Manager | 0.5h |
+| — | Git commit and push | Deployment Engineer | 0.5h |
+
+**Session 3 Total: 4h**
+
+---
+
+**Running Total: 54h of 75-79h estimated**

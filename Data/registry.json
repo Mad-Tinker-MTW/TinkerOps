@@ -41,7 +41,7 @@
       "tags": ["dashboard", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "v1.0.2. All docs at MTW standard. WBS merged (PMD-003 deleted, PMD-002 is now the single authoritative file). 50h logged across two sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts)."
+      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts)."
     },
 
     {

@@ -2,6 +2,23 @@
 
 ---
 
+## [1.0.3] — 2026-06-04
+
+### Changed
+
+- Moved all PMD files from flat docs\ into docs\PMP\ subfolder per MTW standard
+- Synced 4 stale Obsidian mirrors to current versions: SPEC, ROADMAP, BUGS, VISION
+- Added source: frontmatter field to all Obsidian doc copies (CHANGELOG, SPEC, ROADMAP, BUGS, VISION, PMD-001 through PMD-006)
+- Updated Obsidian PMD-001 and PMD-003 source: paths to reflect docs\PMP\ location
+
+### Infrastructure
+
+- Session 3 hours logged: 4h across Technical Writer, QA Engineer, Project Manager, Deployment Engineer
+- Running total: 54h of 75-79h estimated
+- Deleted TinkerOps.md legacy project card from Obsidian vault
+
+---
+
 ## [1.0.2] — 2026-06-04
 
 ### Changed
