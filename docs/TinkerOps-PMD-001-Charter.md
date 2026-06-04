@@ -1,65 +1,120 @@
-# Project Charter — TinkerOps
-**Project ID:** TinkerOps
-**Document:** PMD-001
-**Owner:** Francisco De La Paz (Mad Tinker), 4Kings Enterprises
-**Date:** 2026-06-04
-**Status:** Active
+# Project Charter
+**TinkerOps — MTW Workshop Dev Console**
+Document ID: TinkerOps-PMD-001
+Version: 1.0
+Date: 2026-06-04
+Project Manager: Francisco De La Paz
 
 ---
 
-## Purpose
+## Project Overview
 
-TinkerOps is the MTW Workshop Dev Console, a local React dashboard that reads registry.json as its single source of truth and gives the workshop operator a unified view of all active, dormant, triage, and pre-build projects. It replaces manual tracking in notes and removes the cognitive overhead of remembering what is active and what needs attention.
+TinkerOps is an internal operations tool developed under Mad Tinker's Workshop (MTW), a division of 4Kings Enterprises. It provides a local React dashboard that reads registry.json as its source of truth and gives the workshop operator a unified view of all active, dormant, triage, and pre-build projects across the workshop. It replaces manual project tracking in notes and removes the cognitive overhead of reconstructing workshop context at the start of every session.
+
+Paired with five Claude Code slash command governance agents, TinkerOps forms the operational backbone of the MTW development process: auditing project state, generating documentation to PMP standard, managing deployments, and closing sessions with proper logging and journal entries.
+
+---
+
+## Business Need
+
+Mad Tinker's Workshop operates 40+ projects across multiple technology stacks, drives, and development phases simultaneously. There was no single source of truth for project status, no automated way to surface what needed triage or documentation, and no consistent session workflow to prevent project drift. Each Claude Code session started from scratch, reconstructing context from memory and chat history.
+
+TinkerOps addresses this by centralizing the project record into a governed, versioned registry and providing a visual interface and agent system that enforces MTW standards at scale.
+
+---
 
 ## Objectives
 
-- Provide a single-pane dashboard for all MTW projects with real-time status, stack, doc coverage, and deployment info.
-- Surface triage and blocked projects so nothing goes dark without notice.
-- Support registry.json as the canonical project record across all MTW Claude Code sessions.
-- Serve as the launch point for dev environment shortcuts and project navigation.
+1. Deliver a functional project dashboard reading from registry.json by Stage 1 completion (2026-06-03)
+2. Complete all views and components — triage and wiring views — by Stage 2 (TBD)
+3. Add search, launch shortcuts, and wiring view completion by Stage 3 (TBD)
+4. Serve as the authoritative session governance tool for all MTW Claude Code sessions going forward
+
+---
 
 ## Scope
 
-**In scope:**
-- React + Vite + TypeScript + Tailwind dashboard reading registry.json locally.
-- Project cards, overview stats, triage view, project detail panel.
-- Doc coverage indicators and deployment badges.
-- Local-only operation, no backend, no auth, no external API calls.
-- Dark-theme MTW aesthetic.
+### In Scope
 
-**Out of scope:**
-- Authentication or multi-user access.
-- Cloud sync or remote registry storage.
-- Direct file system writes from the dashboard (registry updates are done in Claude Code sessions).
-- Mobile or responsive layout (desktop-only internal tool).
+- React + Vite + TypeScript + Tailwind dashboard reading registry.json locally
+- Project cards, overview stats, triage view, wiring view, and project detail panel
+- Doc coverage indicators and deployment badges
+- Five Claude Code slash command agents (audit, new, doc, deploy, session-close)
+- Local-only operation, no backend, no auth, no external API calls
+- Dark-theme MTW aesthetic
 
-## Success Criteria
+### Out of Scope
 
-- All 40+ MTW projects are visible with accurate status, stack, and doc coverage.
-- Triage view surfaces all projects with `triage_needed: true`.
-- Dashboard loads without error from a clean `bun install && bun run dev`.
-- Registry changes in registry.json are reflected on page reload with no code changes.
+- Authentication or multi-user access
+- Cloud sync or remote registry storage
+- Direct file system writes from the dashboard (registry updates happen in Claude Code sessions)
+- Mobile or responsive layout (desktop-only internal tool)
+- External API integrations
 
-## Constraints and Assumptions
+---
 
-- Must use bun as package manager. Never npm or pnpm.
-- No backend. All data comes from the local Data/registry.json file at build/runtime.
-- Runs only on the MTW workstation at localhost:5175.
-- Registry schema is defined by PROJECT.schema.json and must not be violated.
+## Deliverables
+
+| Deliverable | Target Date |
+|---|---|
+| Stage 1: Core Infrastructure — registry, components, governance agents | Complete (2026-06-03) |
+| Stage 2: Views and Components — triage, wiring, detail panel | TBD |
+| Stage 3: Polish and Deployment — search, launch shortcuts | TBD |
+
+---
+
+## Milestones
+
+| Milestone | Date |
+|---|---|
+| Project initiated | 2026-06-03 |
+| Initial build complete (v1.0.0) | 2026-06-03 |
+| Git initialized and pushed to GitHub | 2026-06-04 |
+| Documentation suite complete | 2026-06-04 |
+| PMP suite established (6 docs) | 2026-06-04 |
+| Obsidian vault mirror created | 2026-06-04 |
+| Bun rebase complete | 2026-06-04 |
+| All docs brought to MTW standard format | 2026-06-04 |
+
+---
+
+## Budget Summary
+
+| Category | Amount |
+|---|---|
+| Labor — Stage 1 (45h at $85/hr) | $3,825 |
+| Labor — Stage 2 (17h at $85/hr) | $1,445 |
+| Labor — Stage 3 (13-17h at $85/hr) | $1,105 - $1,445 |
+| Tools and hosting | $0 (local only) |
+| **Total estimated** | **$6,375 - $6,715** |
+
+**Hours logged to date:** 31h ($2,635) as of 2026-06-04.
+
+---
 
 ## Stakeholders
 
-Francisco De La Paz is the sole stakeholder, operator, and user of this tool. No external review, approval, or delivery is required.
+| Name | Role | Interest |
+|---|---|---|
+| Francisco De La Paz | Project Sponsor, Project Manager, Lead Developer, Technical Writer, QA Engineer, Deployment Engineer | Full ownership and sole user |
+| Mad Tinker's Workshop | Primary environment and validation context | Operational efficiency across all active projects |
+| 4Kings Enterprises | Parent organization | Internal tooling investment and documentation record |
 
-## Timeline Estimate
+---
 
-Total estimated effort: 75-79 hours across three phases.
-See PMD-002-WBS for phase breakdown.
+## Risks (Summary)
 
-| Phase | Description | Est. | Status |
-|---|---|---|---|
-| Phase 1 | Core Infrastructure | 45h | Complete |
-| Phase 2 | Views and Components | 17h | Mostly complete |
-| Phase 3 | Polish and Deployment | 13-17h | Pending |
+| Risk | Level |
+|---|---|
+| registry.json drift — sessions skip end-of-session checklist | Medium |
+| Schema violations from manual registry edits | Low |
+| Triage and wiring views incomplete before Stage 2 closes | Low |
+| WBS format deviations breaking TinkerScheduler parsing | Low |
 
-**Actual hours logged to date:** 31h (2026-06-04)
+---
+
+## Authorization
+
+Project authorized under 4Kings Enterprises internal operations budget.
+Project Manager: Francisco De La Paz
+Date: 2026-06-04
