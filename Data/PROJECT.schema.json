@@ -1,0 +1,204 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://madtinkersworkshop.com/tinkerops/PROJECT.schema.json",
+  "title": "MTW Project Record",
+  "description": "Schema for a single Mad Tinker's Workshop project entry in TinkerOps registry",
+  "type": "object",
+  "required": ["id", "name", "status", "path"],
+
+  "properties": {
+
+    "id": {
+      "type": "string",
+      "description": "Unique identifier, matches folder name exactly",
+      "examples": ["SkillForge20", "KageMiru", "TinkerVault"]
+    },
+
+    "name": {
+      "type": "string",
+      "description": "Human-readable display name",
+      "examples": ["SkillForge20", "KageMiru (影を見る)", "TinkerVault 42"]
+    },
+
+    "status": {
+      "type": "string",
+      "description": "Current lifecycle state of the project",
+      "enum": [
+        "active",
+        "dormant",
+        "placeholder",
+        "pre-build",
+        "complete",
+        "archived",
+        "triage"
+      ],
+      "enumDescriptions": {
+        "active": "Currently being worked on",
+        "dormant": "Built, not being touched right now, may resume",
+        "placeholder": "Folder exists intentionally, content lives elsewhere or not yet started",
+        "pre-build": "Fully designed and documented, not yet coded",
+        "complete": "Shipped and done, no planned changes",
+        "archived": "Dead or superseded, kept for reference only",
+        "triage": "Unknown state, needs investigation"
+      }
+    },
+
+    "division": {
+      "type": ["string", "null"],
+      "description": "MTW division this project belongs to, null if root-level",
+      "enum": [
+        "Foundry",
+        "GemLab",
+        "TimeWorks",
+        "Games",
+        "WebDivision",
+        "Tools",
+        "Docs",
+        null
+      ]
+    },
+
+    "path": {
+      "type": "string",
+      "description": "Absolute path on Vulcain's Forge (Q:) or other drive",
+      "examples": ["Q:\\MTW\\SkillForge20", "V:\\DaVinciMSv10"]
+    },
+
+    "alt_path": {
+      "type": ["string", "null"],
+      "description": "Secondary path if project spans drives or has a companion location",
+      "examples": ["Q:\\ColdStorage\\wpn_inventory-ai_shelved"]
+    },
+
+    "stack": {
+      "type": "array",
+      "description": "Technologies, frameworks, and languages used",
+      "items": { "type": "string" },
+      "examples": [["React", "TypeScript", "Tauri v2", "Rust", "Bun"]]
+    },
+
+    "package_manager": {
+      "type": ["string", "null"],
+      "description": "Primary package manager for this project",
+      "enum": ["bun", "pnpm", "npm", "uv", "cargo", "scoop", null]
+    },
+
+    "deployment": {
+      "type": "array",
+      "description": "Where this project is deployed or intended to run",
+      "items": {
+        "type": "string",
+        "enum": [
+          "local-only",
+          "local-desktop",
+          "local-cli",
+          "cloudflare-pages",
+          "cloudflare-tunnel",
+          "netlify",
+          "railway",
+          "raspberry-pi",
+          "github-pages",
+          "android-termux",
+          "nsis-installer"
+        ]
+      }
+    },
+
+    "urls": {
+      "type": "object",
+      "description": "Live URLs for deployed versions",
+      "properties": {
+        "production": { "type": ["string", "null"] },
+        "staging": { "type": ["string", "null"] },
+        "local": { "type": ["string", "null"] }
+      }
+    },
+
+    "github": {
+      "type": ["string", "null"],
+      "description": "GitHub repo path under Mad-Tinker-MTW org",
+      "examples": ["Mad-Tinker-MTW/SkillForge20"]
+    },
+
+    "docs": {
+      "type": "object",
+      "description": "Which documentation files exist for this project",
+      "properties": {
+        "readme": { "type": "boolean" },
+        "claude_md": { "type": "boolean" },
+        "status_md": { "type": "boolean" },
+        "pmp": { "type": "boolean" },
+        "handoff_md": { "type": "boolean" },
+        "design_md": { "type": "boolean" },
+        "obsidian_note": { "type": "boolean" }
+      }
+    },
+
+    "pmp_ids": {
+      "type": ["string", "null"],
+      "description": "PMP document ID prefix if PMP stack exists",
+      "examples": ["MTFN-PMD", "TMOD-SCHED-PMD", "TV42-PMD"]
+    },
+
+    "launch": {
+      "type": ["string", "null"],
+      "description": "Launch script filename relative to project root",
+      "examples": ["start.ps1", "run.bat", null]
+    },
+
+    "launch_cmd": {
+      "type": ["string", "null"],
+      "description": "Manual launch command if no script exists yet",
+      "examples": ["bun run tauri dev", "uv run python app.py", "pnpm dev"]
+    },
+
+    "port": {
+      "type": ["integer", "null"],
+      "description": "Local dev server port if applicable",
+      "examples": [3000, 5173, 5174, 8080, 8890]
+    },
+
+    "last_worked": {
+      "type": ["string", "null"],
+      "description": "ISO date of last active session",
+      "format": "date",
+      "examples": ["2026-06-01"]
+    },
+
+    "last_commit": {
+      "type": ["string", "null"],
+      "description": "ISO date of last git commit",
+      "format": "date"
+    },
+
+    "summary": {
+      "type": "string",
+      "description": "2-3 sentence description of what this project is and does"
+    },
+
+    "tags": {
+      "type": "array",
+      "description": "Freeform tags for filtering and grouping",
+      "items": { "type": "string" },
+      "examples": [["UAT", "RSA", "education"], ["OSINT", "law-enforcement", "CLI"]]
+    },
+
+    "blocked_by": {
+      "type": ["string", "null"],
+      "description": "Project ID this depends on before it can be built",
+      "examples": ["TinkerCode", "TinkerGuard"]
+    },
+
+    "triage_needed": {
+      "type": "boolean",
+      "description": "True if this record is incomplete and needs a manual review pass",
+      "default": false
+    },
+
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Freeform internal notes, migration plans, known issues",
+      "examples": ["Needs to move to Divisions/WebDivision", "Content lives on V: drive"]
+    }
+  }
+}
