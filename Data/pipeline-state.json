@@ -17,12 +17,25 @@
     "status": "ok",
     "plan_file": "Q:\\MTW\\SmokeProbe\\PLAN.md",
     "tasks_total": 2,
-    "last_run": "2026-06-05T09:41:47Z",
+    "last_run": "2026-06-05T10:41:58Z",
     "runner_version": "0.1.0",
-    "tasks_complete": 2,
+    "tasks_complete": 0,
+    "tasks_failed": 0,
+    "tasks_skipped": 2,
+    "last_task": "SMOKE-02",
+    "last_commit": null
+  },
+  "MessageBurst": {
+    "phase": "awaiting-audit",
+    "status": "ok",
+    "plan_file": "Q:\\MTW\\MessageBurst\\PLAN.md",
+    "tasks_total": 5,
+    "last_run": "2026-06-05T10:42:22Z",
+    "runner_version": "0.1.0",
+    "tasks_complete": 5,
     "tasks_failed": 0,
     "tasks_skipped": 0,
-    "last_task": "SMOKE-02",
-    "last_commit": "fa07670274358613a1324ff0c12268eb34ea0cd5"
+    "last_task": "MB-05",
+    "last_commit": "5dd9c0a86f505269fb2dfd5ac4eae51cc65c4ece"
   }
 }

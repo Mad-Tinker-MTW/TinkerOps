@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 42,
-    "active": 9,
+    "total": 43,
+    "active": 10,
     "dormant": 7,
     "pre_build": 3,
     "placeholder": 2,
@@ -1201,6 +1201,35 @@
       "blocked_by": null,
       "triage_needed": false,
       "notes": "TinkerPipeline reference fixture, created and implemented 2026-06-05 through the full pipeline. Kept (not throwaway) so docs referencing it do not deadhead and the /smoke-test driver (TinkerPipeline 1.5.1) has a stable example. Obsidian vault mirror created. PMP at minimum (Charter + WBS); full 5-doc suite via /doc-project if the fixture is expanded. uv run python -m smokeprobe prints SmokeProbe OK."
+    },
+
+    {
+      "id": "MessageBurst",
+      "name": "MessageBurst",
+      "status": "active",
+      "division": null,
+      "path": "Q:\\MTW\\MessageBurst",
+      "alt_path": null,
+      "stack": ["Python", "uv", "keyring"],
+      "package_manager": "uv",
+      "deployment": ["local-only"],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": true, "claude_md": true, "status_md": true,
+        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": "MB-PMD",
+      "launch": null,
+      "launch_cmd": "uv run python -m messageburst send --to email \"message\"",
+      "port": null,
+      "last_worked": "2026-06-05",
+      "last_commit": "2026-06-05",
+      "summary": "Write a 180-character quick message and burst it to email, SMS, or social. The second real project built on TinkerPipeline (proving multi-project orchestration). Stage 1 core (message model, secure config wizards via OS keyring, channel dispatcher, CLI) authored through the pipeline; real channel integrations and a UI are later stages.",
+      "tags": ["messaging", "cli", "pipeline-built", "Python"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood, orchestrated alongside SmokeProbe in one --projects run (SmokeProbe skipped idempotently, MessageBurst executed 5 tasks). audit-diff caught a config-API mismatch in the pipeline-authored channels.py (called nonexistent config.get); fixed via the audit-to-fix loop. send/configure CLI works end to end with keyring-backed secrets. Stage 1 core complete; Stage 2 real channel integrations and Stage 3 UI pending. Charter + WBS minimum; full PMP via /doc-project if expanded. Local-only, no GitHub repo yet."
     }
 
   ]
