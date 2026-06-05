@@ -1165,13 +1165,13 @@
       "launch": "start.ps1",
       "launch_cmd": "uv run runner",
       "port": null,
-      "last_worked": "2026-06-04",
-      "last_commit": "2026-06-04",
+      "last_worked": "2026-06-05",
+      "last_commit": "2026-06-05",
       "summary": "Local LLM execution pipeline that splits Claude Code planning and auditing from Qwen3 boilerplate execution, using Git as the handoff layer. Claude Code writes PLAN.md, a local Qwen3 runner executes and commits each task, and Claude Code audits the diff. Born from TinkerOps to cut frontier token cost on boilerplate.",
       "tags": ["pipeline", "llm", "local-execution", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Stage 1 complete and live-validated; Stage 2 in progress as of 2026-06-04. Execution model is Qwen3-8B Q6_K (WBS 1.2.0 resolved; LM Studio exposes id qwen3-8b). Runner package under runner/: config, llm, plan, git_ops, executor, main, diff. 26 unit tests passing. Stage 2 done so far: commit hygiene (BUG-001 CLOSED, commits only files a task wrote, message format [PREFIX-task_id] title), audit-diff reader runner/diff.py with --show-diff CLI (1.2.1), plan status writeback (1.2.2). Stage 2 remaining: error handling/retry (1.2.3), full dry-run reporting (1.2.4), live validation pass. OBS-001 open (model over-reach, motivating case for audit stage). 34h logged total (all build hours through Stage 2 start captured via session-close). config.toml gitignored, only config.example.toml committed. Pushed to Mad-Tinker-MTW/TinkerPipeline main (f211164). Audit 2026-06-04 (2nd pass): 13/13 coverage, valid WBS, no anomalies. Next audit 2026-06-18."
+      "notes": "Stage 2 complete as of 2026-06-05 (live end-to-end validation still pending). Execution model is Qwen3-8B Q6_K (WBS 1.2.0; LM Studio exposes id qwen3-8b). Runner package under runner/: config, llm, plan, git_ops, executor, main, diff. 31 unit tests passing across 9 test files. Stage 2 delivered: commit hygiene (BUG-001 CLOSED, commits only files a task wrote, [PREFIX-task_id] format), audit-diff reader with --show-diff CLI (1.2.1), plan status writeback (1.2.2), error handling with pipeline.retries and clean halt-on-failure reporting the task ID (1.2.3), dry-run plan validation and per-task preview (1.2.4). OBS-001 open (model over-reach, motivating case for audit stage). 34h logged through Stage 2 start; hours for 1.2.3/1.2.4 not yet logged via session-close. config.toml gitignored, only config.example.toml committed. Pushed to Mad-Tinker-MTW/TinkerPipeline main (7f8973d). Audit 2026-06-05: 13/13 coverage, valid WBS, no anomalies. Next: live Stage 2 validation, then Stage 3 (registry pipeline block, dashboard). Next audit 2026-06-19."
     }
 
   ]
