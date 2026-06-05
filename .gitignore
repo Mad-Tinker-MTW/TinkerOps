@@ -3,3 +3,6 @@ dist/
 .env
 .env.local
 .DS_Store
+
+# Runner-owned pipeline state (machine-generated, written by TinkerPipeline each run)
+Data/pipeline-state.json

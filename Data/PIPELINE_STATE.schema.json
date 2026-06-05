@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://madtinkersworkshop.com/tinkerops/PIPELINE_STATE.schema.json",
+  "title": "TinkerPipeline State Map",
+  "description": "Runner-owned pipeline state, keyed by project id. Written by the TinkerPipeline runner at each phase transition and read by the TinkerOps dashboard alongside registry.json. The registry itself is never modified by the runner.",
+  "type": "object",
+  "additionalProperties": { "$ref": "#/$defs/projectState" },
+
+  "$defs": {
+    "projectState": {
+      "type": "object",
+      "required": ["phase", "status", "last_run"],
+      "properties": {
+        "phase": {
+          "type": "string",
+          "description": "Current pipeline phase for this project",
+          "enum": ["idle", "plan", "execute", "awaiting-audit", "audit"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Outcome state of the most recent runner activity",
+          "enum": ["ok", "running", "failed"]
+        },
+        "last_run": {
+          "type": "string",
+          "description": "ISO 8601 UTC timestamp of the most recent phase transition",
+          "format": "date-time"
+        },
+        "plan_file": {
+          "type": ["string", "null"],
+          "description": "Plan file the runner executed"
+        },
+        "tasks_total": { "type": "integer", "minimum": 0 },
+        "tasks_complete": { "type": "integer", "minimum": 0 },
+        "tasks_failed": { "type": "integer", "minimum": 0 },
+        "tasks_skipped": { "type": "integer", "minimum": 0 },
+        "last_task": {
+          "type": ["string", "null"],
+          "description": "ID of the last task the runner acted on"
+        },
+        "last_commit": {
+          "type": ["string", "null"],
+          "description": "Short hash of the last commit the runner produced"
+        },
+        "runner_version": {
+          "type": ["string", "null"],
+          "description": "TinkerPipeline runner version that wrote this state"
+        }
+      }
+    }
+  }
+}
