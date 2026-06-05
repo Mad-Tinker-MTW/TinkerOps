@@ -40,6 +40,7 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 - Project cards, overview stats, triage view, wiring view, and project detail panel
 - Doc coverage indicators and deployment badges
 - Five Claude Code slash command agents (audit, new, doc, deploy, session-close)
+- Pipeline state view: reads pipeline-state.json written by the TinkerPipeline runner and surfaces per-project pipeline phase and status
 - Local-only operation, no backend, no auth, no external API calls
 - Dark-theme MTW aesthetic
 
@@ -60,6 +61,7 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 | Stage 1: Core Infrastructure — registry, components, governance agents | Complete (2026-06-03) |
 | Stage 2: Views and Components — triage, wiring, detail panel | TBD |
 | Stage 3: Polish and Deployment — search, launch shortcuts | TBD |
+| Pipeline state integration — reads pipeline-state.json, PipelinePill on cards and detail panel section | Complete (2026-06-05) |
 
 ---
 

@@ -1,6 +1,6 @@
 # TinkerOps — Specification
 **MTW Workshop Dev Console**
-Version: 1.0.1
+Version: 1.0.4
 
 ---
 
@@ -21,6 +21,7 @@ Paired with five Claude Code slash command agents that govern project auditing, 
 | Package manager | bun |
 | Build tool | Vite |
 | Data source | Data/registry.json (local JSON, read at runtime) |
+| Pipeline data | Data/pipeline-state.json (written by the TinkerPipeline runner, read at runtime) |
 | Backend | None |
 | Auth | None |
 | Port | 5175 |
@@ -60,6 +61,26 @@ Each project record:
 | triage_needed | boolean | Surfaces project in triage view |
 | notes | string or null | Session carry-over notes |
 
+### Pipeline State
+
+Source: `Q:\MTW\TinkerOps\Data\pipeline-state.json`
+Schema: `Q:\MTW\TinkerOps\Data\PIPELINE_STATE.schema.json`
+
+A separate file, keyed by project id, written by the TinkerPipeline runner at each
+phase transition. The dashboard reads it alongside the registry and never writes it.
+Per-project entry:
+
+| Field | Type | Description |
+|---|---|---|
+| phase | enum | idle / plan / execute / awaiting-audit / audit |
+| status | enum | ok / running / failed |
+| last_run | string | ISO 8601 UTC timestamp |
+| plan_file | string or null | Plan the runner executed |
+| tasks_total / tasks_complete / tasks_failed / tasks_skipped | number | Task counts for the run |
+| last_task | string or null | ID of the last task acted on |
+| last_commit | string or null | Hash of the last commit produced |
+| runner_version | string or null | Runner version that wrote the state |
+
 ---
 
 ## Views and Components
@@ -70,12 +91,13 @@ Each project record:
 | Triage | Filtered view of triage_needed projects | Needs completion pass |
 | Wiring | Division grouping and blocked-by dependency chain | Needs completion pass |
 | StatCards | Active / dormant / pre-build / triage counts | Complete |
-| ProjectCard | Status badge, stack pills, doc coverage, deployment icons | Complete |
+| ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill | Complete |
 | StatusBadge | Color-coded status indicator | Complete |
+| PipelinePill | Pipeline phase and status with task counts, color-coded, pulses while running | Complete |
 | DocCoverage | Visual doc coverage flags (readme, claude_md, status_md, pmp) | Complete |
 | StackPill | Technology tag pill | Complete |
 | DeploymentIcons | Deployment target icon set | Complete |
-| ProjectDetail | Full registry record display panel | Complete |
+| ProjectDetail | Full registry record display panel, with a pipeline state section | Complete |
 
 ---
 
@@ -90,6 +112,8 @@ Five slash command agents at `Q:\MTW\.claude\commands\`:
 | Doc | /doc-project | Generate or catch up documentation including full PMP suite |
 | Deploy | /deploy-project | Handle deployment for any MTW deployment target |
 | Close | /session-close | Log hours, write journal entry, update registry, confirm commit |
+
+The same commands path also holds TinkerPipeline agents (/audit-diff, /plan-guard, and the planned /plan-project). Those belong to the TinkerPipeline project, not TinkerOps governance, but share the global Q:\MTW\.claude\commands\ location.
 
 ---
 

@@ -2,6 +2,17 @@
 
 ---
 
+## [1.0.5] — 2026-06-05
+
+### Changed
+
+- Doc reconciliation: brought README, SPEC, and Charter in line with the v1.0.4 pipeline state feature, which had only been recorded in the CHANGELOG
+- SPEC: added pipeline-state.json as a data source, a Pipeline State data-model subsection, the PipelinePill component, and pipeline notes on ProjectCard and ProjectDetail; version to 1.0.4; noted the additional TinkerPipeline agents at the shared commands path
+- README: Data and Status sections note the pipeline state view and pipeline-state.json
+- Charter: pipeline state view added to In Scope and Deliverables
+
+---
+
 ## [1.0.4] — 2026-06-05
 
 ### Added
