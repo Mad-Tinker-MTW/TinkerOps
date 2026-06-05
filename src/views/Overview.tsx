@@ -1,4 +1,4 @@
-import type { Project, Registry, Status } from '../types/registry'
+import type { Project, Registry, Status, PipelineStateMap } from '../types/registry'
 import { StatCards } from '../components/StatCards'
 import { ProjectCard } from '../components/ProjectCard'
 
@@ -23,11 +23,12 @@ function sortProjects(projects: Project[]): Project[] {
 
 interface Props {
   registry: Registry
+  pipelineState: PipelineStateMap
   search: string
   onSelect: (p: Project) => void
 }
 
-export function Overview({ registry, search, onSelect }: Props) {
+export function Overview({ registry, pipelineState, search, onSelect }: Props) {
   const query = search.toLowerCase().trim()
 
   const filtered = registry.projects.filter(p => {
@@ -77,6 +78,7 @@ export function Overview({ registry, search, onSelect }: Props) {
               <ProjectCard
                 key={p.id}
                 project={p}
+                pipeline={pipelineState[p.id]}
                 onClick={onSelect}
               />
             ))}

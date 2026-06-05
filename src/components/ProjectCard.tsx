@@ -1,18 +1,20 @@
-import type { Project } from '../types/registry'
+import type { Project, PipelineState } from '../types/registry'
 import { StatusBadge } from './StatusBadge'
 import { DocCoverage } from './DocCoverage'
 import { DeploymentIcons } from './DeploymentIcons'
 import { StackPill } from './StackPill'
+import { PipelinePill } from './PipelinePill'
 
 const MAX_STACK_PILLS = 5
 
 interface Props {
   project: Project
+  pipeline?: PipelineState
   onClick: (p: Project) => void
   highlight?: boolean
 }
 
-export function ProjectCard({ project, onClick, highlight = false }: Props) {
+export function ProjectCard({ project, pipeline, onClick, highlight = false }: Props) {
   const {
     name,
     status,
@@ -62,7 +64,10 @@ export function ProjectCard({ project, onClick, highlight = false }: Props) {
             </p>
           )}
         </div>
-        <StatusBadge status={status} />
+        <div className="flex flex-col items-end gap-1 shrink-0">
+          <StatusBadge status={status} />
+          {pipeline && <PipelinePill state={pipeline} />}
+        </div>
       </div>
 
       {/* Summary */}

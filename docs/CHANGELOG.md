@@ -2,6 +2,22 @@
 
 ---
 
+## [1.0.4] — 2026-06-05
+
+### Added
+
+- Pipeline state view: the dashboard now reads data/pipeline-state.json (written by the TinkerPipeline runner) and surfaces it per project
+- PipelinePill component on each ProjectCard showing phase, status, and task counts, color-coded with a pulse while running
+- Pipeline section in the project detail panel (tasks, last task, last commit, plan file, last run)
+- Types: PipelinePhase, PipelineStatus, PipelineState, PipelineStateMap
+- PIPELINE_STATE.schema.json in data/ defining the state file shape
+
+### Infrastructure
+
+- pipeline-state.json committed and read via static import alongside registry.json; the runner never writes registry.json
+
+---
+
 ## [1.0.3] — 2026-06-04
 
 ### Changed

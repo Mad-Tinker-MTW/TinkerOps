@@ -92,3 +92,24 @@ export interface Registry {
   _meta: RegistryMeta
   projects: Project[]
 }
+
+// Pipeline state is written by the TinkerPipeline runner to a separate
+// pipeline-state.json (keyed by project id), read here alongside the registry.
+export type PipelinePhase = 'idle' | 'plan' | 'execute' | 'awaiting-audit' | 'audit'
+export type PipelineStatus = 'ok' | 'running' | 'failed'
+
+export interface PipelineState {
+  phase: PipelinePhase
+  status: PipelineStatus
+  last_run: string
+  plan_file?: string | null
+  tasks_total?: number
+  tasks_complete?: number
+  tasks_failed?: number
+  tasks_skipped?: number
+  last_task?: string | null
+  last_commit?: string | null
+  runner_version?: string | null
+}
+
+export type PipelineStateMap = Record<string, PipelineState>

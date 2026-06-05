@@ -1,13 +1,15 @@
 import { useState, useCallback } from 'react'
-import type { Project, Registry } from './types/registry'
+import type { Project, Registry, PipelineStateMap } from './types/registry'
 import { Overview } from './views/Overview'
 import { Triage } from './views/Triage'
 import { ProjectDetail } from './components/ProjectDetail'
 import registryData from '../data/registry.json'
+import pipelineData from '../data/pipeline-state.json'
 
 type View = 'overview' | 'triage'
 
 const registry = registryData as unknown as Registry
+const pipelineState = pipelineData as unknown as PipelineStateMap
 
 const triageCount = registry.projects.filter(
   p => p.triage_needed || p.status === 'triage'
@@ -82,6 +84,7 @@ export default function App() {
         {view === 'overview' && (
           <Overview
             registry={registry}
+            pipelineState={pipelineState}
             search={search}
             onSelect={handleSelect}
           />
@@ -99,6 +102,7 @@ export default function App() {
         <ProjectDetail
           project={selected}
           registry={registry}
+          pipeline={pipelineState[selected.id]}
           onClose={handleClose}
         />
       )}

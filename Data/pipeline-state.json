@@ -1,0 +1,15 @@
+{
+  "TinkerPipeline": {
+    "phase": "awaiting-audit",
+    "status": "ok",
+    "plan_file": "PLAN.validation.md",
+    "tasks_total": 2,
+    "last_run": "2026-06-05T08:04:00Z",
+    "runner_version": "0.1.0",
+    "tasks_complete": 0,
+    "tasks_failed": 0,
+    "tasks_skipped": 2,
+    "last_task": "TASK-V02",
+    "last_commit": null
+  }
+}

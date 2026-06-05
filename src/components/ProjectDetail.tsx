@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
-import type { Project, Registry } from '../types/registry'
+import type { Project, Registry, PipelineState } from '../types/registry'
 import { StatusBadge } from './StatusBadge'
 import { DocCoverage } from './DocCoverage'
 import { DeploymentIcons } from './DeploymentIcons'
 import { StackPill } from './StackPill'
+import { PipelinePill } from './PipelinePill'
 
 interface Props {
   project: Project
   registry: Registry
+  pipeline?: PipelineState
   onClose: () => void
 }
 
@@ -40,7 +42,7 @@ function getBlockChain(startId: string, projects: Project[]): Project[] {
   return chain
 }
 
-export function ProjectDetail({ project, registry, onClose }: Props) {
+export function ProjectDetail({ project, registry, pipeline, onClose }: Props) {
   const { projects } = registry
 
   // Close on Escape
@@ -101,6 +103,31 @@ export function ProjectDetail({ project, registry, onClose }: Props) {
           <div>
             <p className="text-sm text-gray-400 leading-relaxed">{project.summary}</p>
           </div>
+
+          {/* Pipeline state */}
+          {pipeline && (
+            <div className="bg-surface-900 rounded-lg border border-gray-700/50 px-4 py-3">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono text-gray-500 tracking-widest uppercase">
+                  Pipeline
+                </span>
+                <PipelinePill state={pipeline} size="md" />
+              </div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs font-mono text-gray-400">
+                {pipeline.tasks_total != null && (
+                  <span>
+                    tasks: {pipeline.tasks_complete ?? 0}/{pipeline.tasks_total}
+                    {pipeline.tasks_skipped ? ` · ${pipeline.tasks_skipped} skipped` : ''}
+                    {pipeline.tasks_failed ? ` · ${pipeline.tasks_failed} failed` : ''}
+                  </span>
+                )}
+                {pipeline.last_task && <span>last task: {pipeline.last_task}</span>}
+                {pipeline.last_commit && <span>commit: {pipeline.last_commit}</span>}
+                {pipeline.plan_file && <span>plan: {pipeline.plan_file}</span>}
+                {pipeline.last_run && <span className="col-span-2 text-gray-600">updated {pipeline.last_run}</span>}
+              </div>
+            </div>
+          )}
 
           {/* Core fields */}
           <div className="grid grid-cols-2 gap-4">
