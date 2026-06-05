@@ -2,14 +2,27 @@
   "TinkerPipeline": {
     "phase": "awaiting-audit",
     "status": "ok",
-    "plan_file": "PLAN.validation.md",
-    "tasks_total": 2,
-    "last_run": "2026-06-05T08:04:00Z",
+    "plan_file": "PLAN.stage3.md",
+    "tasks_total": 1,
+    "last_run": "2026-06-05T08:23:15Z",
     "runner_version": "0.1.0",
-    "tasks_complete": 0,
+    "tasks_complete": 1,
     "tasks_failed": 0,
-    "tasks_skipped": 2,
-    "last_task": "TASK-V02",
-    "last_commit": null
+    "tasks_skipped": 0,
+    "last_task": "TASK-S3-01",
+    "last_commit": "26f0ced7cdc8ddc23bbe2f856f9f550b7e458dce"
+  },
+  "SmokeProbe": {
+    "phase": "awaiting-audit",
+    "status": "ok",
+    "plan_file": "Q:\\MTW\\SmokeProbe\\PLAN.md",
+    "tasks_total": 2,
+    "last_run": "2026-06-05T09:41:47Z",
+    "runner_version": "0.1.0",
+    "tasks_complete": 2,
+    "tasks_failed": 0,
+    "tasks_skipped": 0,
+    "last_task": "SMOKE-02",
+    "last_commit": "fa07670274358613a1324ff0c12268eb34ea0cd5"
   }
 }
