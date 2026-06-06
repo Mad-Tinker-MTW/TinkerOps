@@ -128,11 +128,11 @@
       "port": 5173,
       "last_worked": "2026-05-31",
       "last_commit": null,
-      "summary": "Local-first Markdown and text editor desktop app built on Tauri v2 and Svelte. Not a VS Code replacement — focused writing and text workbench. Phase 1 complete with core editor, file tree, tabs, workspaces, and keyboard shortcuts. Phase 2 and 3 planned.",
-      "tags": ["desktop", "editor", "Tauri", "Svelte"],
+      "summary": "Local-first Markdown and text editor desktop app built on Tauri v2 and Svelte, and the editor/IDE for the TinkerCode language. Not a general-purpose VS Code replacement; a focused writing and code workbench. Phase 1 complete with core editor, file tree, tabs, workspaces, and keyboard shortcuts. TinkerCode support arrives along the roadmap (Phase 2 run .tkr, Phase 4 language server, Phase 5 TinkerPal AI panel).",
+      "tags": ["desktop", "editor", "IDE", "Tauri", "Svelte", "TinkerCode"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Was getting CSS black-screen regressions — fixed in latest session. Keyboard accessibility pass planned for Phase 3."
+      "notes": "Was getting CSS black-screen regressions, fixed in a prior session. Keyboard accessibility pass planned for Phase 3. Ecosystem role confirmed 2026-06-06: TinkerPad Alpha is the editor/IDE for TinkerCode (write/run .tkr; Phase 4 language server and Phase 5 TinkerPal AI panel build toward full TinkerCode-aware editing). Documented in both projects' docs."
     },
 
     {
@@ -190,7 +190,7 @@
       "tags": ["Rust", "language", "CLI", "ecosystem"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Phase 2 complete. Phase 3 (Format Ecosystem) is next."
+      "notes": "Phase 2 complete. Phase 3 (Format Ecosystem) is next. Editor/IDE is TinkerPad Alpha (confirmed 2026-06-06; write/run .tkr there, with a TinkerCode language server and a TinkerPal AI panel planned in TinkerPad's Phase 4 and 5). Agent chain: TinkerCode -> TinkerGuard -> TinkerHub -> TinkerPal. Note: version drift across docs (CLAUDE.md v0.2.11, README v0.2.18, registry v0.3.0) worth reconciling on the next TinkerCode session."
     },
 
     {
