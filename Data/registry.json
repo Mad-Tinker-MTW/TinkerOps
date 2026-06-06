@@ -407,26 +407,26 @@
       "division": "Tools",
       "path": "Q:\\MTW\\TinkerWire",
       "alt_path": null,
-      "stack": ["Python", "uv"],
+      "stack": ["Python", "uv", "customtkinter", "keyring", "requests", "feedparser", "beautifulsoup4"],
       "package_manager": "uv",
-      "deployment": ["local-cli"],
+      "deployment": ["local-desktop"],
       "urls": { "production": null, "staging": null, "local": null },
       "github": null,
       "docs": {
         "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
-      "launch_cmd": "uv run python tinkerwire.py",
+      "launch_cmd": "uv run tinkerwire",
       "port": null,
-      "last_worked": null,
-      "last_commit": null,
-      "summary": "CLI tool for SMTP setup, email sending, and news fetching with deduplication. Natural-language-style commands. Passwords stored via OS keyring. v0.1.3.",
-      "tags": ["Python", "CLI", "email", "news"],
+      "last_worked": "2026-04-25",
+      "last_commit": "2026-04-25",
+      "summary": "Desktop research and dispatch tool (customtkinter GUI) with a natural-language command bar. Fetches and dedupes content across six providers (news, finance, sports, shopping, education, tutor), composes social posts and articles with style/tone/length and a character budget, runs a rule-based humanizer, exports briefs and article cards, opens result links in the browser, and emails digests over SMTP. Secrets in the OS keyring, settings in a per-user JSON. No LLM; composition is deterministic. v0.1.3.",
+      "tags": ["Python", "desktop", "GUI", "news", "research", "content-generation", "social-posts", "email"],
       "blocked_by": null,
-      "triage_needed": false,
-      "notes": null
+      "triage_needed": true,
+      "notes": "Audited 2026-06-06: the prior record (CLI, SMTP plus news, v0.1.3) badly underdescribed the project. Reality is a customtkinter desktop app with a command parser, six content providers, digest/post/article/export composition (style/tone/length/char-budget), a regex humanizer, browser handoff, and SMTP email. Significant doc debt: no CLAUDE.md, STATUS.md, SPEC, VISION, CHANGELOG, or BUGS, no PMP suite (0 of 5), no Obsidian mirror; has README, ROADMAP, DECISIONS, HANDOFF, PMP_EVIDENCE. Overlaps MessageBurst: the SMTP plus keyring/JSON config is the same pattern MessageBurst reused (independently reimplemented), and TinkerWire's build_post is prior art for MessageBurst's Phase 2 social-post route. Dormant since 2026-04-25. When reactivated, run /doc-project for the focused PMP suite plus SPEC/VISION/CHANGELOG/BUGS and an Obsidian mirror. last_worked reflects the git last-commit date, not the audit date, to keep the dormancy clock honest."
     },
 
     {
