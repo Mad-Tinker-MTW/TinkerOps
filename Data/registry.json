@@ -1230,6 +1230,35 @@
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood (Spike 0 routing-core, orchestrated alongside SmokeProbe; audit-diff caught and fixed a config-API mismatch). Re-architected the same day into MessageBurst 180, a G.I.S.T.-centered communication launcher: VISION/SPEC/ROADMAP rewritten, Charter/WBS phased (Phase 0 Spike done; Phase 1 MVP = G.I.S.T. on local model + email/SMS + preview/approve; Phase 2 breadth; Phase 3 BRST Direct encrypted layer + sunburst display). Two concept notes added: BRST-DIRECT-SECURITY.md (deposit-only/skiff crypto model with honest dissolve/metadata/anti-capture boundaries) and BURST-DISPLAY.md (sunburst morphing display). G.I.S.T. runs locally so raw thoughts never leave the device. MVP stack recommended Tauri v2 + React/TS. Phase 1 started 2026-06-05: the G.I.S.T. engine (WBS 1.1.1) is built and live-verified against LM Studio/Qwen3 (gist.py: grammar/intent/style/trim to 180, local-only endpoint guard, deterministic 180 backstop, output cleaning; `burst` CLI preview-only with --style; 13 tests via injected fake client; added openai dep + pytest). Engine is Python (reuses the TinkerPipeline LM Studio integration) and stays headless until the UI task (1.1.7). Also fixed MB-001: wizard.py stored settings/secrets under the field name instead of the channel (config.set_setting/set_secret called with 2 args, need 3), so configured channels could not resolve at send time; latent since Phase 0, now fixed with a round-trip test. Phase 1 Chunk A done (1.1.2 preview/edit gate, 1.1.3 route+capability framework): routes.py advertises capabilities and a kind, preview.py is the mandatory approve/edit trust gate, CLI `compose` runs think->G.I.S.T.->preview->route and `routes` lists capabilities; 33 tests, compose live-verified. Chunk B done: 1.1.4 email route now sends for real over SMTP (stdlib smtplib, _open_smtp seam, resolves host/port/from/use_tls/password from config at send time, degrades to labeled dry-run when unconfigured or --dry-run); compose takes --recipient/--dry-run and validates recipient early via route.requires_recipient. 1.1.5 SMS provider decision deferred (Twilio vs email-gateway), route kept as a labeled dry-run stub (Open). Chunk C done: 1.1.6 local-first storage (storage.py) with save/metadata-only/dissolve retention; raw thought never stored (not a parameter), metadata kept separately from the burst artifact, save is local plaintext (encryption later); compose stores per --retain/config and a history command lists records. Phase 1 MVP COMPLETE and live-verified end to end (CLI and web UI): added the minimal web UI (1.1.7, Vite+React/TS in ui/ over a thin stdlib HTTP API src/messageburst/api.py exposing /api/gist|routes|send|history, plus a serve command; the preview gate is an explicit UI step so nothing auto-sends; the full think->burst->preview->email->store->history loop was driven live in the browser). Charter/WBS reconciled: UI is in the MVP, SMS (1.1.5) reassigned to the self-hosted gateway track (docs/BRST-TRANSPORT.md, a Phase 3 design note: native burst message, one-envelope-many-transports onion/relay/SMS, SPA dark relay + Pico hardware key + phone egress, TinkerVault for at-rest only). 53 tests. Remaining: Phase 2, or the parked gateway/BRST-transport project. 4th session close logged 15h (BRST transport research and design note, MVP scope regroup and Charter/WBS reconciliation, web UI build and live verification); running total 52.5h. 3rd session close logged 15.5h across the three chunks (each through its own audit+doc loop); running total 37.5h. 2nd session close logged 16h (8.5h G.I.S.T.+wizard fix this session, 7.5h OBS-002 catch-up for the earlier re-architecture); running total 22h; Schedule re-cast to the four-phase structure (110h budget). No GitHub repo yet (local-only). PMP suite now complete (5 of 5 focused standard): added MB-PMD-003-RiskStakeholder (7 risks + 7 stakeholders) and MB-PMD-004-Scope, closing the 003/004 gap the audits had flagged."
+    },
+
+    {
+      "id": "TinkerArchivist",
+      "name": "Tinker Archivist",
+      "status": "active",
+      "division": "Tools",
+      "path": "Q:\\MTW\\TinkerArchivist",
+      "alt_path": null,
+      "stack": ["Python", "uv", "FastAPI", "SQLite", "httpx", "React", "Vite", "bun"],
+      "package_manager": "uv",
+      "deployment": ["local-only"],
+      "urls": { "production": null, "staging": null, "local": "http://localhost:5183" },
+      "github": null,
+      "docs": {
+        "readme": true, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": "backend: cd backend && uv run uvicorn app.main:app --port 8083 | frontend: cd frontend && bun run dev (UI http://localhost:5183)",
+      "port": 5183,
+      "last_worked": "2026-06-06",
+      "last_commit": "2026-06-06",
+      "summary": "Local research-vault web app for historical and podcast research. Create projects, run a Research Scout against free public archives (Internet Archive, Library of Congress, Wikidata), generate source-backed story cards, and export a research packet (markdown plus source-log CSV plus HTML) as a ZIP. FastAPI plus SQLite backend, React/Vite frontend. Rule-based story logic, no paid AI. Complements TinkerWire (current news/feeds) with historical-archive coverage.",
+      "tags": ["research", "archive", "OSINT", "podcast", "history", "FastAPI", "React"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Found and moved into Q:\\MTW 2026-06-06 (from tinker-archivist-mvp.zip). Converted to MTW standards: backend Python to uv (pyproject.toml, requirements.txt removed), frontend npm to bun, added the missing frontend/vite.config.js (the React plugin was unwired, so it had never run). Dedicated ports 8083 (API) and 5183 (UI), moved off the contested 5173/8000 and wired through CORS, the frontend API const, the start scripts, and the README. Live-tested: Research Scout pulled 23 real records (Internet Archive 10, Library of Congress 9, Wikidata 4), 23 story cards, zero errors. Fixed a Wikidata 403 by adding a descriptive User-Agent to all three connectors. git-init done 2026-06-06 (commit 45e6a48). Backlog: backend uses the deprecated @app.on_event (swap to lifespan); a few test projects sit in the local SQLite db (under backend/data/, gitignored); could later share a connector/export layer with TinkerWire."
     }
 
   ]
