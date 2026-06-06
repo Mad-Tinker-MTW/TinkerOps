@@ -1259,6 +1259,35 @@
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Found and moved into Q:\\MTW 2026-06-06 (from tinker-archivist-mvp.zip). Converted to MTW standards: backend Python to uv (pyproject.toml, requirements.txt removed), frontend npm to bun, added the missing frontend/vite.config.js (the React plugin was unwired, so it had never run). Dedicated ports 8083 (API) and 5183 (UI), moved off the contested 5173/8000 and wired through CORS, the frontend API const, the start scripts, and the README. Live-tested: Research Scout pulled 23 real records (Internet Archive 10, Library of Congress 9, Wikidata 4), 23 story cards, zero errors. Fixed a Wikidata 403 by adding a descriptive User-Agent to all three connectors. git-init done 2026-06-06 (commit 45e6a48). Backlog: backend uses the deprecated @app.on_event (swap to lifespan); a few test projects sit in the local SQLite db (under backend/data/, gitignored); could later share a connector/export layer with TinkerWire."
+    },
+
+    {
+      "id": "TinkerBrain",
+      "name": "TinkerBrain",
+      "status": "active",
+      "division": null,
+      "path": "Q:\\MTW\\TinkerBrain",
+      "alt_path": "V:\\TinkerBrain",
+      "stack": ["Python", "uv", "ChromaDB", "sentence-transformers", "Ollama", "llama3"],
+      "package_manager": "uv",
+      "deployment": ["local-only"],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": true, "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": "python scripts/ask_vault.py (ask) | python scripts/ingest.py (ingest+route); run from Q:\\MTW\\TinkerBrain, data root via TINKERBRAIN_ROOT (default V:\\TinkerBrain)",
+      "port": null,
+      "last_worked": "2026-06-06",
+      "last_commit": "2026-06-06",
+      "summary": "The keystone knowledge/memory layer: a fully-local RAG second-brain. Ingests raw inputs (ChatGPT/Claude exports, notes, pdf, docx), cleans/chunks/tags and routes them into a PARA vault (Inbox/Projects/Ideas/Reference/Ephemera/Archive), vector-indexes with ChromaDB (sentence-transformers all-MiniLM-L6-v2), and answers grounded questions via Ollama/llama3. This is TinkerPal's knowledge base and the intended memory for the Hex-Veridicae overseer. Code home Q:, data home V:.",
+      "tags": ["knowledge-base", "RAG", "second-brain", "local-llm", "Ollama", "ChromaDB", "memory", "keystone"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md."
     }
 
   ]
