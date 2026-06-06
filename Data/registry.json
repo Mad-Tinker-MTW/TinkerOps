@@ -1205,7 +1205,7 @@
 
     {
       "id": "MessageBurst",
-      "name": "MessageBurst",
+      "name": "MessageBurst 180",
       "status": "active",
       "division": null,
       "path": "Q:\\MTW\\MessageBurst",
@@ -1225,11 +1225,11 @@
       "port": null,
       "last_worked": "2026-06-05",
       "last_commit": "2026-06-05",
-      "summary": "Write a 180-character quick message and burst it to email, SMS, or social. The second real project built on TinkerPipeline (proving multi-project orchestration). Stage 1 core (message model, secure config wizards via OS keyring, channel dispatcher, CLI) authored through the pipeline; real channel integrations and a UI are later stages.",
-      "tags": ["messaging", "cli", "pipeline-built", "Python"],
+      "summary": "Communication launcher and message optimizer. Type a messy thought, the G.I.S.T. engine (Grammar, Intent, Style, Trim) compresses it to a 180-char burst on the local model, you approve it, and it routes to email, SMS, social, or the encrypted BRST Direct layer. Second TinkerPipeline dogfood. Today's Python code is Spike 0 (routing-core prototype); MVP is G.I.S.T. plus two routes, recommended stack Tauri v2 plus React.",
+      "tags": ["messaging", "communication-launcher", "local-llm", "privacy", "pipeline-built"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood, orchestrated alongside SmokeProbe in one --projects run (SmokeProbe skipped idempotently, MessageBurst executed 5 tasks). audit-diff caught a config-API mismatch in the pipeline-authored channels.py (called nonexistent config.get); fixed via the audit-to-fix loop. send/configure CLI works end to end with keyring-backed secrets. Stage 1 core complete; Stage 2 real channel integrations and Stage 3 UI pending. Charter + WBS minimum; full PMP via /doc-project if expanded. Local-only, no GitHub repo yet."
+      "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood (Spike 0 routing-core, orchestrated alongside SmokeProbe; audit-diff caught and fixed a config-API mismatch). Re-architected the same day into MessageBurst 180, a G.I.S.T.-centered communication launcher: VISION/SPEC/ROADMAP rewritten, Charter/WBS phased (Phase 0 Spike done; Phase 1 MVP = G.I.S.T. on local model + email/SMS + preview/approve; Phase 2 breadth; Phase 3 BRST Direct encrypted layer + sunburst display). Two concept notes added: BRST-DIRECT-SECURITY.md (deposit-only/skiff crypto model with honest dissolve/metadata/anti-capture boundaries) and BURST-DISPLAY.md (sunburst morphing display). G.I.S.T. runs locally so raw thoughts never leave the device. MVP stack recommended Tauri v2 + React/TS. Next: build the G.I.S.T. engine MVP. No GitHub repo yet (local-only). Full PMP via /doc-project as it grows."
     }
 
   ]
