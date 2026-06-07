@@ -2,6 +2,24 @@
 
 ---
 
+## [1.0.6] — 2026-06-07
+
+### Added
+
+- Wiring view (Stage 2.6): a third nav tab visualizing the project graph. Renders blocked-by dependency chains in build order (root blocker → leaf) and groups every project by division, with an Unassigned group for division-less projects. Cards and chain nodes open the detail panel.
+- Dependency-clear hint: a chain flags when an upstream blocker has reached `complete`, signaling downstream work may now be unblocked.
+- Copy-to-clipboard button on the launch command in the project detail panel (Stage 3 launch shortcut).
+
+### Fixed
+
+- Cross-platform build break: registry/pipeline imports referenced `../data/` while the directory is `Data/`. Resolved only on case-insensitive filesystems (Windows); `bun run build` and CI on Linux failed with TS2307. Imports now match the actual `Data/` case.
+
+### Notes
+
+- The Wiring view was listed in the 1.0.0 changelog but never actually existed; this entry makes the code match the record.
+
+---
+
 ## [1.0.5] — 2026-06-05
 
 ### Changed

@@ -28,8 +28,8 @@ Dashboard views, detail panel, and filtering.
 - [x] DocCoverage — visual indicator for readme, claude_md, status_md, pmp flags
 - [x] StackPill + DeploymentIcons
 - [x] ProjectDetail — full registry record display panel
-- [ ] Triage view — fully wired and tested (all triage_needed projects surfaced)
-- [ ] Wiring view — division grouping and blocked-by dependency chain
+- [x] Triage view — fully wired and tested (all triage_needed projects surfaced)
+- [x] Wiring view — division grouping and blocked-by dependency chain (2026-06-07)
 
 ---
 
@@ -39,9 +39,9 @@ Search, launch shortcuts, and completion.
 - [x] Bun rebase completed (2026-06-04)
 - [x] Git initialized and pushed (2026-06-04)
 - [x] Documentation pass complete (2026-06-04)
-- [ ] Search and filter by name, tag, status, or stack
-- [ ] Wiring view completion (dependency chain visualization)
-- [ ] Launch shortcuts — copy or run bun commands per project
+- [x] Search and filter by name, tag, status, or stack (Overview search box)
+- [x] Wiring view completion (dependency chain visualization) (2026-06-07)
+- [x] Launch shortcuts — copy launch command per project (detail panel, 2026-06-07)
 
 ---
 
