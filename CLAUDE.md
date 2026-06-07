@@ -18,7 +18,7 @@ Runs on localhost:5175
 ## Data
 registry.json is the source of truth for all MTW projects.
 PROJECT.schema.json defines the shape of each record.
-Both live in Q:\MTW\TinkerOps\data\
+Both live in the project's Data\ folder (capital D — imports are case-sensitive on Linux/CI).
 
 When adding or updating project records always validate against the schema.
 

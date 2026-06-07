@@ -26,8 +26,8 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 ## Objectives
 
 1. Deliver a functional project dashboard reading from registry.json by Stage 1 completion (2026-06-03)
-2. Complete all views and components — triage and wiring views — by Stage 2 (TBD)
-3. Add search, launch shortcuts, and wiring view completion by Stage 3 (TBD)
+2. Complete all views and components — triage and wiring views — by Stage 2 (2026-06-07)
+3. Add search, launch shortcuts, and wiring view completion by Stage 3 (2026-06-07)
 4. Serve as the authoritative session governance tool for all MTW Claude Code sessions going forward
 
 ---
@@ -59,8 +59,8 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 | Deliverable | Target Date |
 |---|---|
 | Stage 1: Core Infrastructure — registry, components, governance agents | Complete (2026-06-03) |
-| Stage 2: Views and Components — triage, wiring, detail panel | TBD |
-| Stage 3: Polish and Deployment — search, launch shortcuts | TBD |
+| Stage 2: Views and Components — triage, wiring, detail panel | Complete (2026-06-07) |
+| Stage 3: Polish and Deployment — search, launch shortcuts | Complete (2026-06-07) |
 | Pipeline state integration — reads pipeline-state.json, PipelinePill on cards and detail panel section | Complete (2026-06-05) |
 
 ---

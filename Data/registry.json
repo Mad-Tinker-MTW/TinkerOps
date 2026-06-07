@@ -1,16 +1,16 @@
 {
   "_meta": {
-    "version": "1.0.0",
-    "generated": "2026-06-03",
+    "version": "1.0.6",
+    "generated": "2026-06-07",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 43,
-    "active": 10,
-    "dormant": 7,
-    "pre_build": 3,
+    "total": 41,
+    "active": 11,
+    "dormant": 14,
+    "pre_build": 4,
     "placeholder": 2,
     "complete": 4,
     "archived": 1,
-    "triage": 16
+    "triage": 5
   },
 
   "projects": [
@@ -35,13 +35,13 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "port": 5175,
-      "last_worked": "2026-06-04",
-      "last_commit": "2026-06-04",
+      "last_worked": "2026-06-07",
+      "last_commit": "2026-06-07",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
       "tags": ["dashboard", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts)."
+      "notes": "v1.0.6. Stages 1-3 complete: Overview + search, Triage, and the Wiring view (blocked-by dependency chains + division grouping) all shipped; launch-command copy in the detail panel. Fixed a cross-platform build break (imports used ../data/ but the dir is Data/; only worked on case-insensitive Windows). _meta counts re-synced to the actual 41 records. All docs at MTW standard, PMD files in docs\\PMP\\. Remaining work is Beyond-Stage-3 backlog only (session briefing, registry diff view, PMP hours surface, quick-edit). Last commit 6e6cdf8 on branch claude/tinkerplanner-ops-status-wTjXS."
     },
 
     {

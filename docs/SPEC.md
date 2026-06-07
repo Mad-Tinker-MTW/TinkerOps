@@ -1,6 +1,6 @@
 # TinkerOps — Specification
 **MTW Workshop Dev Console**
-Version: 1.0.4
+Version: 1.0.6
 
 ---
 
@@ -87,9 +87,9 @@ Per-project entry:
 
 | Module | Description | Status |
 |---|---|---|
-| Overview | All projects as cards with stat summary | Complete |
-| Triage | Filtered view of triage_needed projects | Needs completion pass |
-| Wiring | Division grouping and blocked-by dependency chain | Needs completion pass |
+| Overview | All projects as cards with stat summary, plus name/tag/status/stack search | Complete |
+| Triage | Filtered view of triage_needed projects with missing-field flags | Complete |
+| Wiring | Division grouping and blocked-by dependency chains (build order, clears when a blocker completes) | Complete |
 | StatCards | Active / dormant / pre-build / triage counts | Complete |
 | ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill | Complete |
 | StatusBadge | Color-coded status indicator | Complete |
@@ -97,7 +97,7 @@ Per-project entry:
 | DocCoverage | Visual doc coverage flags (readme, claude_md, status_md, pmp) | Complete |
 | StackPill | Technology tag pill | Complete |
 | DeploymentIcons | Deployment target icon set | Complete |
-| ProjectDetail | Full registry record display panel, with a pipeline state section | Complete |
+| ProjectDetail | Full registry record display panel, pipeline state section, blocked-by/dependents, copy-able launch command | Complete |
 
 ---
 
@@ -128,4 +128,3 @@ No environment variables required. Data/registry.json is fetched at runtime by V
 - No writes from the dashboard — registry updates happen in Claude Code sessions only
 - Desktop-only — no mobile or responsive layout planned
 - No real-time updates — changes appear on page reload
-- Triage and Wiring views need a Stage 2 completion pass

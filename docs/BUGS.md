@@ -10,6 +10,14 @@ None currently tracked.
 
 ## Closed
 
+**Build break: registry imports used lowercase `../data/`**
+`src/App.tsx` imported `../data/registry.json` and `../data/pipeline-state.json`, but the directory is `Data/`. Resolved fine on case-insensitive Windows but failed `tsc`/`vite build` and any Linux/CI run with `TS2307: Cannot find module`.
+Fixed: imports now reference `../Data/` to match the actual directory case. CLAUDE.md note clarified the capital-D requirement. 2026-06-07.
+
+**registry.json `_meta` counts out of sync**
+`_meta` reported `total: 43` (actual 41) and stale per-status counts (dormant 7→14, triage 16→5, active 10→11, pre-build 3→4); the dashboard StatCards and header read these directly, so it displayed wrong totals. `version`/`generated` were also stuck at the 1.0.0 initial build.
+Fixed: recomputed all `_meta` counts from the project array, bumped version to 1.0.6 and generated to 2026-06-07. 2026-06-07.
+
 **CLAUDE.md stale data path**
 CLAUDE.md referenced `src/data/registry.json` as the data source path. The actual path is `Data/registry.json`.
 Fixed: corrected path in CLAUDE.md. 2026-06-04.
