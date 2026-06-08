@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 43,
+    "total": 44,
     "active": 10,
-    "dormant": 7,
+    "dormant": 8,
     "pre_build": 3,
     "placeholder": 2,
     "complete": 4,
@@ -403,7 +403,7 @@
     {
       "id": "TinkerWire",
       "name": "TinkerWire",
-      "status": "dormant",
+      "status": "active",
       "division": "Tools",
       "path": "Q:\\MTW\\TinkerWire",
       "alt_path": null,
@@ -411,22 +411,22 @@
       "package_manager": "uv",
       "deployment": ["local-desktop"],
       "urls": { "production": null, "staging": null, "local": null },
-      "github": null,
+      "github": "Mad-Tinker-MTW/TinkerWire",
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
+        "readme": true, "claude_md": true, "status_md": false,
         "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": "uv run tinkerwire",
       "port": null,
-      "last_worked": "2026-04-25",
-      "last_commit": "2026-06-06",
-      "summary": "Desktop research and dispatch tool (customtkinter GUI) with a natural-language command bar. Fetches and dedupes content across six providers (news, finance, sports, shopping, education, tutor), composes social posts and articles with style/tone/length and a character budget, runs a rule-based humanizer, exports briefs and article cards, opens result links in the browser, and emails digests over SMTP. Secrets in the OS keyring, settings in a per-user JSON. No LLM; composition is deterministic. v0.1.3.",
+      "last_worked": "2026-06-08",
+      "last_commit": "2026-06-08",
+      "summary": "Desktop research and dispatch tool (customtkinter GUI) with a natural-language command bar. Fetches and dedupes content across six providers (news, finance, sports, shopping, education, tutor), composes social posts and articles with style/tone/length and a character budget, runs a deterministic de-AI humanizer (default-on for post/article), exports briefs and article cards, opens result links in the browser (per-source open: Na/Na-f/N* for clustered events), and emails digests over SMTP. Composition is grounded in real headlines via a local LM Studio summarizer (no free-form generation), with an honest headline+source fallback when the model is offline. News queries enforce recency via the Google News when: operator. An in-app dockable Commands panel documents the full command surface. Secrets in the OS keyring, settings in a per-user JSON. v0.1.11.",
       "tags": ["Python", "desktop", "GUI", "news", "research", "content-generation", "social-posts", "email"],
       "blocked_by": null,
-      "triage_needed": true,
-      "notes": "Audited 2026-06-06: the prior record (CLI, SMTP plus news, v0.1.3) badly underdescribed the project. Reality is a customtkinter desktop app with a command parser, six content providers, digest/post/article/export composition (style/tone/length/char-budget), a regex humanizer, browser handoff, and SMTP email. Significant doc debt: no CLAUDE.md, STATUS.md, SPEC, VISION, CHANGELOG, or BUGS, no PMP suite (0 of 5), no Obsidian mirror; has README, ROADMAP, DECISIONS, HANDOFF, PMP_EVIDENCE. Overlaps MessageBurst: the SMTP plus keyring/JSON config is the same pattern MessageBurst reused (independently reimplemented), and TinkerWire's build_post is prior art for MessageBurst's Phase 2 social-post route. Dormant since 2026-04-25. When reactivated, run /doc-project for the focused PMP suite plus SPEC/VISION/CHANGELOG/BUGS and an Obsidian mirror. last_worked reflects the git last-commit date, not the audit date, to keep the dormancy clock honest."
+      "triage_needed": false,
+      "notes": "2026-06-08 (session 2, headless backlog run): shipped a dockable/floatable in-app Commands panel backed by commands.py as the single source of truth, drift-guarded against the engine (c877dec); per-source open: Na / Na-f / N* so a clustered multi-outlet event exposes every source link, not just the primary (b471ca0); recency enforcement via the Google News when: operator with a default 7d window, resolving Pain A (25f5965); wired AND upgraded the humanizer, which was dead code (defined+tested but never called) into a default-on de-AI pass for post:/article: plus humanize: yes on summary: (f21d1e0); expanded and externalized the source-lean map to config/source_bias.json (df7691a); added the project CLAUDE.md (06aef77). 82 tests passing, all pushed to main, last_commit 06aef77. PLAN.md TASK-001/002/003 complete. Hours NOT yet logged for this session (run /session-close). Remaining backlog: corroboration L2 (fetch article bodies for true independence vs echo) and L3 (local-LLM echo classification), clustering precision (tighten Jaccard, consider semantic similarity), and the rest of the doc suite (SPEC/VISION/PMP Charter+WBS/Obsidian via /doc-project). --- 2026-06-08 de-rot: removed hardcoded canned narratives (news_builder/compose) and the Callais/redistricting query hijack (query_rules/query_expander), fixed substring trigger matching to word boundaries, rebuilt post:/article: as an honest headline+source digest, rewrote coupled tests (52 passing), committed 4c0cc1f, pushed to GitHub (Mad-Tinker-MTW/TinkerWire), added docs/CHANGELOG.md and docs/BUGS.md. Status -> active. Outstanding: recency (when:Nd) enforcement, source diversity/weighting, and the full PMP+SPEC/VISION+Obsidian suite (run /doc-project). --- Audited 2026-06-06: the prior record (CLI, SMTP plus news, v0.1.3) badly underdescribed the project. Reality is a customtkinter desktop app with a command parser, six content providers, digest/post/article/export composition (style/tone/length/char-budget), a regex humanizer, browser handoff, and SMTP email. Significant doc debt: no CLAUDE.md, STATUS.md, SPEC, VISION, CHANGELOG, or BUGS, no PMP suite (0 of 5), no Obsidian mirror; has README, ROADMAP, DECISIONS, HANDOFF, PMP_EVIDENCE. Overlaps MessageBurst: the SMTP plus keyring/JSON config is the same pattern MessageBurst reused (independently reimplemented), and TinkerWire's build_post is prior art for MessageBurst's Phase 2 social-post route. Dormant since 2026-04-25. When reactivated, run /doc-project for the focused PMP suite plus SPEC/VISION/CHANGELOG/BUGS and an Obsidian mirror. last_worked reflects the git last-commit date, not the audit date, to keep the dormancy clock honest."
     },
 
     {
@@ -763,30 +763,30 @@
     {
       "id": "HexVeridicae",
       "name": "Hex-Veridicae",
-      "status": "dormant",
+      "status": "active",
       "division": null,
       "path": "Q:\\MTW\\HexVeridicae",
       "alt_path": null,
-      "stack": ["Python", "LM Studio", "Qwen3-14B"],
+      "stack": ["Python", "FastAPI", "SQLite", "SQLAlchemy", "faster-whisper", "Coqui XTTS", "LM Studio", "Qwen3-14B"],
       "package_manager": "uv",
       "deployment": ["local-only"],
       "urls": { "production": null, "staging": null, "local": null },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true, "claude_md": true, "status_md": true,
+        "pmp": true, "handoff_md": false, "design_md": true, "obsidian_note": true
       },
-      "pmp_ids": null,
+      "pmp_ids": "HEXVER-PMD",
       "launch": null,
-      "launch_cmd": null,
-      "port": null,
-      "last_worked": "2026-04-23",
-      "last_commit": "2026-06-06",
-      "summary": "Six-persona AI council system with Truth-Speaker personas: Angie (ops lead), Rose (cold analyst), Meghan (discipline), Sabrina (intuition), Lilly (execution), Irene (grounding). Runs via LM Studio with Qwen3-14B reasoning model.",
-      "tags": ["AI", "council", "LM Studio", "Python"],
+      "launch_cmd": "uv run uvicorn src.app:app --host 0.0.0.0 --port 8090",
+      "port": 8090,
+      "last_worked": "2026-06-07",
+      "last_commit": "2026-06-07",
+      "summary": "Local-first six-persona AI council. Truth-Speaker personas: Angie (ops lead/overseer/synthesizer), Rose (cold analyst), Meghan (discipline), Sabrina (intuition), Lilly (chaos), Irene (grounding). Phone-reachable FastAPI text and voice chat (faster-whisper STT, Coqui XTTS), SQLite memory, self-aware auto-routing. Runs against a local LLM via LM Studio (Qwen3). v1 complete (MVP-1 text + MVP-2 voice).",
+      "tags": ["AI", "council", "LM Studio", "Python", "FastAPI", "voice", "local-first"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Future integration with Arsenal planned for quartermaster-archetype persona."
+      "notes": "v1 complete and committed (35d3d87): MVP-1 text council + MVP-2 voice, both built 2026-06-06..07. Full doc + focused PMP suite (HEXVER-PMD 5 docs) and Obsidian mirror generated 2026-06-07; coverage 0/10 -> 10/10. 55h logged (Stage 1 MVP-1, Stage 2 MVP-2, documentation pass) across architect/dev/QA/writer/PM roles. KEY DECISIONS (in CLAUDE.md Resolved Decisions): brain is LOCAL via LM Studio not Claude API; voice is Coqui XTTS not Piper (pivoted in 35d3d87); self-aware auto-routing added; HEX_LLM_MODEL is the model source (running Qwen3-14B). OPEN for next session (config reconciliation, WBS 1.2.7/1.2.8): pyproject.toml still lists piper-tts and omits the XTTS dep; .env.example still defaults qwen3-8b + documents HEX_PIPER_MODEL; leftover voices/en_US-amy-medium.onnx (a DELETE - guard active, get Francisco's OK before removing); then verify a fresh uv venv runs. Future Arsenal integration planned (quartermaster persona). Next audit 2026-06-21."
     },
 
     {
@@ -1136,13 +1136,13 @@
       "launch": null,
       "launch_cmd": null,
       "port": null,
-      "last_worked": null,
-      "last_commit": "2026-06-06",
+      "last_worked": "2026-06-07",
+      "last_commit": "2026-06-07",
       "summary": "Collection of MTW utility scripts. Contains at minimum SF20-json2md (converts SkillForge20 JSON exports to markdown reports). Likely contains other one-off tools.",
       "tags": ["tools", "utilities", "Python", "organizational"],
       "blocked_by": null,
       "triage_needed": true,
-      "notes": "Organizational folder containing multiple sub-tools. Each sub-tool may warrant its own registry entry."
+      "notes": "Organizational folder containing multiple sub-tools. Each sub-tool may warrant its own registry entry. 2026-06-07: chat-export2md (the TinkerBrain ingestion worker, sibling to SF20-json2md) gained an LM Studio adapter (reads a folder of *.conversation.json -> clean per-chat .md; handles versions[currentlySelected] + assistant steps[], drops tool/debug noise). Exported all 37 LM Studio chats to Tools/chat-export2md/Output/LMStudio (one cosmetic 1970-date file from a missing createdAt, fixed in-tool via epoch-ms filename fallback for future runs). Ready for TinkerBrain ingest. Change uncommitted."
     },
 
     {
@@ -1165,13 +1165,13 @@
       "launch": "start.ps1",
       "launch_cmd": "uv run runner",
       "port": null,
-      "last_worked": "2026-06-05",
+      "last_worked": "2026-06-07",
       "last_commit": "2026-06-05",
       "summary": "Local LLM execution pipeline that splits Claude Code planning and auditing from Qwen3 boilerplate execution, using Git as the handoff layer. Claude Code writes PLAN.md, a local Qwen3 runner executes and commits each task, and Claude Code audits the diff. Born from TinkerOps to cut frontier token cost on boilerplate.",
       "tags": ["pipeline", "llm", "local-execution", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "PRODUCTION-READY as of 2026-06-05: end-to-end smoke test passed on a real project (SmokeProbe), browser-confirmed, full plan-project to plan-guard to runner to audit-diff to dashboard loop plus a working generated CLI. All four stages and three agents (plan-project, plan-guard, audit-diff) built. OBS-002 agent hardening applied to audit/doc/session-close. 82.5h logged through 2026-06-05 session-close-5 (Stage 4: /smoke-test agent, write/git retry hardening, OBS-002 agent hardening validated, OBS-003 resolved). Stage 4 complete except 1.5.4 VS Code + Continue in-editor check (operator-driven). SmokeProbe kept as the canonical reference fixture (status complete, vault mirror) so the evidence does not deadhead. Stage 4 open: /smoke-test driver skill (1.5.1), write/git retry coverage (1.5.2), OBS-002 agent-validation pass (1.5.3), VS Code + Continue integration smoke test (1.5.4). Execution model Qwen3-8B Q6_K (WBS 1.2.0). Runner package: config, llm, plan, git_ops, executor, main, diff, pipeline_state, orchestrator. 41 unit tests passing. Stage 2 delivered commit hygiene (BUG-001 closed, [PREFIX-task_id] format), audit-diff reader, plan writeback, error handling with retries, dry-run reporting. Stage 3 delivered: pipeline-state.json written by the runner at phase transitions, read by the TinkerOps dashboard (PipelinePill + detail section, v1.0.4); multi-project orchestration via --projects manifest; /audit-diff and /plan-guard global slash command agents at Q:\\MTW\\.claude\\commands\\; and a live end-to-end testing pass (plan-guard PASS, runner executed, audit-diff PASS). Decision: pipeline state lives in a separate pipeline-state.json, never in registry.json (schema at Data/PIPELINE_STATE.schema.json). OBS-001 open (model over-reach; the audit stage and tight plan-guard scoping address it). 64h logged total through 2026-06-05 session-close-3 (Stage 0-3 actuals; lands at the original 64h estimate, scope grew to 66h). OBS-002 logged: doc process gap, recommended audit/doc/session-close agent improvements. PENDING NEXT SESSION (first item): TinkerOps doc reconciliation, the 1.3.2 dashboard added pipeline-state features that may not be in TinkerOps own SPEC, README, CHANGELOG, Charter. Also pending: WBS 1.3.8, build a /plan-project agent that scaffolds PLAN.md (confirmed distinct from plan-guard; plan-project was an orphaned Stage 0 design, OBS-002 gap 4). Estimate now 68h. Pushed to Mad-Tinker-MTW/TinkerPipeline main (c1e5327). Optional next: retry hardening for write/git failures, artifact cleanup, adopt pipeline for a second project. Next audit 2026-06-19."
+      "notes": "PRODUCTION-READY as of 2026-06-05: end-to-end smoke test passed on a real project (SmokeProbe), browser-confirmed, full plan-project to plan-guard to runner to audit-diff to dashboard loop plus a working generated CLI. All four stages and three agents (plan-project, plan-guard, audit-diff) built. OBS-002 agent hardening applied to audit/doc/session-close. 82.5h logged through 2026-06-05 session-close-5 (Stage 4: /smoke-test agent, write/git retry hardening, OBS-002 agent hardening validated, OBS-003 resolved). Stage 4 complete except 1.5.4 VS Code + Continue in-editor check (operator-driven). SmokeProbe kept as the canonical reference fixture (status complete, vault mirror) so the evidence does not deadhead. Stage 4 open: /smoke-test driver skill (1.5.1), write/git retry coverage (1.5.2), OBS-002 agent-validation pass (1.5.3), VS Code + Continue integration smoke test (1.5.4). Execution model Qwen3-8B Q6_K (WBS 1.2.0). Runner package: config, llm, plan, git_ops, executor, main, diff, pipeline_state, orchestrator. 41 unit tests passing. Stage 2 delivered commit hygiene (BUG-001 closed, [PREFIX-task_id] format), audit-diff reader, plan writeback, error handling with retries, dry-run reporting. Stage 3 delivered: pipeline-state.json written by the runner at phase transitions, read by the TinkerOps dashboard (PipelinePill + detail section, v1.0.4); multi-project orchestration via --projects manifest; /audit-diff and /plan-guard global slash command agents at Q:\\MTW\\.claude\\commands\\; and a live end-to-end testing pass (plan-guard PASS, runner executed, audit-diff PASS). Decision: pipeline state lives in a separate pipeline-state.json, never in registry.json (schema at Data/PIPELINE_STATE.schema.json). OBS-001 open (model over-reach; the audit stage and tight plan-guard scoping address it). 64h logged total through 2026-06-05 session-close-3 (Stage 0-3 actuals; lands at the original 64h estimate, scope grew to 66h). OBS-002 logged: doc process gap, recommended audit/doc/session-close agent improvements. PENDING NEXT SESSION (first item): TinkerOps doc reconciliation, the 1.3.2 dashboard added pipeline-state features that may not be in TinkerOps own SPEC, README, CHANGELOG, Charter. Also pending: WBS 1.3.8, build a /plan-project agent that scaffolds PLAN.md (confirmed distinct from plan-guard; plan-project was an orphaned Stage 0 design, OBS-002 gap 4). Estimate now 68h. Pushed to Mad-Tinker-MTW/TinkerPipeline main (c1e5327). Optional next: retry hardening for write/git failures, artifact cleanup, adopt pipeline for a second project. Next audit 2026-06-19. 2026-06-07: added a 4th pipeline agent /integrate (brownfield front-end) at Q:\\MTW\\.claude\\commands\\integrate.md, registered in TinkerPipeline CLAUDE.md. It reads an existing project, proposes ranked improvements, and authors a pipeline-safe PLAN.md (model-safe new-file/context-embedded tasks) while routing surgical edits to Claude-direct. Born from the TinkerArchivist dogfood where the runner's blind full-file regen broke 8/9 tasks on existing-file edits. CLAUDE.md edit is uncommitted (last_commit stays 2026-06-05)."
     },
 
     {
@@ -1229,7 +1229,7 @@
       "tags": ["messaging", "communication-launcher", "local-llm", "privacy", "pipeline-built"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood (Spike 0 routing-core, orchestrated alongside SmokeProbe; audit-diff caught and fixed a config-API mismatch). Re-architected the same day into MessageBurst 180, a G.I.S.T.-centered communication launcher: VISION/SPEC/ROADMAP rewritten, Charter/WBS phased (Phase 0 Spike done; Phase 1 MVP = G.I.S.T. on local model + email/SMS + preview/approve; Phase 2 breadth; Phase 3 BRST Direct encrypted layer + sunburst display). Two concept notes added: BRST-DIRECT-SECURITY.md (deposit-only/skiff crypto model with honest dissolve/metadata/anti-capture boundaries) and BURST-DISPLAY.md (sunburst morphing display). G.I.S.T. runs locally so raw thoughts never leave the device. MVP stack recommended Tauri v2 + React/TS. Phase 1 started 2026-06-05: the G.I.S.T. engine (WBS 1.1.1) is built and live-verified against LM Studio/Qwen3 (gist.py: grammar/intent/style/trim to 180, local-only endpoint guard, deterministic 180 backstop, output cleaning; `burst` CLI preview-only with --style; 13 tests via injected fake client; added openai dep + pytest). Engine is Python (reuses the TinkerPipeline LM Studio integration) and stays headless until the UI task (1.1.7). Also fixed MB-001: wizard.py stored settings/secrets under the field name instead of the channel (config.set_setting/set_secret called with 2 args, need 3), so configured channels could not resolve at send time; latent since Phase 0, now fixed with a round-trip test. Phase 1 Chunk A done (1.1.2 preview/edit gate, 1.1.3 route+capability framework): routes.py advertises capabilities and a kind, preview.py is the mandatory approve/edit trust gate, CLI `compose` runs think->G.I.S.T.->preview->route and `routes` lists capabilities; 33 tests, compose live-verified. Chunk B done: 1.1.4 email route now sends for real over SMTP (stdlib smtplib, _open_smtp seam, resolves host/port/from/use_tls/password from config at send time, degrades to labeled dry-run when unconfigured or --dry-run); compose takes --recipient/--dry-run and validates recipient early via route.requires_recipient. 1.1.5 SMS provider decision deferred (Twilio vs email-gateway), route kept as a labeled dry-run stub (Open). Chunk C done: 1.1.6 local-first storage (storage.py) with save/metadata-only/dissolve retention; raw thought never stored (not a parameter), metadata kept separately from the burst artifact, save is local plaintext (encryption later); compose stores per --retain/config and a history command lists records. Phase 1 MVP COMPLETE and live-verified end to end (CLI and web UI): added the minimal web UI (1.1.7, Vite+React/TS in ui/ over a thin stdlib HTTP API src/messageburst/api.py exposing /api/gist|routes|send|history, plus a serve command; the preview gate is an explicit UI step so nothing auto-sends; the full think->burst->preview->email->store->history loop was driven live in the browser). Charter/WBS reconciled: UI is in the MVP, SMS (1.1.5) reassigned to the self-hosted gateway track (docs/BRST-TRANSPORT.md, a Phase 3 design note: native burst message, one-envelope-many-transports onion/relay/SMS, SPA dark relay + Pico hardware key + phone egress, TinkerVault for at-rest only). 53 tests. Remaining: Phase 2, or the parked gateway/BRST-transport project. 4th session close logged 15h (BRST transport research and design note, MVP scope regroup and Charter/WBS reconciliation, web UI build and live verification); running total 52.5h. 3rd session close logged 15.5h across the three chunks (each through its own audit+doc loop); running total 37.5h. 2nd session close logged 16h (8.5h G.I.S.T.+wizard fix this session, 7.5h OBS-002 catch-up for the earlier re-architecture); running total 22h; Schedule re-cast to the four-phase structure (110h budget). No GitHub repo yet (local-only). PMP suite now complete (5 of 5 focused standard): added MB-PMD-003-RiskStakeholder (7 risks + 7 stakeholders) and MB-PMD-004-Scope, closing the 003/004 gap the audits had flagged."
+      "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood (Spike 0 routing-core, orchestrated alongside SmokeProbe; audit-diff caught and fixed a config-API mismatch). Re-architected the same day into MessageBurst 180, a G.I.S.T.-centered communication launcher: VISION/SPEC/ROADMAP rewritten, Charter/WBS phased (Phase 0 Spike done; Phase 1 MVP = G.I.S.T. on local model + email/SMS + preview/approve; Phase 2 breadth; Phase 3 BRST Direct encrypted layer + sunburst display). Two concept notes added: BRST-DIRECT-SECURITY.md (deposit-only/skiff crypto model with honest dissolve/metadata/anti-capture boundaries) and BURST-DISPLAY.md (sunburst morphing display). G.I.S.T. runs locally so raw thoughts never leave the device. MVP stack recommended Tauri v2 + React/TS. Phase 1 started 2026-06-05: the G.I.S.T. engine (WBS 1.1.1) is built and live-verified against LM Studio/Qwen3 (gist.py: grammar/intent/style/trim to 180, local-only endpoint guard, deterministic 180 backstop, output cleaning; `burst` CLI preview-only with --style; 13 tests via injected fake client; added openai dep + pytest). Engine is Python (reuses the TinkerPipeline LM Studio integration) and stays headless until the UI task (1.1.7). Also fixed MB-001: wizard.py stored settings/secrets under the field name instead of the channel (config.set_setting/set_secret called with 2 args, need 3), so configured channels could not resolve at send time; latent since Phase 0, now fixed with a round-trip test. Phase 1 Chunk A done (1.1.2 preview/edit gate, 1.1.3 route+capability framework): routes.py advertises capabilities and a kind, preview.py is the mandatory approve/edit trust gate, CLI `compose` runs think->G.I.S.T.->preview->route and `routes` lists capabilities; 33 tests, compose live-verified. Chunk B done: 1.1.4 email route now sends for real over SMTP (stdlib smtplib, _open_smtp seam, resolves host/port/from/use_tls/password from config at send time, degrades to labeled dry-run when unconfigured or --dry-run); compose takes --recipient/--dry-run and validates recipient early via route.requires_recipient. 1.1.5 SMS provider decision deferred (Twilio vs email-gateway), route kept as a labeled dry-run stub (Open). Chunk C done: 1.1.6 local-first storage (storage.py) with save/metadata-only/dissolve retention; raw thought never stored (not a parameter), metadata kept separately from the burst artifact, save is local plaintext (encryption later); compose stores per --retain/config and a history command lists records. Phase 1 MVP COMPLETE and live-verified end to end (CLI and web UI): added the minimal web UI (1.1.7, Vite+React/TS in ui/ over a thin stdlib HTTP API src/messageburst/api.py exposing /api/gist|routes|send|history, plus a serve command; the preview gate is an explicit UI step so nothing auto-sends; the full think->burst->preview->email->store->history loop was driven live in the browser). Charter/WBS reconciled: UI is in the MVP, SMS (1.1.5) reassigned to the self-hosted gateway track (docs/BRST-TRANSPORT.md, a Phase 3 design note: native burst message, one-envelope-many-transports onion/relay/SMS, SPA dark relay + Pico hardware key + phone egress, TinkerVault for at-rest only). 53 tests. Remaining: Phase 2, or the parked gateway/BRST-transport project. 4th session close logged 15h (BRST transport research and design note, MVP scope regroup and Charter/WBS reconciliation, web UI build and live verification); running total 52.5h. 3rd session close logged 15.5h across the three chunks (each through its own audit+doc loop); running total 37.5h. 2nd session close logged 16h (8.5h G.I.S.T.+wizard fix this session, 7.5h OBS-002 catch-up for the earlier re-architecture); running total 22h; Schedule re-cast to the four-phase structure (110h budget). No GitHub repo yet (local-only). PMP suite now complete (5 of 5 focused standard): added MB-PMD-003-RiskStakeholder (7 risks + 7 stakeholders) and MB-PMD-004-Scope, closing the 003/004 gap the audits had flagged. 2026-06-07: a 'Text-to-Email app' the user prototyped against a local model (type message + recipient -> send via Nodemailer/SMTP, Bun/Vite/Svelte) is FOLDED INTO MessageBurst as a simple type-and-send entry mode in the prototyping/planning phase, not a separate project - MessageBurst already has a working SMTP email route, so this is a subset. The local-model scaffold attempt was buggy (Svelte4/5 mix, wrong vite plugin name, JSX-in-Svelte, missing express/cors deps) and never written to disk; rebuild correctly if pursued."
     },
 
     {
@@ -1243,22 +1243,22 @@
       "package_manager": "uv",
       "deployment": ["local-only"],
       "urls": { "production": null, "staging": null, "local": "http://localhost:5183" },
-      "github": null,
+      "github": "Mad-Tinker-MTW/TinkerArchivist",
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true, "claude_md": true, "status_md": true,
+        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
       },
-      "pmp_ids": null,
+      "pmp_ids": "TARCH-PMD",
       "launch": null,
       "launch_cmd": "backend: cd backend && uv run uvicorn app.main:app --port 8083 | frontend: cd frontend && bun run dev (UI http://localhost:5183)",
       "port": 5183,
-      "last_worked": "2026-06-06",
-      "last_commit": "2026-06-06",
+      "last_worked": "2026-06-07",
+      "last_commit": "2026-06-07",
       "summary": "Local research-vault web app for historical and podcast research. Create projects, run a Research Scout against free public archives (Internet Archive, Library of Congress, Wikidata), generate source-backed story cards, and export a research packet (markdown plus source-log CSV plus HTML) as a ZIP. FastAPI plus SQLite backend, React/Vite frontend. Rule-based story logic, no paid AI. Complements TinkerWire (current news/feeds) with historical-archive coverage.",
       "tags": ["research", "archive", "OSINT", "podcast", "history", "FastAPI", "React"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Found and moved into Q:\\MTW 2026-06-06 (from tinker-archivist-mvp.zip). Converted to MTW standards: backend Python to uv (pyproject.toml, requirements.txt removed), frontend npm to bun, added the missing frontend/vite.config.js (the React plugin was unwired, so it had never run). Dedicated ports 8083 (API) and 5183 (UI), moved off the contested 5173/8000 and wired through CORS, the frontend API const, the start scripts, and the README. Live-tested: Research Scout pulled 23 real records (Internet Archive 10, Library of Congress 9, Wikidata 4), 23 story cards, zero errors. Fixed a Wikidata 403 by adding a descriptive User-Agent to all three connectors. git-init done 2026-06-06 (commit 45e6a48). Backlog: backend uses the deprecated @app.on_event (swap to lifespan); a few test projects sit in the local SQLite db (under backend/data/, gitignored); could later share a connector/export layer with TinkerWire."
+      "notes": "Found and moved into Q:\\MTW 2026-06-06 (from tinker-archivist-mvp.zip). Converted to MTW standards: backend Python to uv (pyproject.toml, requirements.txt removed), frontend npm to bun, added the missing frontend/vite.config.js (the React plugin was unwired, so it had never run). Dedicated ports 8083 (API) and 5183 (UI), moved off the contested 5173/8000 and wired through CORS, the frontend API const, the start scripts, and the README. Live-tested: Research Scout pulled 23 real records (Internet Archive 10, Library of Congress 9, Wikidata 4), 23 story cards, zero errors. Fixed a Wikidata 403 by adding a descriptive User-Agent to all three connectors. git-init done 2026-06-06 (commit 45e6a48). Backlog: backend uses the deprecated @app.on_event (swap to lifespan); a few test projects sit in the local SQLite db (under backend/data/, gitignored); could later share a connector/export layer with TinkerWire. 2026-06-07 resilience+hygiene pass (committed 5bd36e8, c2ec7c3): added a shared resilient fetch helper (retry/backoff, per-host rate limit, offline cache) and routed all three connectors through it (descriptive User-Agents preserved), DB reset path (maintenance.py + scripts/reset_db.py), migrated startup to lifespan, FIXED a real SQLite connection leak in db.connect() (was committing but never closing), added pytest + 4 connector/fetch tests. Full doc + PMP suite (TARCH-PMD, 5 docs) and Obsidian mirror generated; coverage 1/10 -> 10/10. Then redesigned the web UI as an old-newspaper broadsheet (blackletter masthead, dateline, figures bar, article-style story cards with drop cap, sepia source ledger; browser-verified end to end with live data, commit 9482c2c) and added FastAPI route-level tests (TestClient, isolated temp DB), a 4th connector Chronicling America (historic newspapers via the loc.gov collections API; fetch helper now follows redirects), and fixed the masthead font (Fraktur -> Playfair Didone). 11 tests pass. Pushed to GitHub Mad-Tinker-MTW/TinkerArchivist (PRIVATE, commit 6cc43bc). 28h logged this session. Open (Stage 3/4): further connectors, move blocking SQLite off the event loop, shared connector/export layer with TinkerWire. NOTE: a TinkerPipeline Qwen3-8B run produced broken code (non-returning helper, hallucinated httpx/connector APIs, fabricated User-Agents, Path+str crash); rejected at /audit-diff (report in Docs/TinkerOps/audits/TinkerArchivist-diffaudit-2026-06-07.md) and reimplemented directly by Claude (fix-forward; the 9 broken ARCH commits remain in history below the fix since the delete-guard blocked git reset). Next audit 2026-06-21."
     },
 
     {
@@ -1281,13 +1281,42 @@
       "launch": null,
       "launch_cmd": "python scripts/ask_vault.py (ask) | python scripts/ingest.py (ingest+route); run from Q:\\MTW\\TinkerBrain, data root via TINKERBRAIN_ROOT (default V:\\TinkerBrain)",
       "port": null,
-      "last_worked": "2026-06-06",
-      "last_commit": "2026-06-06",
+      "last_worked": "2026-06-07",
+      "last_commit": "2026-06-07",
       "summary": "The keystone knowledge/memory layer: a fully-local RAG second-brain. Ingests raw inputs (ChatGPT/Claude exports, notes, pdf, docx), cleans/chunks/tags and routes them into a PARA vault (Inbox/Projects/Ideas/Reference/Ephemera/Archive), vector-indexes with ChromaDB (sentence-transformers all-MiniLM-L6-v2), and answers grounded questions via Ollama/llama3. This is TinkerPal's knowledge base and the intended memory for the Hex-Veridicae overseer. Code home Q:, data home V:.",
       "tags": ["knowledge-base", "RAG", "second-brain", "local-llm", "Ollama", "ChromaDB", "memory", "keystone"],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md."
+    },
+
+    {
+      "id": "WoodWright",
+      "name": "Tinker's WoodWright",
+      "status": "dormant",
+      "division": "Foundry",
+      "path": "Q:\\Workshop\\WoodWright",
+      "alt_path": null,
+      "stack": ["Tauri v2", "React", "TypeScript", "Vite", "Tailwind CSS", "pdf-lib"],
+      "package_manager": "npm",
+      "deployment": ["local-desktop"],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": "npm run tauri dev",
+      "port": null,
+      "last_worked": "2026-04-23",
+      "last_commit": "2026-04-23",
+      "summary": "Tinker's WoodWright, a lumber cut optimization desktop app (Tauri v2 + React/TypeScript + Vite + Tailwind). Cut-list input with quantities, stock board management, a bin-packing optimizer, visual cut diagrams, project save/load, and PDF BOM export via pdf-lib. v1.0.0 built in a single LM Studio / MCP-filesystem session and audited via local models (Qwen3-8B, TeichAI).",
+      "tags": ["woodworking", "desktop", "Tauri", "optimization", "bin-packing", "Foundry"],
+      "blocked_by": null,
+      "triage_needed": true,
+      "notes": "Discovered 2026-06-07 in Q:\\Workshop (LM Studio dev scratch space); absent from the registry until now, surfaced from ~15 LM Studio chats. Built across one session (commits through e8b8a2f, 2026-04-23): v0.1 then v1.0.0, with multiple local-model audits (docs/AUDIT_*.md, TeichAI + Qwen3-8B eval) plus pm_hours/project_log/decisions/project_plan docs. ANOMALY: uses npm (package-lock.json) against the MTW bun standard; meta/project.json lists Tauri ^1.0.0 but package.json pins @tauri-apps/api ^2.0.0, so the real build is Tauri v2. NEXT: migrate Q:\\Workshop\\WoodWright -> Q:\\MTW\\WoodWright (Foundry division), convert npm -> bun, generate MTW-standard docs via /doc-project, add an Obsidian mirror. last_worked reflects git last-commit (2026-04-23) to keep the dormancy clock honest. MTW-DevWorkflow alongside it in Q:\\Workshop is an empty docs/meta/tasks scaffold (template), not a project."
     }
 
   ]
