@@ -41,7 +41,7 @@
       "tags": ["dashboard", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md."
+      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. 2026-06-08 also: Wiring view landed (src/views/Wiring.tsx, commit f630bc7, build green) ported from PR #1 which was closed as superseded (its stale-base registry would have clobbered the 21 unpushed commits; local main pushed to origin first as backup). Stage 2 wiring view 2.6 now complete. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md."
     },
 
     {
