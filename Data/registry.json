@@ -3,14 +3,14 @@
     "version": "1.0.6",
     "generated": "2026-06-07",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 41,
+    "total": 42,
     "active": 11,
     "dormant": 14,
     "pre_build": 4,
     "placeholder": 2,
     "complete": 4,
     "archived": 1,
-    "triage": 5
+    "triage": 6
   },
 
   "projects": [
@@ -1230,6 +1230,35 @@
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood (Spike 0 routing-core, orchestrated alongside SmokeProbe; audit-diff caught and fixed a config-API mismatch). Re-architected the same day into MessageBurst 180, a G.I.S.T.-centered communication launcher: VISION/SPEC/ROADMAP rewritten, Charter/WBS phased (Phase 0 Spike done; Phase 1 MVP = G.I.S.T. on local model + email/SMS + preview/approve; Phase 2 breadth; Phase 3 BRST Direct encrypted layer + sunburst display). Two concept notes added: BRST-DIRECT-SECURITY.md (deposit-only/skiff crypto model with honest dissolve/metadata/anti-capture boundaries) and BURST-DISPLAY.md (sunburst morphing display). G.I.S.T. runs locally so raw thoughts never leave the device. MVP stack recommended Tauri v2 + React/TS. Next: build the G.I.S.T. engine MVP. No GitHub repo yet (local-only). Full PMP via /doc-project as it grows."
+    },
+
+    {
+      "id": "TinkerBrain",
+      "name": "TinkerBrain",
+      "status": "triage",
+      "division": null,
+      "path": "Q:\\MTW\\TinkerBrain",
+      "alt_path": null,
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": null,
+      "last_commit": null,
+      "summary": "",
+      "tags": [],
+      "blocked_by": null,
+      "triage_needed": true,
+      "notes": "RECOVERED STUB 2026-06-07. This project was added in a prior session but never committed/pushed, so it was lost when the ephemeral environment was reclaimed; git history has no record of it. Re-created as a minimal triage stub to prevent further loss. Path is a guess (MTW convention). Needs: real status, stack, summary, and doc/path details filled in."
     }
 
   ]
