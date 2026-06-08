@@ -3,14 +3,14 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 44,
+    "total": 51,
     "active": 10,
-    "dormant": 8,
+    "dormant": 13,
     "pre_build": 3,
     "placeholder": 2,
     "complete": 4,
     "archived": 1,
-    "triage": 16
+    "triage": 18
   },
 
   "projects": [
@@ -35,13 +35,13 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "port": 5175,
-      "last_worked": "2026-06-04",
-      "last_commit": "2026-06-06",
+      "last_worked": "2026-06-08",
+      "last_commit": "2026-06-08",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
       "tags": ["dashboard", "internal", "dev-ops"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts)."
+      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md."
     },
 
     {
@@ -1281,13 +1281,13 @@
       "launch": null,
       "launch_cmd": "python scripts/ask_vault.py (ask) | python scripts/ingest.py (ingest+route); run from Q:\\MTW\\TinkerBrain, data root via TINKERBRAIN_ROOT (default V:\\TinkerBrain)",
       "port": null,
-      "last_worked": "2026-06-07",
-      "last_commit": "2026-06-07",
+      "last_worked": "2026-06-08",
+      "last_commit": "2026-06-08",
       "summary": "The keystone knowledge/memory layer: a fully-local RAG second-brain. Ingests raw inputs (ChatGPT/Claude exports, notes, pdf, docx), cleans/chunks/tags and routes them into a PARA vault (Inbox/Projects/Ideas/Reference/Ephemera/Archive), vector-indexes with ChromaDB (sentence-transformers all-MiniLM-L6-v2), and answers grounded questions via Ollama/llama3. This is TinkerPal's knowledge base and the intended memory for the Hex-Veridicae overseer. Code home Q:, data home V:.",
       "tags": ["knowledge-base", "RAG", "second-brain", "local-llm", "Ollama", "ChromaDB", "memory", "keystone"],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md."
+      "notes": "Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md. 2026-06-08 INGEST: full clean-markdown corpus ingested via new scripts/tb_ingest_batch.py (one-shot batch ingester that extends ingest.py without touching the blocking watcher) - 1,574 files into 13,334 chunks; vault now 13,561 chunks (Projects 9900 / Reference 2283 / Ideas 770 / Inbox 588 / Ephemera 19). FIXED vector_index.rebuild_index: it added all docs in one collection.add and hit Chroma's 5461 max-batch on 13.5k docs; now batches at 5000. ask_vault verified live on qwen3-8b (answered a space-western query with sources). Routing skews ~73% to Projects (cosmetic; the planned embed+cluster curation is the real fix). NEXT: PDFs/Drive docs need the file-ingest path and the 2.2GB mbox needs mail_export2md before ingest; add a DECISIONS file (6 architecture decisions still unwritten); run /plan-project + /doc-project (no WBS/docs yet, hence no Obsidian Projects mirror). Summary still says Ollama/llama3 but runtime is now LM Studio qwen3-8b - fix at /doc-project."
     },
 
     {
@@ -1317,6 +1317,209 @@
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Discovered 2026-06-07 in Q:\\Workshop (LM Studio dev scratch space); absent from the registry until now, surfaced from ~15 LM Studio chats. Built across one session (commits through e8b8a2f, 2026-04-23): v0.1 then v1.0.0, with multiple local-model audits (docs/AUDIT_*.md, TeichAI + Qwen3-8B eval) plus pm_hours/project_log/decisions/project_plan docs. ANOMALY: uses npm (package-lock.json) against the MTW bun standard; meta/project.json lists Tauri ^1.0.0 but package.json pins @tauri-apps/api ^2.0.0, so the real build is Tauri v2. NEXT: migrate Q:\\Workshop\\WoodWright -> Q:\\MTW\\WoodWright (Foundry division), convert npm -> bun, generate MTW-standard docs via /doc-project, add an Obsidian mirror. last_worked reflects git last-commit (2026-04-23) to keep the dormancy clock honest. MTW-DevWorkflow alongside it in Q:\\Workshop is an empty docs/meta/tasks scaffold (template), not a project."
+    },
+
+    {
+      "id": "LastBloodline",
+      "name": "The Last Bloodline",
+      "status": "dormant",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\The Last Bloodline.md",
+      "alt_path": "V:\\Figure it out later\\Phone 1-6-2026\\Download\\Book.pdf",
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-06",
+      "last_commit": null,
+      "summary": "Post-apocalyptic supernatural survival story: a novel plus a video-game concept, with a Codex Bestiarium and Codex Personae. Protagonist Atlas (hidden Wraithborn heritage), shadow entity Erebus, monsters the Vrykolakas. Found in full as two PDF drafts.",
+      "tags": ["creative", "novel", "game-concept", "codex", "Creative"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Cleaner 2nd draft Book.pdf, 1st draft Book Idea.pdf (both in the phone Download folder); emailed Feb 2025. Vault note at Obsidian Vault\\Creative IP. Possible shared universe with Noir Guardian (shared 'Elias')."
+    },
+
+    {
+      "id": "NoirGuardian",
+      "name": "Noir Guardian",
+      "status": "dormant",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\Noir Guardian.md",
+      "alt_path": "V:\\Google Import\\_extracted\\002_NOIR GUARDIAN.docx",
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-06",
+      "last_commit": null,
+      "summary": "Comic-book project (The Sentinel Initiative). A roughly 980-word series bible plus concept art. Protagonist Elias Mercer, a veteran with a norepinephrine neural implant turned night vigilante; antagonist Victor Aldric, an old-money corporate-dynasty power broker beaten only by exposure.",
+      "tags": ["creative", "comic", "Creative"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Bible at _extracted\\002_NOIR GUARDIAN.docx, concept art 000_Noir.png. Confirmed NOT the mega-corp novel (Aldric is only thematically adjacent). Shares 'Elias' with The Last Bloodline."
+    },
+
+    {
+      "id": "BusinessBushido",
+      "name": "Business Bushido (working title - real title unknown)",
+      "status": "triage",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\Business Bushido.md",
+      "alt_path": null,
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-07",
+      "last_commit": null,
+      "summary": "Nonfiction business book on handling business situations using several philosophies. Bushido is one, Buddhism another, plus a likely third Franky does not currently recall. A multi-philosophy business-decision book, NOT Bushido-only and NOT Tinker Field Editions / Tinker Philosophy Engine. 'Business Bushido' is a working label only; real title unknown. Manuscript UNFOUND digitally.",
+      "tags": ["creative", "nonfiction", "management", "philosophy", "unfound", "Creative"],
+      "blocked_by": null,
+      "triage_needed": true,
+      "notes": "NAME CORRECTED by Franky 2026-06-08: not Bushido-only; it is a multi-philosophy (Bushido + Buddhism + a forgotten third) business-decision book, real title unknown. MOST LIKELY on an old computer hard drive Franky will reconnect when he has time (that resolves this triage). Not located in any chat export or the Q:/V: docx/pdf sweep (only a 'where's my book' reference). Also check Perplexity (Franky to pull), Google Docs, pre-AI files. Linked twin of MegaCorpDynasties (same timeframe, one idea in two forms)."
+    },
+
+    {
+      "id": "MegaCorpDynasties",
+      "name": "Mega-Corp Dynasties (working title)",
+      "status": "triage",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\Mega-Corp Dynasties.md",
+      "alt_path": null,
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-07",
+      "last_commit": null,
+      "summary": "Novel where world powers are major corporation family dynasties, with hackers and assassins (corporate houses as samurai clans). The fiction twin of Business Bushido. Manuscript UNFOUND digitally.",
+      "tags": ["creative", "novel", "fiction", "unfound", "Creative"],
+      "blocked_by": null,
+      "triage_needed": true,
+      "notes": "Registered as a placeholder for tracking in the 2026-06-08 deep-dive catch pass; not located in any export or the drive sweep (keyword search collides with cyber-ops coursework; may sit under a codename). MOST LIKELY on an old computer hard drive Franky will reconnect when he has time (that resolves this triage). Perplexity is the next untried source (Franky to pull). Linked twin of BusinessBushido. Ask Franky for working titles/codenames."
+    },
+
+    {
+      "id": "SpaceWestern",
+      "name": "Space Western (untitled)",
+      "status": "dormant",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\Space Western.md",
+      "alt_path": "Q:\\MTW\\Tools\\chat-export2md\\Output\\ChatGPT-full",
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-06",
+      "last_commit": null,
+      "summary": "Early fully-chaptered space-western story with a game concept. Characters Rylan, Luna, Valen; ship the Nomad; chapters The Trap / Luna's Secret / Ghosts of the Past / Unlikely Alliances / The Showdown. Exists as drafted chapters inside the 2023 ChatGPT archive.",
+      "tags": ["creative", "story", "game-concept", "Creative"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Origin chat 2023-11-17_create-space-western-game in the ChatGPT-full export. Never assembled into a standalone manuscript."
+    },
+
+    {
+      "id": "AALanguageKit",
+      "name": "Axis & Allies WWII Languages Fluency Kit",
+      "status": "dormant",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\Axis and Allies Language Kit.md",
+      "alt_path": "V:\\Google Import\\takeout-20260606T231721Z-9-002\\Takeout\\Drive\\Google AI Studio",
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-06",
+      "last_commit": null,
+      "summary": "A Conversational Fluency Kit for WWII-era languages built around an Axis & Allies framing: two volumes plus a generation playbook. A substantial, mostly-complete reference/creative project that was invisible to TinkerOps before this pass.",
+      "tags": ["creative", "language", "reference", "WWII", "Creative"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Source files are Google AI Studio exports (Conversational Fluency Kit, WWII Languages Fluency Kit Generated, Allied Languages French/Russian/Spanish, Axis and Allies Traslation.pdf) under V:\\Google Import takeout 9-001 and 9-002. File-ingest fodder for TinkerBrain."
+    },
+
+    {
+      "id": "Songbook",
+      "name": "Songwriting Lead Sheets",
+      "status": "dormant",
+      "division": "Creative",
+      "path": "Q:\\MTW\\Obsidian Vault\\Creative IP\\Songwriting Lead Sheets.md",
+      "alt_path": "V:\\Figure it out later\\Phone 1-6-2026\\Download",
+      "stack": [],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-06",
+      "last_commit": null,
+      "summary": "A batch of original songwriting lead-sheet text files (titles include Velvet Circuitry, Gravity Has Teeth, A Gnome Walks Into a Flame, The Silence That Followed). The creative-writing/music output, distinct from the SkaldForge AI music-station app.",
+      "tags": ["creative", "music", "songwriting", "Creative"],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Lead-sheet .txt files in the phone Download dump. Distinct from SkaldForge (code project). File-ingest fodder for TinkerBrain (Writing + Music cluster)."
     }
 
   ]
