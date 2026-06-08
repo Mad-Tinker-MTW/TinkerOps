@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { Project, Registry, PipelineState } from '../types/registry'
 import { StatusBadge } from './StatusBadge'
 import { DocCoverage } from './DocCoverage'
@@ -11,6 +11,24 @@ interface Props {
   registry: Registry
   pipeline?: PipelineState
   onClose: () => void
+}
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
+  const copy = () => {
+    navigator.clipboard?.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    })
+  }
+  return (
+    <button
+      onClick={copy}
+      className="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-gray-700/60 text-gray-500 hover:text-gray-300 hover:border-gray-600 transition-colors"
+    >
+      {copied ? 'copied ✓' : 'copy'}
+    </button>
+  )
 }
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
@@ -218,7 +236,10 @@ export function ProjectDetail({ project, registry, pipeline, onClose }: Props) {
                 <code className="text-xs text-amber-400 block mb-1">📄 {project.launch}</code>
               )}
               {project.launch_cmd && (
-                <code className="text-xs text-green-400">$ {project.launch_cmd}</code>
+                <div className="flex items-center justify-between gap-2">
+                  <code className="text-xs text-green-400 break-all">$ {project.launch_cmd}</code>
+                  <CopyButton text={project.launch_cmd} />
+                </div>
               )}
             </div>
           )}

@@ -2,11 +2,12 @@ import { useState, useCallback } from 'react'
 import type { Project, Registry, PipelineStateMap } from './types/registry'
 import { Overview } from './views/Overview'
 import { Triage } from './views/Triage'
+import { Wiring } from './views/Wiring'
 import { ProjectDetail } from './components/ProjectDetail'
-import registryData from '../data/registry.json'
-import pipelineData from '../data/pipeline-state.json'
+import registryData from '../Data/registry.json'
+import pipelineData from '../Data/pipeline-state.json'
 
-type View = 'overview' | 'triage'
+type View = 'overview' | 'triage' | 'wiring'
 
 const registry = registryData as unknown as Registry
 const pipelineState = pipelineData as unknown as PipelineStateMap
@@ -53,6 +54,9 @@ export default function App() {
                 </span>
               )}
             </NavTab>
+            <NavTab active={view === 'wiring'} onClick={() => { setView('wiring'); setSearch('') }}>
+              Wiring
+            </NavTab>
           </nav>
 
           {/* Search — only in overview */}
@@ -91,6 +95,12 @@ export default function App() {
         )}
         {view === 'triage' && (
           <Triage
+            registry={registry}
+            onSelect={handleSelect}
+          />
+        )}
+        {view === 'wiring' && (
+          <Wiring
             registry={registry}
             onSelect={handleSelect}
           />
