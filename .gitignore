@@ -10,3 +10,10 @@ __pycache__/
 
 # Registry backup snapshots (kept on disk, not versioned)
 Data/backups/
+
+# MCP configs and API keys (Brave key lives in ~/.lmstudio/mcp.json — never commit a copy)
+mcp.json
+*.mcp.json
+.lmstudio/
+*.key
+config.toml
