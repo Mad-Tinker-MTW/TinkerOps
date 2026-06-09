@@ -1,7 +1,7 @@
 # TinkerOps Workers
 
 Automation workers for the MTW workshop. Each worker reads the registry
-(`../data/registry.json`, the source of truth) and does one reliable chore so the
+(`../Data/registry.json`, the source of truth) and does one reliable chore so the
 operator does not have to remember to. These are the functional core of the
 overseer: dumb, dependable workers that keep the bookkeeping honest while you
 build. Stdlib-only Python, no dependencies.
