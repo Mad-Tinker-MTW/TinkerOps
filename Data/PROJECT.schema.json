@@ -196,6 +196,12 @@
       "default": false
     },
 
+    "uat": {
+      "type": "boolean",
+      "description": "True if this is UAT coursework, grouped under the dashboard UAT toggle (default on). Toggling off in TinkerOps marks it 'to be moved' (persisted client-side in localStorage; the dashboard has no backend to write the registry).",
+      "default": false
+    },
+
     "notes": {
       "type": ["string", "null"],
       "description": "Freeform internal notes, migration plans, known issues",

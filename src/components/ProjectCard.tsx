@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import type { Project, PipelineState } from '../types/registry'
 import { StatusBadge } from './StatusBadge'
 import { DocCoverage } from './DocCoverage'
 import { DeploymentIcons } from './DeploymentIcons'
 import { StackPill } from './StackPill'
 import { PipelinePill } from './PipelinePill'
+import { UATToggle } from './UATToggle'
+import { useUATMoved } from '../hooks/useUATFlags'
 
 const MAX_STACK_PILLS = 5
 
@@ -35,7 +38,46 @@ export function ProjectCard({ project, pipeline, onClick, highlight = false }: P
   const localUrl = urls.local
   const prodUrl = urls.production
 
-  const borderColor = highlight
+  const [launchState, setLaunchState] = useState<'idle' | 'launching' | 'ok' | 'err'>('idle')
+
+  async function handleRun(e: React.MouseEvent) {
+    e.stopPropagation()
+    if (localUrl) return void window.open(localUrl, '_blank')
+    if (prodUrl) return void window.open(prodUrl, '_blank')
+    if (!launch_cmd) return
+    setLaunchState('launching')
+    try {
+      const r = await fetch('/api/launch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: project.id }),
+      })
+      const j = await r.json()
+      setLaunchState(j.ok ? 'ok' : 'err')
+    } catch {
+      setLaunchState('err')
+    }
+    setTimeout(() => setLaunchState('idle'), 2500)
+  }
+
+  const runLabel =
+    launchState === 'launching'
+      ? '· running…'
+      : launchState === 'ok'
+        ? '✓ launched'
+        : launchState === 'err'
+          ? '✗ failed'
+          : localUrl || prodUrl
+            ? '↗ launch'
+            : '$ run'
+
+  const { isMoved } = useUATMoved()
+  const isUat = project.uat === true
+  const moved = isUat && isMoved(project.id)
+
+  const borderColor = moved
+    ? 'border-red-500/40'
+    : highlight
     ? 'border-amber-500/40'
     : status === 'active'
     ? 'border-green-500/20'
@@ -67,6 +109,7 @@ export function ProjectCard({ project, pipeline, onClick, highlight = false }: P
         <div className="flex flex-col items-end gap-1 shrink-0">
           <StatusBadge status={status} />
           {pipeline && <PipelinePill state={pipeline} />}
+          {isUat && <UATToggle id={project.id} />}
         </div>
       </div>
 
@@ -102,15 +145,11 @@ export function ProjectCard({ project, pipeline, onClick, highlight = false }: P
           )}
           {(launch_cmd || localUrl || prodUrl) && (
             <button
-              onClick={e => {
-                e.stopPropagation()
-                if (localUrl) window.open(localUrl, '_blank')
-                else if (prodUrl) window.open(prodUrl, '_blank')
-              }}
+              onClick={handleRun}
               title={launch_cmd ?? localUrl ?? prodUrl ?? ''}
               className="px-2 py-0.5 rounded text-[9px] font-mono bg-surface-500 text-gray-400 border border-gray-700/50 hover:border-green-500/40 hover:text-green-400 transition-colors"
             >
-              {localUrl || prodUrl ? '↗ launch' : '$ run'}
+              {runLabel}
             </button>
           )}
         </div>

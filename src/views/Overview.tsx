@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import type { Project, Registry, Status, PipelineStateMap } from '../types/registry'
 import { StatCards } from '../components/StatCards'
 import { ProjectCard } from '../components/ProjectCard'
+import { useUATMoved } from '../hooks/useUATFlags'
 
 const STATUS_ORDER: Status[] = [
   'active',
@@ -30,8 +32,13 @@ interface Props {
 
 export function Overview({ registry, pipelineState, search, onSelect }: Props) {
   const query = search.toLowerCase().trim()
+  const [showUat, setShowUat] = useState(true)
+  const { movedCount } = useUATMoved()
+
+  const uatCount = registry.projects.filter(p => p.uat === true).length
 
   const filtered = registry.projects.filter(p => {
+    if (!showUat && p.uat === true) return false
     if (!query) return true
     return (
       p.name.toLowerCase().includes(query) ||
@@ -56,6 +63,31 @@ export function Overview({ registry, pipelineState, search, onSelect }: Props) {
   return (
     <div className="flex flex-col gap-8">
       {!query && <StatCards registry={registry} />}
+
+      {uatCount > 0 && (
+        <div className="flex items-center gap-3 text-[10px] font-mono">
+          <button
+            type="button"
+            onClick={() => setShowUat(v => !v)}
+            aria-pressed={showUat}
+            title={showUat ? 'Hide UAT coursework from the board' : 'Show UAT coursework on the board'}
+            className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded border transition-colors ${
+              showUat
+                ? 'bg-teal-500/15 text-teal-300 border-teal-500/30 hover:border-teal-500/60'
+                : 'bg-surface-600 text-gray-500 border-gray-700/50 hover:border-gray-500/60'
+            }`}
+          >
+            <span>UAT coursework</span>
+            <span className="opacity-70">{showUat ? 'on' : 'off'}</span>
+            <span className="opacity-50">({uatCount})</span>
+          </button>
+          {movedCount > 0 && (
+            <span className="text-red-400/80">
+              {movedCount} marked to be moved
+            </span>
+          )}
+        </div>
+      )}
 
       {query && (
         <p className="text-xs font-mono text-gray-500">

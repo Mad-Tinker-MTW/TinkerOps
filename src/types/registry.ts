@@ -71,6 +71,13 @@ export interface Project {
   tags: string[]
   blocked_by: string | null
   triage_needed: boolean
+  /**
+   * True if this is UAT coursework, grouped under the dashboard UAT toggle
+   * (default on). Toggling it off in TinkerOps marks the project "to be moved"
+   * (that flip is persisted client-side in localStorage, since the dashboard
+   * has no backend to write registry.json).
+   */
+  uat?: boolean
   notes: string | null
 }
 
