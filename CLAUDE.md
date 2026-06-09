@@ -29,5 +29,15 @@ When adding or updating project records always validate against the schema.
 - Dark theme, MTW aesthetic
 - Read registry.json on load, no backend needed
 
+## Launch Endpoint (the one backend exception)
+The "no backend" rule has a single deliberate exception: a dev-server-only launch
+middleware in vite.config.ts (`POST /api/launch`). It exists so the card "$ run"
+button can actually start a desktop/CLI project. It accepts only a project `id`,
+looks the project up in data/registry.json, and spawns that project's OWN
+`launch_cmd` at its `path` in a new console. It never runs a client-supplied
+command string. It runs only under `bun run dev` (configureServer), not in build or
+preview. Because it spawns local processes, the dev server must stay bound to
+localhost: never set server.host to 0.0.0.0 while this is enabled.
+
 ## Project Status
 Built June 2026. Initial build complete. Wiring and triage views may need completion.
