@@ -3,14 +3,14 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 51,
+    "total": 53,
     "active": 10,
     "dormant": 13,
     "pre_build": 3,
     "placeholder": 2,
     "complete": 4,
     "archived": 1,
-    "triage": 18
+    "triage": 20
   },
 
   "projects": [
@@ -1520,6 +1520,64 @@
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Lead-sheet .txt files in the phone Download dump. Distinct from SkaldForge (code project). File-ingest fodder for TinkerBrain (Writing + Music cluster)."
+    },
+
+    {
+      "id": "ESP32CardInventory",
+      "name": "ESP32 Card Inventory System",
+      "status": "triage",
+      "division": "Foundry",
+      "path": "Q:\\MTW\\ESP32CardInventory",
+      "alt_path": null,
+      "stack": ["ESP32", "local-LLM", "inventory"],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-08",
+      "last_commit": null,
+      "summary": "An ESP32 plus local-AI inventory system for a collectible-card / HackerBox collection. Hardware build with local-AI cataloging. Concept stage, surfaced from Claude Chat, not yet a built project.",
+      "tags": ["hardware", "ESP32", "inventory", "local-ai", "Foundry", "discovered"],
+      "blocked_by": null,
+      "triage_needed": true,
+      "notes": "Discovered in the 2026-06-08 Claude Chat discovery pass (conversations: esp32-collectible-card-inventory-system, local-ai-inventory-system-for-hackerbox-collection). VERIFY overlap with the existing Cardcam project (card scanning) before building - may be the same idea or distinct. Path is prospective (not yet created). See Docs/TinkerOps/claude-chat-discovery-2026-06-08.md."
+    },
+
+    {
+      "id": "WatchRepairVoice",
+      "name": "Hands-Free Watch Repair Voice Control",
+      "status": "triage",
+      "division": "TimeWorks",
+      "path": "Q:\\MTW\\WatchRepairVoice",
+      "alt_path": null,
+      "stack": ["voice", "Whisper", "TTS"],
+      "package_manager": null,
+      "deployment": [],
+      "urls": { "production": null, "staging": null, "local": null },
+      "github": null,
+      "docs": {
+        "readme": false, "claude_md": false, "status_md": false,
+        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-08",
+      "last_commit": null,
+      "summary": "A hands-free voice-control assistant for watch repair: voice in and out while hands are occupied at the bench. HexVeridicae-adjacent (could reuse the same local voice stack). Concept stage, surfaced from Claude Chat.",
+      "tags": ["TimeWorks", "voice", "watch-repair", "assistant", "discovered"],
+      "blocked_by": null,
+      "triage_needed": true,
+      "notes": "Discovered in the 2026-06-08 Claude Chat discovery pass (conversation: hands-free-voice-control-for-watch-repair). Could reuse the HexVeridicae voice stack (faster-whisper + Coqui XTTS) and a local LLM. Path is prospective (not yet created). See Docs/TinkerOps/claude-chat-discovery-2026-06-08.md."
     }
 
   ]
