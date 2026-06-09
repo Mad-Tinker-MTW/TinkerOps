@@ -7,3 +7,6 @@ dist/
 # Python worker cache
 __pycache__/
 *.pyc
+
+# Registry backup snapshots (kept on disk, not versioned)
+Data/backups/
