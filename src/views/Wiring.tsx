@@ -15,6 +15,7 @@ const DIVISION_ORDER: Division[] = [
   'WebDivision',
   'Tools',
   'Docs',
+  'Creative',
 ]
 
 // Walk a project's blocked_by chain to its root blocker (depth-capped, cycle-safe).

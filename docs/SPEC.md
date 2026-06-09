@@ -1,6 +1,6 @@
 # TinkerOps — Specification
 **MTW Workshop Dev Console**
-Version: 1.0.4
+Version: 1.0.6
 
 ---
 
@@ -87,9 +87,9 @@ Per-project entry:
 
 | Module | Description | Status |
 |---|---|---|
-| Overview | All projects as cards with stat summary | Complete |
-| Triage | Filtered view of triage_needed projects | Needs completion pass |
-| Wiring | Division grouping and blocked-by dependency chain | Needs completion pass |
+| Overview | All projects as cards with stat summary, plus name/tag/status/stack search | Complete |
+| Triage | Filtered view of triage_needed projects with missing-field flags | Complete |
+| Wiring | Division grouping (incl. Creative) and blocked-by dependency chains in build order | Complete |
 | StatCards | Active / dormant / pre-build / triage counts | Complete |
 | ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill | Complete |
 | StatusBadge | Color-coded status indicator | Complete |
@@ -97,7 +97,7 @@ Per-project entry:
 | DocCoverage | Visual doc coverage flags (readme, claude_md, status_md, pmp) | Complete |
 | StackPill | Technology tag pill | Complete |
 | DeploymentIcons | Deployment target icon set | Complete |
-| ProjectDetail | Full registry record display panel, with a pipeline state section | Complete |
+| ProjectDetail | Full registry record panel: pipeline state, blocked-by/dependents, copy-able launch command | Complete |
 
 ---
 
@@ -117,6 +117,16 @@ The same commands path also holds TinkerPipeline agents (/audit-diff, /plan-guar
 
 ---
 
+## Workers
+
+Stdlib-only Python automation in `scripts/`. Each worker reads the registry as source of truth and does one reliable bookkeeping chore. No dependencies; run with any Python 3.11+ or `uv run`.
+
+| Worker | Purpose |
+|---|---|
+| mtw_vcs.py | Version-control hygiene across every project: `scan` (read-only status), `protect` (git-init + safe first commit for no-git projects), `snapshot` (commit uncommitted work as WIP), `refresh` (sync each record's last_commit from git). Never commits secrets (`.gitignore` + post-stage guard), skips files >20 MB and `.obsidian`, and never pushes to a remote. |
+
+---
+
 ## Environment
 
 No environment variables required. Data/registry.json is fetched at runtime by Vite. No .env file needed.
@@ -128,4 +138,3 @@ No environment variables required. Data/registry.json is fetched at runtime by V
 - No writes from the dashboard — registry updates happen in Claude Code sessions only
 - Desktop-only — no mobile or responsive layout planned
 - No real-time updates — changes appear on page reload
-- Triage and Wiring views need a Stage 2 completion pass
