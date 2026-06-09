@@ -37,5 +37,31 @@
     "tasks_skipped": 0,
     "last_task": "MB-05",
     "last_commit": "5dd9c0a86f505269fb2dfd5ac4eae51cc65c4ece"
+  },
+  "TinkerArchivist": {
+    "phase": "awaiting-audit",
+    "status": "ok",
+    "plan_file": "Q:\\MTW\\TinkerArchivist\\PLAN.md",
+    "tasks_total": 9,
+    "last_run": "2026-06-07T08:12:17Z",
+    "runner_version": "0.1.0",
+    "tasks_complete": 9,
+    "tasks_failed": 0,
+    "tasks_skipped": 0,
+    "last_task": "TASK-009",
+    "last_commit": "69f1909f4b343a10a5db6de815377bdb09ed2bef"
+  },
+  "Tools": {
+    "phase": "awaiting-audit",
+    "status": "ok",
+    "plan_file": "Q:\\MTW\\Tools\\PLAN.md",
+    "tasks_total": 1,
+    "last_run": "2026-06-09T00:56:54Z",
+    "runner_version": "0.1.0",
+    "tasks_complete": 1,
+    "tasks_failed": 0,
+    "tasks_skipped": 0,
+    "last_task": "TEST-001",
+    "last_commit": "d780b643a2e60f27220ed72103e734e4268ce7d8"
   }
 }
