@@ -12,9 +12,7 @@
     "archived": 1,
     "triage": 20
   },
-
   "projects": [
-
     {
       "id": "TinkerOps",
       "name": "TinkerOps",
@@ -22,14 +20,30 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerOps",
       "alt_path": null,
-      "stack": ["React", "Vite", "TypeScript", "Tailwind"],
+      "stack": [
+        "React",
+        "Vite",
+        "TypeScript",
+        "Tailwind"
+      ],
       "package_manager": "bun",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:5175" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:5175"
+      },
       "github": "Mad-Tinker-MTW/TinkerOps",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "TinkerOps-PMD",
       "launch": "start.ps1",
@@ -38,12 +52,15 @@
       "last_worked": "2026-06-08",
       "last_commit": "2026-06-08",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
-      "tags": ["dashboard", "internal", "dev-ops"],
+      "tags": [
+        "dashboard",
+        "internal",
+        "dev-ops"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. 2026-06-08 also: Wiring view landed (src/views/Wiring.tsx, commit f630bc7, build green) ported from PR #1 which was closed as superseded (its stale-base registry would have clobbered the 21 unpushed commits; local main pushed to origin first as backup). Stage 2 wiring view 2.6 now complete. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md."
     },
-
     {
       "id": "SkillForge20",
       "name": "SkillForge20",
@@ -51,9 +68,21 @@
       "division": null,
       "path": "Q:\\MTW\\SkillForge20",
       "alt_path": null,
-      "stack": ["React", "TypeScript", "Bun", "Vite", "Express", "SQLite", "Anthropic API"],
+      "stack": [
+        "React",
+        "TypeScript",
+        "Bun",
+        "Vite",
+        "Express",
+        "SQLite",
+        "Anthropic API"
+      ],
       "package_manager": "bun",
-      "deployment": ["local-desktop", "cloudflare-pages", "nsis-installer"],
+      "deployment": [
+        "local-desktop",
+        "cloudflare-pages",
+        "nsis-installer"
+      ],
       "urls": {
         "production": "https://madtinkersworkshop.com/skillforge20",
         "staging": null,
@@ -61,8 +90,13 @@
       },
       "github": "Mad-Tinker-MTW/SkillForge20",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -71,12 +105,17 @@
       "last_worked": "2026-06-01",
       "last_commit": "2026-06-03",
       "summary": "Personal rapid skill acquisition tracker built on Josh Kaufman's First 20 Hours method. Deconstructs skills into subskills, generates 7-week plans, runs practice sessions, and tracks progress. Used for UAT RSA coursework. v2.2 with NSIS installer and web companion.",
-      "tags": ["UAT", "RSA", "education", "AI", "desktop"],
+      "tags": [
+        "UAT",
+        "RSA",
+        "education",
+        "AI",
+        "desktop"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "KageMiru",
       "name": "KageMiru (影を見る)",
@@ -84,14 +123,29 @@
       "division": null,
       "path": "Q:\\MTW\\KageMiru",
       "alt_path": null,
-      "stack": ["Python", "uv"],
+      "stack": [
+        "Python",
+        "uv"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-cli", "android-termux"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli",
+        "android-termux"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/KageMiru",
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -100,12 +154,17 @@
       "last_worked": "2026-05-10",
       "last_commit": "2026-06-06",
       "summary": "MTW OSINT Toolkit with 15 modules covering username lookup, phone/email OSINT, port scanning, dork generation, hash/decode, whois, DNS, IP geo, subdomain enum, Gmail audit, Spider Recon, Case File Engine, Network Intelligence, and Public Records. Runs on Windows and Android Termux. Used to support law enforcement on missing persons and investigations.",
-      "tags": ["OSINT", "law-enforcement", "CLI", "Python", "security"],
+      "tags": [
+        "OSINT",
+        "law-enforcement",
+        "CLI",
+        "Python",
+        "security"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Module 15 (Public Records) needs rework. Module 16 (target psych profiling) planned."
     },
-
     {
       "id": "TinkerPadAlpha",
       "name": "TinkerPad Alpha",
@@ -113,14 +172,32 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerPadAlpha",
       "alt_path": null,
-      "stack": ["Tauri v2", "Svelte", "TypeScript", "Vite", "CodeMirror 6", "Bun"],
+      "stack": [
+        "Tauri v2",
+        "Svelte",
+        "TypeScript",
+        "Vite",
+        "CodeMirror 6",
+        "Bun"
+      ],
       "package_manager": "bun",
-      "deployment": ["local-desktop"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-desktop"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/TinkerPad-Alpha",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": true,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -129,12 +206,18 @@
       "last_worked": "2026-05-31",
       "last_commit": "2026-06-06",
       "summary": "Local-first Markdown and text editor desktop app built on Tauri v2 and Svelte, and the editor/IDE for the TinkerCode language. Not a general-purpose VS Code replacement; a focused writing and code workbench. Phase 1 complete with core editor, file tree, tabs, workspaces, and keyboard shortcuts. TinkerCode support arrives along the roadmap (Phase 2 run .tkr, Phase 4 language server, Phase 5 TinkerPal AI panel).",
-      "tags": ["desktop", "editor", "IDE", "Tauri", "Svelte", "TinkerCode"],
+      "tags": [
+        "desktop",
+        "editor",
+        "IDE",
+        "Tauri",
+        "Svelte",
+        "TinkerCode"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Was getting CSS black-screen regressions, fixed in a prior session. Keyboard accessibility pass planned for Phase 3. Ecosystem role confirmed 2026-06-06: TinkerPad Alpha is the editor/IDE for TinkerCode (write/run .tkr; Phase 4 language server and Phase 5 TinkerPal AI panel build toward full TinkerCode-aware editing). Documented in both projects' docs."
     },
-
     {
       "id": "MindScribe",
       "name": "DaVinci MindScribe",
@@ -142,14 +225,32 @@
       "division": null,
       "path": "V:\\DaVinciMSv10",
       "alt_path": "Q:\\MTW\\MindScribe",
-      "stack": ["Python", "Flask", "uv", "Anthropic API", "Replicate API", "SQLite"],
+      "stack": [
+        "Python",
+        "Flask",
+        "uv",
+        "Anthropic API",
+        "Replicate API",
+        "SQLite"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:5000" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:5000"
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -158,12 +259,19 @@
       "last_worked": "2026-05-14",
       "last_commit": "2026-06-06",
       "summary": "SIP project for UAT SIP408/409. Four AI agents (Sabina, Artemisia, Vera, Ada) profile how a user thinks via a custom 800+ term cognitive lexicon, generate Da Vinci-style concept sketches via Replicate, and convert approved images to G-code for an EleksDraw pen plotter running FluidNC over WiFi. Two lies and one truth intake method.",
-      "tags": ["UAT", "SIP", "AI", "Python", "Flask", "art", "plotter"],
+      "tags": [
+        "UAT",
+        "SIP",
+        "AI",
+        "Python",
+        "Flask",
+        "art",
+        "plotter"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Live code on V: drive. Q:\\MTW\\MindScribe is a placeholder/mirror. Critical bug fixed in May 2026: field name mismatch between lexicon and app dimensions. Q:\\MTW\\DaVinciMindScribe is empty placeholder."
     },
-
     {
       "id": "TinkerCode",
       "name": "TinkerCode",
@@ -171,14 +279,28 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerCode",
       "alt_path": null,
-      "stack": ["Rust", "Cargo"],
+      "stack": [
+        "Rust",
+        "Cargo"
+      ],
       "package_manager": "cargo",
-      "deployment": ["local-cli"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": true, "status_md": false,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -187,12 +309,16 @@
       "last_worked": "2026-04-24",
       "last_commit": "2026-06-06",
       "summary": "Custom BASIC-like programming language built in Rust with a tree-walking interpreter. 38 modules across phases covering language foundations, fintech, AI, OSINT, security, and document output. v0.3.0 with 35/35 tests passing. Core dependency for TinkerGuard, TinkerHub, and TinkerPal ecosystem.",
-      "tags": ["Rust", "language", "CLI", "ecosystem"],
+      "tags": [
+        "Rust",
+        "language",
+        "CLI",
+        "ecosystem"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Phase 2 complete. Phase 3 (Format Ecosystem) is next. Editor/IDE is TinkerPad Alpha (confirmed 2026-06-06; write/run .tkr there, with a TinkerCode language server and a TinkerPal AI panel planned in TinkerPad's Phase 4 and 5). Agent chain: TinkerCode -> TinkerGuard -> TinkerHub -> TinkerPal. Note: version drift across docs (CLAUDE.md v0.2.11, README v0.2.18, registry v0.3.0) worth reconciling on the next TinkerCode session."
     },
-
     {
       "id": "TinkerVault",
       "name": "TinkerVault 42",
@@ -200,14 +326,33 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerVault",
       "alt_path": null,
-      "stack": ["Tauri v2", "React", "TypeScript", "Vite", "Rust", "AES-256-GCM", "Argon2id"],
+      "stack": [
+        "Tauri v2",
+        "React",
+        "TypeScript",
+        "Vite",
+        "Rust",
+        "AES-256-GCM",
+        "Argon2id"
+      ],
       "package_manager": "pnpm",
-      "deployment": ["local-desktop"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-desktop"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/tinkervault-42",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": false,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": false,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "TV42-PMD",
       "launch": null,
@@ -216,12 +361,17 @@
       "last_worked": "2026-05-18",
       "last_commit": "2026-06-06",
       "summary": "MTW Security Division deterministic multi-factor file encryption desktop app. Five lock factors (seed phrase, place, date, sky time, star) derive a key with no key files. Pure Rust/Tauri backend, TVLT42-1 binary vault format, AES-256-GCM with Argon2id Beast Mode. Windows-only MTW internal tool.",
-      "tags": ["security", "encryption", "desktop", "Tauri", "Rust"],
+      "tags": [
+        "security",
+        "encryption",
+        "desktop",
+        "Tauri",
+        "Rust"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Crypto parameters are FROZEN. Beast Mode: 1GB RAM, 4 iterations. Do not modify."
     },
-
     {
       "id": "SkaldForge",
       "name": "SkaldForge",
@@ -229,9 +379,20 @@
       "division": null,
       "path": "Q:\\MTW\\SkaldForge",
       "alt_path": null,
-      "stack": ["Node.js", "Express", "Python", "FastAPI", "Mistral Nemo", "Ollama", "Spotify SDK"],
+      "stack": [
+        "Node.js",
+        "Express",
+        "Python",
+        "FastAPI",
+        "Mistral Nemo",
+        "Ollama",
+        "Spotify SDK"
+      ],
       "package_manager": "uv",
-      "deployment": ["cloudflare-tunnel", "local-only"],
+      "deployment": [
+        "cloudflare-tunnel",
+        "local-only"
+      ],
       "urls": {
         "production": "https://skaldforge.madtinkersworkshop.com",
         "staging": null,
@@ -239,8 +400,13 @@
       },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -249,12 +415,17 @@
       "last_worked": "2026-04-22",
       "last_commit": "2026-06-06",
       "summary": "MTW local and Spotify music curation player. v7.9 pipeline uses Mistral Nemo via Ollama for music knowledge, FastAPI backend, Spotify Web Playback SDK for in-browser audio. Queue-first player behavior with user-curated seed knowledge base. Deployed via Cloudflare tunnel.",
-      "tags": ["music", "Spotify", "AI", "Node", "Python"],
+      "tags": [
+        "music",
+        "Spotify",
+        "AI",
+        "Node",
+        "Python"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "MTFN",
       "name": "Mad Tinker's Field Notebook",
@@ -262,14 +433,32 @@
       "division": null,
       "path": "Q:\\MTW\\MTFN",
       "alt_path": null,
-      "stack": ["React", "Vite", "TypeScript", "Supabase", "Zustand", "React Router v6"],
+      "stack": [
+        "React",
+        "Vite",
+        "TypeScript",
+        "Supabase",
+        "Zustand",
+        "React Router v6"
+      ],
       "package_manager": "npm",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:5173" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:5173"
+      },
       "github": "Mad-Tinker-MTW/MTFN",
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": true, "handoff_md": true, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": true,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "MTFN-PMD",
       "launch": null,
@@ -278,12 +467,16 @@
       "last_worked": "2026-05-08",
       "last_commit": "2026-06-06",
       "summary": "MTW engineering notebook, build tracker, inventory system, and file vault. React/Vite frontend with Supabase cloud backend. v0.1 prototype, no auth. Tracks projects, parts, orders, measurements, and files across all MTW divisions.",
-      "tags": ["internal", "inventory", "notebook", "Supabase"],
+      "tags": [
+        "internal",
+        "inventory",
+        "notebook",
+        "Supabase"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Data layer for TinkerOps integration. Supabase requires .env.local with correct URL."
     },
-
     {
       "id": "TinkerScheduler",
       "name": "Tinker Scheduler",
@@ -291,14 +484,29 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerScheduler",
       "alt_path": null,
-      "stack": ["React", "Vite", "TypeScript"],
+      "stack": [
+        "React",
+        "Vite",
+        "TypeScript"
+      ],
       "package_manager": "npm",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:5174" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:5174"
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "TMOD-SCHED-PMD",
       "launch": null,
@@ -307,12 +515,16 @@
       "last_worked": "2026-05-08",
       "last_commit": "2026-06-06",
       "summary": "MTW Project Calendar Engine. Reads WBS and Schedule markdown files and builds a color-coded calendar with auto-scheduled task slots at 3 hours per project per week. Priority circle system lets you shift projects to front-of-week. Parses PMP doc formats directly via file drop.",
-      "tags": ["internal", "scheduling", "PMP", "calendar"],
+      "tags": [
+        "internal",
+        "scheduling",
+        "PMP",
+        "calendar"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "VisioVox",
       "name": "VisioVox",
@@ -320,14 +532,31 @@
       "division": null,
       "path": "Q:\\MTW\\VisioVox",
       "alt_path": null,
-      "stack": ["Tauri v2", "React", "TypeScript", "Rust", "Tesseract OCR"],
+      "stack": [
+        "Tauri v2",
+        "React",
+        "TypeScript",
+        "Rust",
+        "Tesseract OCR"
+      ],
       "package_manager": "npm",
-      "deployment": ["local-desktop"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-desktop"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -336,12 +565,17 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Windows desktop app that captures on-screen text via drag-region screenshot, runs Tesseract OCR, filters to a selected target language, and speaks it aloud. Global hotkey Ctrl+Shift+V. Supports Russian, Spanish, Arabic, Persian, Chinese, Japanese, Korean, and Thai. TTS via OpenAI, Azure, or Windows SAPI offline fallback.",
-      "tags": ["desktop", "OCR", "TTS", "accessibility", "Tauri"],
+      "tags": [
+        "desktop",
+        "OCR",
+        "TTS",
+        "accessibility",
+        "Tauri"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "NovaMentis",
       "name": "NovaMentis",
@@ -349,14 +583,31 @@
       "division": null,
       "path": "Q:\\MTW\\NovaMentis",
       "alt_path": null,
-      "stack": ["Bun", "Vite", "Svelte 5", "TypeScript", "PocketBase"],
+      "stack": [
+        "Bun",
+        "Vite",
+        "Svelte 5",
+        "TypeScript",
+        "PocketBase"
+      ],
       "package_manager": "bun",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:5173" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:5173"
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -365,12 +616,16 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Curiosity burst engine for 10-15 minute focused learning gaps. Generates 10-card bursts of obscure concepts via AI through PocketBase. Falls back to local seed cards if PocketBase is offline. Svelte 5 frontend, no SSR.",
-      "tags": ["education", "AI", "Svelte", "PocketBase"],
+      "tags": [
+        "education",
+        "AI",
+        "Svelte",
+        "PocketBase"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "TinkerEnv",
       "name": "TinkerEnv",
@@ -378,14 +633,27 @@
       "division": "Tools",
       "path": "Q:\\MTW\\TinkerEnv",
       "alt_path": null,
-      "stack": ["PowerShell"],
+      "stack": [
+        "PowerShell"
+      ],
       "package_manager": null,
-      "deployment": ["local-cli"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -394,12 +662,16 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Local Windows dev-environment inventory and drift checker. Collects installed tools, PATH entries, package manager status, VS Code extensions, and update availability. Phase 3.3 complete with smart conflict detection, source classification, dev readiness assessment, and change tracking.",
-      "tags": ["PowerShell", "tooling", "environment", "Windows"],
+      "tags": [
+        "PowerShell",
+        "tooling",
+        "environment",
+        "Windows"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "TinkerWire",
       "name": "TinkerWire",
@@ -407,28 +679,55 @@
       "division": "Tools",
       "path": "Q:\\MTW\\TinkerWire",
       "alt_path": null,
-      "stack": ["Python", "uv", "customtkinter", "keyring", "requests", "feedparser", "beautifulsoup4"],
+      "stack": [
+        "Python",
+        "uv",
+        "customtkinter",
+        "keyring",
+        "requests",
+        "feedparser",
+        "beautifulsoup4"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-desktop"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-desktop"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/TinkerWire",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": true, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "TWIRE-PMD",
       "launch": null,
       "launch_cmd": "uv run tinkerwire",
       "port": null,
-      "last_worked": "2026-06-09",
-      "last_commit": "2026-06-09",
-      "summary": "Desktop research and dispatch tool (customtkinter GUI) with a natural-language command bar. Fetches and dedupes content across six providers (news, finance, sports, shopping, education, tutor), composes social posts and articles with style/tone/length and a character budget, runs a deterministic de-AI humanizer (default-on for post/article), exports briefs and article cards, opens result links in the browser (per-source open: Na/Na-f/N* for clustered events), and emails digests over SMTP. Composition is grounded in real headlines AND fetched article bodies (Corroboration L2: fetch + extract JSON-LD articleBody + Google News redirect resolution, cached) via a local LM Studio summarizer (default gemma-4-12b-qat, reasoning_effort=none; no free-form generation), with an honest headline+source fallback when the model is offline. News queries enforce recency via the Google News when: operator. An in-app dockable Commands panel documents the full command surface. Secrets in the OS keyring, settings in a per-user JSON. Exports publish the grounded report: brief as a social teaser (summary + corroboration/lean line + Full report link), article as a full newspaper report (write-up + corroboration + sources). The publish: command writes grounded articles into an Astro text-only newspaper site (press/, The Paper) with Front Page / Sports / Finance sections (sports/finance providers fill them), for Cloudflare Pages; publish: auto-sections and returns the social brief with the resolved live URL. v0.1.19.",
-      "tags": ["Python", "desktop", "GUI", "news", "research", "content-generation", "social-posts", "email"],
+      "last_worked": "2026-06-10",
+      "last_commit": "2026-06-10",
+      "summary": "Desktop research and dispatch tool AND the engine behind The TinkerWire, a live old-school text-only newspaper at newswire.madtinkersworkshop.com (Cloudflare Pages, auto-deploys from main). Python + uv + customtkinter console; Astro static site under press/. Six providers (news/shop/finance/sports/edu/tutor), grounded composition (summary/post/article/export/publish) via local LM Studio (gemma-4-12b-qat, reasoning_effort=none, today's-date anchored), default-on grounded synthesis across multiple outlet bodies (Lever A) and multi-event roundup (Lever B; D014). Edition Builder: 2x candidate slate from multi-beat fetches (front/offwire/sports/finance) -> editor controls (edit slide-out: headline/source-mix/kill/notes; review trim-only post-publish editor with word-count enforcement; pin queue promoting news: finds into next edition; JSONL audit log at press/edits.log) -> approve grounds and publishes only approved picks -> auto commit+push for Cloudflare redeploy. Corroboration L1 (lean + amplified-claim flag), L2 (article-body fetch + JSON-LD extract + cache), L3 (shingle-Jaccard heuristic + local-LLM independent/echo/aggregator/uncertain classifier surfaced in front-matter + StoryList badge). LM Studio per-app profile layer (registry, per-request param merge, warn-on-drift; runtime model load is out of scope per D015). Finance page Market Wire topper + 20-item movers ticker (build-time Yahoo fetch, no API key). SMTP send + browser open. Secrets in OS keyring. Stages 1, 2, 3, 4, 6, 7 complete; Stage 5 (Hardening and Reach) in progress (only 1.5.1 done). v0.1.34.",
+      "tags": [
+        "Python",
+        "desktop",
+        "GUI",
+        "news",
+        "research",
+        "content-generation",
+        "social-posts",
+        "email"
+      ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "2026-06-09 (checkpoint, +7.0h, 145.0h total): EDITION BUILDER FINISHED end-to-end (v0.1.27 + v0.1.28). 132 tests. THREE fixes from live use: (1) non-blocking GUI (v0.1.27) - run_command was synchronous on the Tk thread, so a long edition/approve froze the window ('not responding'); now runs on a worker thread + marshals back via after(), busy-guard, 'working' line (BUG-012). (2) multi-beat finance/sports (v0.1.27) - edition gathered finance from one bare 'stock market finance' query that returned only paywalled FT/WSJ/Bloomberg (0 publishable); now gathers across topical beats (sports_beats/finance_beats in config/beats.json: Fed, jobs, oil, earnings) -> 4/6 fetchable, finance fills. (3) AUTO-DEPLOY (v0.1.28, WBS 1.8.6) - publish:/approve now commit + push the new article files to main so the story goes live on Cloudflare automatically (the gap that made published articles sit invisible until a manual push); deploy.autopush stages ONLY press/src/content/articles, never force-pushes, push-first/rebase-on-divergence, fails soft; on by default, push: no or TINKERWIRE_AUTOPUSH=off disables. Published a full live edition across front/sports/finance, verified live. Stage 7 (Edition Builder) now effectively complete except 1.8.2 (top-stories mode). NEXT: 1.8.2 Google top-stories mode; Stage 4 remainder 1.4.5/1.4.6 shared LM Studio prep + 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +3.0h, 138.0h total): LIVE EDITION PUBLISHED + approve bug fixed (v0.1.26). 126 tests. Published the 2026-06-09 edition to the live paper: 17 grounded articles across front (NASA lead synthesized across 3 outlets + ~9 Top of the Wire + 1 Off the Wire), sports (3), and finance (3, via a free-content backfill query because the beats.json finance queries return paywalled FT/WSJ/Bloomberg). Astro build verified (26 pages), Cloudflare auto-deployed, all three section pages verified live (HTTP 200 + content). BUG-011 (the real root cause of the earlier 'nothing published', beyond paywalls): approve never parsed picks - the parser keeps front/offwire/sports/finance in the command query, but _approve read them from cmd.fields which was always empty; fixed with _parse_approve_groups + an end-to-end approve test (prior tests called internals directly and missed it). WBS 1.8.7 (edition validation) COMPLETE. NEXT: 1.8.2 Google top-stories mode, 1.8.6 auto commit+push after approve, and a finance beat that pulls free-content sources (FT/Bloomberg/WSJ are paywalled); Stage 4 remainder 1.4.5/1.4.6 shared LM Studio prep layer + 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +6.0h, 135.0h total): STAGE 4 SYNTHESIS FINISHED + LIVE-TESTED. v0.1.25, 124 tests. Completed the synthesis trio: (1) DEFAULT-ON - article:/publish:/edition approve synthesize automatically when 2+ matching outlet bodies fetch (synth: no or TINKERWIRE_SYNTHESIS=off disables; single-source falls back). (2) LEVER B - multi-event selections weave grounded per-story summaries into one roundup (llm.synthesize_roundup) with no invented connections; verified live that two unrelated stories stayed separate. (3) EDITION WIRING - _publish_candidate fetches every matching outlet body and synthesizes across them. LIVE-TEST FIXES (Franky ran edition->approve and got 'nothing published'): root cause was source URLs are news.google.com redirects, so deduping fetched bodies by URL domain collapsed every outlet to one (synthesis never triggered, attribution read 'google'); now dedups+labels by the named outlet from event sources, and _clean_outlet strips the 'a) ' marker prefix. Also: approve now expands number ranges (12-16 -> 12,13,14,15,16; was 12,16 only) and the nothing-published message explains why (no fetchable body / paywalled, D013). VERIFIED LIVE end-to-end: the NASA Artemis story synthesized across 2 outlets into 262 words with single-source details attributed by name; Franky's own publish: of the Hamilton data-centre story produced a clean 2-source (CBC+MSN) synthesized article, now published to the live paper. NEXT (Stage 4 remainder): 1.4.5/1.4.6 shared LM Studio prep layer; 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +8.0h, 129.0h total): STAGE 4 GROUNDED SYNTHESIS (Lever A) BUILT. v0.1.24, 117 tests. A single story reported by multiple outlets is now grounded on MULTIPLE fetched bodies and synthesized into one coherent piece: corroborated facts (2+ sources) stated plainly, single-source/contested claims attributed in-text to the outlet and flagged as uncorroborated (strengthens D011). Opt-in via synth: yes on article:/publish: or TINKERWIRE_SYNTHESIS env (default OFF while validating); needs 2+ fetchable bodies, else falls back to the single-body path. New: llm.synthesize (temp 0.3, strict no-fabrication prompt), compose.build_synthesized_article, engine._multi_bodies_for (up to 4 distinct-domain, headline-matched) + _synth_enabled. DECISION D014 (amends D010): no-free-composition still holds, but synthesis grounded in multiple real bodies is now the preferred article path. VERIFIED LIVE vs gemma-4-12b-qat: merged the corroborated vote across Reuters+AP, attributed the single-source defense-spending claim to AP and flagged it unconfirmed by Reuters. Also: gitignore secrets net (mcp.json/.lmstudio/*.key/config.toml) in both repos. NEXT (Stage 4 remainder): Lever B multi-event roundup synthesis; flip synth default-on after a validation pass; wire synth into edition approve/_publish_candidate. Still open: 1.4.5/1.4.6 shared LM Studio prep layer; 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +4.5h, 121.0h total): MCP FIX + PMP BACKFILL. (1) Repaired the LM Studio MCP config (~/.lmstudio/mcp.json, shared, not in-repo): swapped deprecated @modelcontextprotocol/server-brave-search -> @brave/brave-search-mcp-server (stdio pinned), rotated the exposed Brave API key, added fetch + filesystem (Q:\\MTW + Q:\\Workshop) servers; all 4 verified via stdio handshake + live key test. WBS 1.5.1 -> Complete (Stage 5 pulled early). Thinking-toggle question resolved: TinkerWire hard-pins reasoning_effort=none per request (llm.py) and strips think tags, so the LM Studio UI thinking toggle is independent and safe to leave on for research chats. (2) PMP backfill: added Stages 6 (The Paper) + 7 (Edition Builder) to Charter (Objectives/Deliverables/Milestones/Budget) and Schedule; reconciled budget+schedule hours to actuals (total est ~194h, 121h logged); converted ROADMAP to a 7-stage checkbox roadmap aligned to the WBS; synced 6 Obsidian mirrors (also fixed broken source: paths from a generator bug). No app code changed (CHANGELOG 'docs + infra' entry, no version bump; 108 tests still green). Separately this conversation: committed+pushed the TinkerOps UAT-coursework feature + launch button (TinkerOps repo, not logged here). NEXT: Stage 4 grounded-synthesis (the depth lever, revise D010); 1.8.6 auto commit+push; 1.8.2 top-stories feed. --- 2026-06-09 (checkpoint, +5.0h, 116.5h total): CLUSTERING FIXED (1.4.8) + headless renderer + D013. v0.1.23, 108 tests. 1.4.8: clustering matched an accumulating token union with overlap>=2 -> runaway false-merging (inflated outlet counts, a Graham headline grounding to an Iran-Israel body). Now anchored on the seed headline's distinctive tokens with proportional overlap -> accurate counts, no mismatches (benefits the whole app). Added a Playwright headless-render fetch fallback (cracks JS/bot-blocked sites). FINAL WALL diagnosed: subscription LOGIN paywalls (NYT/WSJ/WaPo/Reuters) never serve bodies to any client -> unfixable by scraping. DECISION D013 (LOCKED): the paper is FULL-ARTICLE-ONLY; publish only when a real body grounds; no headline-synthesis; paywalled-majors are SKIPPED, not faked -> protects 'Grounded. Corroborated. Unspun.' The edition yields free-content stories; manual publish: carries the rest (works well, now more reliable). PAPER IS DONE + LIVE at newswire.madtinkersworkshop.com. NEXT (optional): Stage 4 grounded-synthesis quality; 1.8.6 auto-push; 1.8.2 top-stories; rotate Brave key; mcp.json Brave package. --- 2026-06-09 (checkpoint, +8.0h, 111.5h total): EDITION BUILDER (Stage 7) BUILT, editor-in-the-loop. v0.1.22, 108 tests. edition -> 2x candidate slate across configurable front beats (config/beats.json) + sports + finance, ranked into Top of the Wire + Off the Wire (under-reported), no grounding. approve: front/offwire/sports/finance <#s> -> grounds + publishes only approved (first front = lead) + social briefs + placement (lead/top/offwire). Headline-keyword guard rejects grounding from a mismatched source (clustering groups loosely - caught a Graham headline grounding to an Iran-Israel body). Front-page layout: lead + Top of the Wire + Off the Wire box + section teasers. FETCH RELIABILITY (1.8.8): batch-throttle FIXED (pacing + browser UA + retry + resolved-URL cache; resolution now reliable). REMAINING WALL: hard-paywall majors (NYT/WSJ/WaPo) block body extraction -> those stories skip; mitigated by trying every outlet per cluster. NEXT (in progress): option 1 = Playwright headless renderer to ground paywalled/JS sites (the real yield fix). Alternatives considered: headline-synthesis fallback (quick, shorter pieces), or accept fetchable-only yield. Also still open: Stage 4 grounded-synthesis; rotate Brave key; auto commit+push (1.8.6); top-stories feed (1.8.2). --- 2026-06-09 (checkpoint, +7.0h, 103.5h total): THE PAPER IS LIVE at https://newswire.madtinkersworkshop.com (Cloudflare Pages, custom domain on madtinkersworkshop.com, auto-deploys from main). v0.1.21, 108 tests. Identity stays 'The TinkerWire' (masthead); newswire is just the address. Editorial quality pass: articles now ~300 words grounded (was 3-5 sentences; writes less if source thin, never pads); adaptive single/two-column layout (single for short, two for long features); NO editorial meta in bodies (BUG-009: 'worth opening because...' removed, compose-only prompt); thin-content publish gate (BUG-010: refuses <50-word hollow single-source stories, force: yes to override). Edition Builder (Stage 7) DESIGNED editor-in-the-loop: edition builds a 2x candidate slate (16 top + 4 offwire front, 6 sports, 6 finance, no grounding) -> approve: front/offwire/sports/finance <#s> -> grounds+publishes only approved -> auto commit+push. NEXT SESSION: build Edition Builder (needs Franky's beats list), then Stage 4 grounded-synthesis. Still open: rotate exposed Brave key; mcp.json Brave package; shared LM Studio prep layer. --- 2026-06-09 (checkpoint, +3.0h, 96.5h total): THE PAPER Phase 3 build-ready (v0.1.20, commit dacbbfa). Added date Archive page + 404 + nav; site builds to 8 static pages. docs/DEPLOY.md has the exact Cloudflare Pages steps (root press, build 'bun run build', output dist, deploy from main) + TINKERWIRE_SITE_URL + wrangler alt. ONLY REMAINING STEP TO GO LIVE: create the Cloudflare Pages project in the dashboard (needs Franky's account login; cannot be automated). After that, every publish: + push auto-redeploys. The Paper is functionally complete (Phases 0-2 built+verified, Phase 3 build-ready). Optional follow-ons: build-edition (1.7.9), RSS/cron. 107 tests. --- 2026-06-09 (checkpoint, +3.5h, 93.5h total): THE PAPER Phase 2 DONE (v0.1.19, commit 983f4af). sports/finance providers now delegate to the full news pipeline (domain-biased) so those sections fill; publish: auto-sections from the last provider (sports:/finance: -> that section) and returns the ready-to-post social brief with the resolved live URL (publisher.site_url, TINKERWIRE_SITE_URL override). 107 tests. REMAINING for The Paper: Phase 3 Cloudflare Pages deploy (root press, build 'bun run build', output press/dist, from main) - needs Franky's CF account + internet; plus build-edition (1.7.9) and date archive (1.7.7). The full vertical slice works: fetch -> ground -> publish -> old-school paper with sections -> social brief linking back. --- 2026-06-09 (checkpoint, +11.0h, 90.0h total): THE PAPER started — TinkerWire is becoming an old-school text-only newspaper website. Battle plan at docs/PRESS-PLAN.md (Astro in press/, Cloudflare Pages from main, phases 0-3). Phase 0 DONE: publish: <#s> [section: front|sports|finance] writes the grounded article as front-matter markdown (title/date/section/sources/outlet_count/lean/corroboration) into press/src/content/articles (publisher.py). Phase 1 DONE: Astro paper in press/ — masthead (The TinkerWire), Vol/No dateline, Front Page/Sports/Finance, ruled multi-column serif articles + corroboration + sources; builds clean, screenshot-verified. v0.1.18, 107 tests. Commits 45ed570/149ce78/cdef934/2490580, pushed. WBS Stage 6 (1.7). REMAINING: Phase 2 (wire sports/finance providers, build-edition, brief Full-report link resolves to /<slug>) and Phase 3 (Cloudflare Pages deploy: root press, build 'bun run build', output press/dist; date archive; RSS/cron) - both need internet/account, do after travel. Run the paper: cd press && bun install && bun run dev (4321) or preview 'press'. ALSO still open: output-quality grounded-synthesis redesign (Stage 4); shared LM Studio prep layer; mcp.json Brave (rotate key). --- 2026-06-09 (checkpoint, +11.5h TinkerWire): publishing exports redesigned (v0.1.17, commit 3a85051) — export: brief is a social teaser, export: article a full newspaper report; both run the grounded composer over fetched bodies instead of the raw headline; (open:) marker leak stripped; brief trims to a full sentence; bard tagline removed (BUG-008). WBS Actual Hours Log added; running logged total 79.0h (commit e989b6f). The TinkerWire paper publishes briefs to social and articles to its site (sports/finance providers will feed those sections). Src-mode guidance: extended is the balanced default for publishing (any pads corroboration with unrated outlets). NEXT priority unchanged: output-quality grounded-synthesis redesign (Stage 4). --- 2026-06-09 (doc-project): created the full MTW doc suite (focused/TinkerScheduler reference) — docs/SPEC.md, docs/VISION.md, STATUS.md, and docs/PMP/ TWIRE-PMD-001 Charter / 002 WBS / 003 RiskStakeholder / 004 Scope / 005 Schedule (WBS in the Scheduler-parseable 3-column format), plus the Obsidian mirror at Projects/TinkerWire (10 mirrored files with frontmatter + navigator README). docs flags status_md/pmp/obsidian_note -> true; pmp_ids TWIRE-PMD. VISION origin section marked for backfill from the pending ChatGPT tickertape export. Committed ccb3812. --- 2026-06-09 (checkpoint, 20.0h logged): Corroboration Level 2 DONE 2026-06-08 afternoon (article-body fetch + extract, JSON-LD articleBody preferred, Google News redirect resolution, ~/.tinkerwire/resources cache; commits 2629ca2/a1bc4f6/3b3bb5b) and default model swapped to gemma-4-12b-qat (f67b9cc). 2026-06-09 fixed reasoning bleed: gemma is a reasoning model that ignored the old /no_think token and burned its whole budget reasoning (flat/empty output, ~150s stalls); now sends reasoning_effort=none (the only knob it honors, verified via live LM Studio logs) and dropped /no_think from all 3 prompts -> clean grounded summary in ~3s. 104 tests pass; committed 19c67fd, pushed; pyproject bumped 0.1.3 -> 0.1.16; CHANGELOG 0.1.16, DECISIONS D012, BUG-007. Findings: Q:\\MTW\\Docs\\TinkerOps\\TinkerWire-LLM-findings-2026-06-09.md. OPEN (priority): output QUALITY redesign (extractive -> grounded synthesis over fetched bodies, behind a flag, revise D010); shared LM Studio prep/profile layer (per-app model+config+reasoning_effort+system-prompt via REST /api/v1/models/load, TinkerWire pilot); mcp.json Brave broken (use @brave/brave-search-mcp-server, ROTATE exposed API key); gemma context over-provisioned at 240k; doc suite still missing SPEC/VISION/STATUS/PMP Charter+WBS/Obsidian mirror (run /doc-project). --- 2026-06-08 (session 2, headless backlog run): shipped a dockable/floatable in-app Commands panel backed by commands.py as the single source of truth, drift-guarded against the engine (c877dec); per-source open: Na / Na-f / N* so a clustered multi-outlet event exposes every source link, not just the primary (b471ca0); recency enforcement via the Google News when: operator with a default 7d window, resolving Pain A (25f5965); wired AND upgraded the humanizer, which was dead code (defined+tested but never called) into a default-on de-AI pass for post:/article: plus humanize: yes on summary: (f21d1e0); expanded and externalized the source-lean map to config/source_bias.json (df7691a); added the project CLAUDE.md (06aef77). 82 tests passing, all pushed to main, last_commit 06aef77. PLAN.md TASK-001/002/003 complete. Hours NOT yet logged for this session (run /session-close). Remaining backlog: corroboration L2 (fetch article bodies for true independence vs echo) and L3 (local-LLM echo classification), clustering precision (tighten Jaccard, consider semantic similarity), and the rest of the doc suite (SPEC/VISION/PMP Charter+WBS/Obsidian via /doc-project). --- 2026-06-08 de-rot: removed hardcoded canned narratives (news_builder/compose) and the Callais/redistricting query hijack (query_rules/query_expander), fixed substring trigger matching to word boundaries, rebuilt post:/article: as an honest headline+source digest, rewrote coupled tests (52 passing), committed 4c0cc1f, pushed to GitHub (Mad-Tinker-MTW/TinkerWire), added docs/CHANGELOG.md and docs/BUGS.md. Status -> active. Outstanding: recency (when:Nd) enforcement, source diversity/weighting, and the full PMP+SPEC/VISION+Obsidian suite (run /doc-project). --- Audited 2026-06-06: the prior record (CLI, SMTP plus news, v0.1.3) badly underdescribed the project. Reality is a customtkinter desktop app with a command parser, six content providers, digest/post/article/export composition (style/tone/length/char-budget), a regex humanizer, browser handoff, and SMTP email. Significant doc debt: no CLAUDE.md, STATUS.md, SPEC, VISION, CHANGELOG, or BUGS, no PMP suite (0 of 5), no Obsidian mirror; has README, ROADMAP, DECISIONS, HANDOFF, PMP_EVIDENCE. Overlaps MessageBurst: the SMTP plus keyring/JSON config is the same pattern MessageBurst reused (independently reimplemented), and TinkerWire's build_post is prior art for MessageBurst's Phase 2 social-post route. Dormant since 2026-04-25. When reactivated, run /doc-project for the focused PMP suite plus SPEC/VISION/CHANGELOG/BUGS and an Obsidian mirror. last_worked reflects the git last-commit date, not the audit date, to keep the dormancy clock honest."
+      "notes": "2026-06-10 (checkpoint block o, +7.5h, 160.0h total): STAGE 4 COMPLETE. v0.1.34, 142 tests. Two features shipped + Stage 4 closeout. (1) LM Studio per-app profile layer (v0.1.33, 1.4.5/1.4.6): registry at config/lmstudio_profiles.json declares model + reasoning_effort + sampling + system preamble + context-length expectations; lmstudio_profile module merges per-request params into llm._chat (caller wins), prepends identity preamble in front of today-anchor, check() reads /api/v0/models and warns on drift. New commands: profile / profiles. D015 LOCKED: programmatic model load via /api/v1/models/load is out of scope (endpoint not a stable REST contract today, every documented body shape returns 400 or times out, lms CLI not on PATH); runtime config stays a manual one-time Load-tab setup + warn-on-drift. Live-verified: warning correctly fires for the running gemma at context 240000 when profile recommends 16384 (the exact over-provisioning the 2026-06-09 findings doc called out). (2) Corroboration L3 (v0.1.34, 1.4.7): two-step pipeline (shingle-Jaccard heuristic over first 300 words of each body, then one local-LLM call per multi-source event with the similarity matrix as JSON-side context), strict no-fabrication prompt, JSON-only response parsed tolerantly, fail-soft to heuristic-only when LM Studio is unreachable. Classifies each outlet as independent / echo / aggregator / uncertain with short concrete evidence; result written to article front-matter (corroboration_breakdown + corroboration_summary + independent_count) and surfaced as a StoryList badge ('3 independent / 1 echo'). Live-verified on a real fetched event (BBC/Al Jazeera/NPR Hormuz coverage): all three classified independent with concrete evidence from the text (Mehr News, IRIB, AFP photo credit). 10 new tests (142 total). Site builds clean. Stage 4 closed (1.4.5/1.4.6/1.4.7/1.4.9 all done). Doc audit cleanup applied: pyproject.toml 0.1.28 -> 0.1.34, HANDOFF.md rewritten as pointer (was severely stale v0.1.3), WBS Stage 4 task statuses flipped from Pending to Complete, NEXT-SESSION test count 108 -> 142, SPEC.md fully refreshed to v0.1.34, Scope removed shipped Stage 4 items from Not-In-Scope (added D015), Charter Stage 4 target Q3 2026 -> Complete. --- 2026-06-10 (checkpoint block n, +7.5h, 152.5h total): EDITOR CONTROLS + FINANCE TOPPER + PIN QUEUE + LM STUDIO TODAY-ANCHOR. v0.1.32, 132 tests. Four features. (1) v0.1.29 finance Market Wire topper + 20-item movers ticker (5 tiles Dow/SnP/Nasdaq/BTC/ETH + paused-on-hover marquee; build-time Yahoo fetch from /v8/finance/chart + /v1/finance/screener; no API key, no CORS; '~15 min delayed - trends not trades' disclaimer matches newspaper voice). (2) v0.1.30 editor controls: edit: <group> <pick> opens slide-out for one slate candidate before approval (headline / source-mix checkboxes / kill toggle / private editor notes; body NOT editable here because it isnt grounded yet, so this is editorial selection not framing); review: <slug> opens post-publish trim-only body editor with live word counter, save rejected if new body exceeds original word count (enforces no-add-framing); every editor touch recorded as JSONL in press/edits.log (slug, words before/after, words removed, note). Astro content schema extended for optional edited / edit_count / last_edited front-matter fields. approve now honors edited_headline (replaces Title: line and publisher fallback), excluded_sources (filtered out of grounding mix), killed (skipped, reported separately from 'too thin'). (3) v0.1.31 LM Studio today's-date anchor: every chat call now prepends 'Today is <weekday>, YYYY-MM-DD' to the system message at request time (computed from local clock), bypassing the unreliable time MCP entirely; single chokepoint in llm._chat so summarize/synthesize/roundup/compose all benefit. Kills session-anchored temporal drift on long-running LM Studio sessions (model was treating recent events as 'the future'). (4) v0.1.32 pin queue: pin: <#> section: <front|offwire|sports|finance> saves an event from a news: result into config/pinned.json (gitignored - transient editor state); next edition merges pinned into the top of their section, marked 📌, deduped by URL+headline against auto-pulled; after approve publishes a pinned item it auto-removes from the pin store. Closes the gap between one-off news: finds and the daily edition flow. --- 2026-06-09 (checkpoint, +7.0h, 145.0h total): EDITION BUILDER FINISHED end-to-end (v0.1.27 + v0.1.28). 132 tests. THREE fixes from live use: (1) non-blocking GUI (v0.1.27) - run_command was synchronous on the Tk thread, so a long edition/approve froze the window ('not responding'); now runs on a worker thread + marshals back via after(), busy-guard, 'working' line (BUG-012). (2) multi-beat finance/sports (v0.1.27) - edition gathered finance from one bare 'stock market finance' query that returned only paywalled FT/WSJ/Bloomberg (0 publishable); now gathers across topical beats (sports_beats/finance_beats in config/beats.json: Fed, jobs, oil, earnings) -> 4/6 fetchable, finance fills. (3) AUTO-DEPLOY (v0.1.28, WBS 1.8.6) - publish:/approve now commit + push the new article files to main so the story goes live on Cloudflare automatically (the gap that made published articles sit invisible until a manual push); deploy.autopush stages ONLY press/src/content/articles, never force-pushes, push-first/rebase-on-divergence, fails soft; on by default, push: no or TINKERWIRE_AUTOPUSH=off disables. Published a full live edition across front/sports/finance, verified live. Stage 7 (Edition Builder) now effectively complete except 1.8.2 (top-stories mode). NEXT: 1.8.2 Google top-stories mode; Stage 4 remainder 1.4.5/1.4.6 shared LM Studio prep + 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +3.0h, 138.0h total): LIVE EDITION PUBLISHED + approve bug fixed (v0.1.26). 126 tests. Published the 2026-06-09 edition to the live paper: 17 grounded articles across front (NASA lead synthesized across 3 outlets + ~9 Top of the Wire + 1 Off the Wire), sports (3), and finance (3, via a free-content backfill query because the beats.json finance queries return paywalled FT/WSJ/Bloomberg). Astro build verified (26 pages), Cloudflare auto-deployed, all three section pages verified live (HTTP 200 + content). BUG-011 (the real root cause of the earlier 'nothing published', beyond paywalls): approve never parsed picks - the parser keeps front/offwire/sports/finance in the command query, but _approve read them from cmd.fields which was always empty; fixed with _parse_approve_groups + an end-to-end approve test (prior tests called internals directly and missed it). WBS 1.8.7 (edition validation) COMPLETE. NEXT: 1.8.2 Google top-stories mode, 1.8.6 auto commit+push after approve, and a finance beat that pulls free-content sources (FT/Bloomberg/WSJ are paywalled); Stage 4 remainder 1.4.5/1.4.6 shared LM Studio prep layer + 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +6.0h, 135.0h total): STAGE 4 SYNTHESIS FINISHED + LIVE-TESTED. v0.1.25, 124 tests. Completed the synthesis trio: (1) DEFAULT-ON - article:/publish:/edition approve synthesize automatically when 2+ matching outlet bodies fetch (synth: no or TINKERWIRE_SYNTHESIS=off disables; single-source falls back). (2) LEVER B - multi-event selections weave grounded per-story summaries into one roundup (llm.synthesize_roundup) with no invented connections; verified live that two unrelated stories stayed separate. (3) EDITION WIRING - _publish_candidate fetches every matching outlet body and synthesizes across them. LIVE-TEST FIXES (Franky ran edition->approve and got 'nothing published'): root cause was source URLs are news.google.com redirects, so deduping fetched bodies by URL domain collapsed every outlet to one (synthesis never triggered, attribution read 'google'); now dedups+labels by the named outlet from event sources, and _clean_outlet strips the 'a) ' marker prefix. Also: approve now expands number ranges (12-16 -> 12,13,14,15,16; was 12,16 only) and the nothing-published message explains why (no fetchable body / paywalled, D013). VERIFIED LIVE end-to-end: the NASA Artemis story synthesized across 2 outlets into 262 words with single-source details attributed by name; Franky's own publish: of the Hamilton data-centre story produced a clean 2-source (CBC+MSN) synthesized article, now published to the live paper. NEXT (Stage 4 remainder): 1.4.5/1.4.6 shared LM Studio prep layer; 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +8.0h, 129.0h total): STAGE 4 GROUNDED SYNTHESIS (Lever A) BUILT. v0.1.24, 117 tests. A single story reported by multiple outlets is now grounded on MULTIPLE fetched bodies and synthesized into one coherent piece: corroborated facts (2+ sources) stated plainly, single-source/contested claims attributed in-text to the outlet and flagged as uncorroborated (strengthens D011). Opt-in via synth: yes on article:/publish: or TINKERWIRE_SYNTHESIS env (default OFF while validating); needs 2+ fetchable bodies, else falls back to the single-body path. New: llm.synthesize (temp 0.3, strict no-fabrication prompt), compose.build_synthesized_article, engine._multi_bodies_for (up to 4 distinct-domain, headline-matched) + _synth_enabled. DECISION D014 (amends D010): no-free-composition still holds, but synthesis grounded in multiple real bodies is now the preferred article path. VERIFIED LIVE vs gemma-4-12b-qat: merged the corroborated vote across Reuters+AP, attributed the single-source defense-spending claim to AP and flagged it unconfirmed by Reuters. Also: gitignore secrets net (mcp.json/.lmstudio/*.key/config.toml) in both repos. NEXT (Stage 4 remainder): Lever B multi-event roundup synthesis; flip synth default-on after a validation pass; wire synth into edition approve/_publish_candidate. Still open: 1.4.5/1.4.6 shared LM Studio prep layer; 1.4.7 corroboration L3. --- 2026-06-09 (checkpoint, +4.5h, 121.0h total): MCP FIX + PMP BACKFILL. (1) Repaired the LM Studio MCP config (~/.lmstudio/mcp.json, shared, not in-repo): swapped deprecated @modelcontextprotocol/server-brave-search -> @brave/brave-search-mcp-server (stdio pinned), rotated the exposed Brave API key, added fetch + filesystem (Q:\\MTW + Q:\\Workshop) servers; all 4 verified via stdio handshake + live key test. WBS 1.5.1 -> Complete (Stage 5 pulled early). Thinking-toggle question resolved: TinkerWire hard-pins reasoning_effort=none per request (llm.py) and strips think tags, so the LM Studio UI thinking toggle is independent and safe to leave on for research chats. (2) PMP backfill: added Stages 6 (The Paper) + 7 (Edition Builder) to Charter (Objectives/Deliverables/Milestones/Budget) and Schedule; reconciled budget+schedule hours to actuals (total est ~194h, 121h logged); converted ROADMAP to a 7-stage checkbox roadmap aligned to the WBS; synced 6 Obsidian mirrors (also fixed broken source: paths from a generator bug). No app code changed (CHANGELOG 'docs + infra' entry, no version bump; 108 tests still green). Separately this conversation: committed+pushed the TinkerOps UAT-coursework feature + launch button (TinkerOps repo, not logged here). NEXT: Stage 4 grounded-synthesis (the depth lever, revise D010); 1.8.6 auto commit+push; 1.8.2 top-stories feed. --- 2026-06-09 (checkpoint, +5.0h, 116.5h total): CLUSTERING FIXED (1.4.8) + headless renderer + D013. v0.1.23, 108 tests. 1.4.8: clustering matched an accumulating token union with overlap>=2 -> runaway false-merging (inflated outlet counts, a Graham headline grounding to an Iran-Israel body). Now anchored on the seed headline's distinctive tokens with proportional overlap -> accurate counts, no mismatches (benefits the whole app). Added a Playwright headless-render fetch fallback (cracks JS/bot-blocked sites). FINAL WALL diagnosed: subscription LOGIN paywalls (NYT/WSJ/WaPo/Reuters) never serve bodies to any client -> unfixable by scraping. DECISION D013 (LOCKED): the paper is FULL-ARTICLE-ONLY; publish only when a real body grounds; no headline-synthesis; paywalled-majors are SKIPPED, not faked -> protects 'Grounded. Corroborated. Unspun.' The edition yields free-content stories; manual publish: carries the rest (works well, now more reliable). PAPER IS DONE + LIVE at newswire.madtinkersworkshop.com. NEXT (optional): Stage 4 grounded-synthesis quality; 1.8.6 auto-push; 1.8.2 top-stories; rotate Brave key; mcp.json Brave package. --- 2026-06-09 (checkpoint, +8.0h, 111.5h total): EDITION BUILDER (Stage 7) BUILT, editor-in-the-loop. v0.1.22, 108 tests. edition -> 2x candidate slate across configurable front beats (config/beats.json) + sports + finance, ranked into Top of the Wire + Off the Wire (under-reported), no grounding. approve: front/offwire/sports/finance <#s> -> grounds + publishes only approved (first front = lead) + social briefs + placement (lead/top/offwire). Headline-keyword guard rejects grounding from a mismatched source (clustering groups loosely - caught a Graham headline grounding to an Iran-Israel body). Front-page layout: lead + Top of the Wire + Off the Wire box + section teasers. FETCH RELIABILITY (1.8.8): batch-throttle FIXED (pacing + browser UA + retry + resolved-URL cache; resolution now reliable). REMAINING WALL: hard-paywall majors (NYT/WSJ/WaPo) block body extraction -> those stories skip; mitigated by trying every outlet per cluster. NEXT (in progress): option 1 = Playwright headless renderer to ground paywalled/JS sites (the real yield fix). Alternatives considered: headline-synthesis fallback (quick, shorter pieces), or accept fetchable-only yield. Also still open: Stage 4 grounded-synthesis; rotate Brave key; auto commit+push (1.8.6); top-stories feed (1.8.2). --- 2026-06-09 (checkpoint, +7.0h, 103.5h total): THE PAPER IS LIVE at https://newswire.madtinkersworkshop.com (Cloudflare Pages, custom domain on madtinkersworkshop.com, auto-deploys from main). v0.1.21, 108 tests. Identity stays 'The TinkerWire' (masthead); newswire is just the address. Editorial quality pass: articles now ~300 words grounded (was 3-5 sentences; writes less if source thin, never pads); adaptive single/two-column layout (single for short, two for long features); NO editorial meta in bodies (BUG-009: 'worth opening because...' removed, compose-only prompt); thin-content publish gate (BUG-010: refuses <50-word hollow single-source stories, force: yes to override). Edition Builder (Stage 7) DESIGNED editor-in-the-loop: edition builds a 2x candidate slate (16 top + 4 offwire front, 6 sports, 6 finance, no grounding) -> approve: front/offwire/sports/finance <#s> -> grounds+publishes only approved -> auto commit+push. NEXT SESSION: build Edition Builder (needs Franky's beats list), then Stage 4 grounded-synthesis. Still open: rotate exposed Brave key; mcp.json Brave package; shared LM Studio prep layer. --- 2026-06-09 (checkpoint, +3.0h, 96.5h total): THE PAPER Phase 3 build-ready (v0.1.20, commit dacbbfa). Added date Archive page + 404 + nav; site builds to 8 static pages. docs/DEPLOY.md has the exact Cloudflare Pages steps (root press, build 'bun run build', output dist, deploy from main) + TINKERWIRE_SITE_URL + wrangler alt. ONLY REMAINING STEP TO GO LIVE: create the Cloudflare Pages project in the dashboard (needs Franky's account login; cannot be automated). After that, every publish: + push auto-redeploys. The Paper is functionally complete (Phases 0-2 built+verified, Phase 3 build-ready). Optional follow-ons: build-edition (1.7.9), RSS/cron. 107 tests. --- 2026-06-09 (checkpoint, +3.5h, 93.5h total): THE PAPER Phase 2 DONE (v0.1.19, commit 983f4af). sports/finance providers now delegate to the full news pipeline (domain-biased) so those sections fill; publish: auto-sections from the last provider (sports:/finance: -> that section) and returns the ready-to-post social brief with the resolved live URL (publisher.site_url, TINKERWIRE_SITE_URL override). 107 tests. REMAINING for The Paper: Phase 3 Cloudflare Pages deploy (root press, build 'bun run build', output press/dist, from main) - needs Franky's CF account + internet; plus build-edition (1.7.9) and date archive (1.7.7). The full vertical slice works: fetch -> ground -> publish -> old-school paper with sections -> social brief linking back. --- 2026-06-09 (checkpoint, +11.0h, 90.0h total): THE PAPER started — TinkerWire is becoming an old-school text-only newspaper website. Battle plan at docs/PRESS-PLAN.md (Astro in press/, Cloudflare Pages from main, phases 0-3). Phase 0 DONE: publish: <#s> [section: front|sports|finance] writes the grounded article as front-matter markdown (title/date/section/sources/outlet_count/lean/corroboration) into press/src/content/articles (publisher.py). Phase 1 DONE: Astro paper in press/ — masthead (The TinkerWire), Vol/No dateline, Front Page/Sports/Finance, ruled multi-column serif articles + corroboration + sources; builds clean, screenshot-verified. v0.1.18, 107 tests. Commits 45ed570/149ce78/cdef934/2490580, pushed. WBS Stage 6 (1.7). REMAINING: Phase 2 (wire sports/finance providers, build-edition, brief Full-report link resolves to /<slug>) and Phase 3 (Cloudflare Pages deploy: root press, build 'bun run build', output press/dist; date archive; RSS/cron) - both need internet/account, do after travel. Run the paper: cd press && bun install && bun run dev (4321) or preview 'press'. ALSO still open: output-quality grounded-synthesis redesign (Stage 4); shared LM Studio prep layer; mcp.json Brave (rotate key). --- 2026-06-09 (checkpoint, +11.5h TinkerWire): publishing exports redesigned (v0.1.17, commit 3a85051) — export: brief is a social teaser, export: article a full newspaper report; both run the grounded composer over fetched bodies instead of the raw headline; (open:) marker leak stripped; brief trims to a full sentence; bard tagline removed (BUG-008). WBS Actual Hours Log added; running logged total 79.0h (commit e989b6f). The TinkerWire paper publishes briefs to social and articles to its site (sports/finance providers will feed those sections). Src-mode guidance: extended is the balanced default for publishing (any pads corroboration with unrated outlets). NEXT priority unchanged: output-quality grounded-synthesis redesign (Stage 4). --- 2026-06-09 (doc-project): created the full MTW doc suite (focused/TinkerScheduler reference) — docs/SPEC.md, docs/VISION.md, STATUS.md, and docs/PMP/ TWIRE-PMD-001 Charter / 002 WBS / 003 RiskStakeholder / 004 Scope / 005 Schedule (WBS in the Scheduler-parseable 3-column format), plus the Obsidian mirror at Projects/TinkerWire (10 mirrored files with frontmatter + navigator README). docs flags status_md/pmp/obsidian_note -> true; pmp_ids TWIRE-PMD. VISION origin section marked for backfill from the pending ChatGPT tickertape export. Committed ccb3812. --- 2026-06-09 (checkpoint, 20.0h logged): Corroboration Level 2 DONE 2026-06-08 afternoon (article-body fetch + extract, JSON-LD articleBody preferred, Google News redirect resolution, ~/.tinkerwire/resources cache; commits 2629ca2/a1bc4f6/3b3bb5b) and default model swapped to gemma-4-12b-qat (f67b9cc). 2026-06-09 fixed reasoning bleed: gemma is a reasoning model that ignored the old /no_think token and burned its whole budget reasoning (flat/empty output, ~150s stalls); now sends reasoning_effort=none (the only knob it honors, verified via live LM Studio logs) and dropped /no_think from all 3 prompts -> clean grounded summary in ~3s. 104 tests pass; committed 19c67fd, pushed; pyproject bumped 0.1.3 -> 0.1.16; CHANGELOG 0.1.16, DECISIONS D012, BUG-007. Findings: Q:\\MTW\\Docs\\TinkerOps\\TinkerWire-LLM-findings-2026-06-09.md. OPEN (priority): output QUALITY redesign (extractive -> grounded synthesis over fetched bodies, behind a flag, revise D010); shared LM Studio prep/profile layer (per-app model+config+reasoning_effort+system-prompt via REST /api/v1/models/load, TinkerWire pilot); mcp.json Brave broken (use @brave/brave-search-mcp-server, ROTATE exposed API key); gemma context over-provisioned at 240k; doc suite still missing SPEC/VISION/STATUS/PMP Charter+WBS/Obsidian mirror (run /doc-project). --- 2026-06-08 (session 2, headless backlog run): shipped a dockable/floatable in-app Commands panel backed by commands.py as the single source of truth, drift-guarded against the engine (c877dec); per-source open: Na / Na-f / N* so a clustered multi-outlet event exposes every source link, not just the primary (b471ca0); recency enforcement via the Google News when: operator with a default 7d window, resolving Pain A (25f5965); wired AND upgraded the humanizer, which was dead code (defined+tested but never called) into a default-on de-AI pass for post:/article: plus humanize: yes on summary: (f21d1e0); expanded and externalized the source-lean map to config/source_bias.json (df7691a); added the project CLAUDE.md (06aef77). 82 tests passing, all pushed to main, last_commit 06aef77. PLAN.md TASK-001/002/003 complete. Hours NOT yet logged for this session (run /session-close). Remaining backlog: corroboration L2 (fetch article bodies for true independence vs echo) and L3 (local-LLM echo classification), clustering precision (tighten Jaccard, consider semantic similarity), and the rest of the doc suite (SPEC/VISION/PMP Charter+WBS/Obsidian via /doc-project). --- 2026-06-08 de-rot: removed hardcoded canned narratives (news_builder/compose) and the Callais/redistricting query hijack (query_rules/query_expander), fixed substring trigger matching to word boundaries, rebuilt post:/article: as an honest headline+source digest, rewrote coupled tests (52 passing), committed 4c0cc1f, pushed to GitHub (Mad-Tinker-MTW/TinkerWire), added docs/CHANGELOG.md and docs/BUGS.md. Status -> active. Outstanding: recency (when:Nd) enforcement, source diversity/weighting, and the full PMP+SPEC/VISION+Obsidian suite (run /doc-project). --- Audited 2026-06-06: the prior record (CLI, SMTP plus news, v0.1.3) badly underdescribed the project. Reality is a customtkinter desktop app with a command parser, six content providers, digest/post/article/export composition (style/tone/length/char-budget), a regex humanizer, browser handoff, and SMTP email. Significant doc debt: no CLAUDE.md, STATUS.md, SPEC, VISION, CHANGELOG, or BUGS, no PMP suite (0 of 5), no Obsidian mirror; has README, ROADMAP, DECISIONS, HANDOFF, PMP_EVIDENCE. Overlaps MessageBurst: the SMTP plus keyring/JSON config is the same pattern MessageBurst reused (independently reimplemented), and TinkerWire's build_post is prior art for MessageBurst's Phase 2 social-post route. Dormant since 2026-04-25. When reactivated, run /doc-project for the focused PMP suite plus SPEC/VISION/CHANGELOG/BUGS and an Obsidian mirror. last_worked reflects the git last-commit date, not the audit date, to keep the dormancy clock honest."
     },
-
     {
       "id": "mtw-website",
       "name": "MTW Website",
@@ -436,9 +735,16 @@
       "division": null,
       "path": "Q:\\MTW\\mtw-website",
       "alt_path": null,
-      "stack": ["HTML", "CSS", "JavaScript", "Cloudflare Pages"],
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Cloudflare Pages"
+      ],
       "package_manager": null,
-      "deployment": ["cloudflare-pages"],
+      "deployment": [
+        "cloudflare-pages"
+      ],
       "urls": {
         "production": "https://madtinkersworkshop.com",
         "staging": null,
@@ -446,8 +752,13 @@
       },
       "github": "Mad-Tinker-MTW/mtw-website",
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -456,12 +767,15 @@
       "last_worked": "2026-05-21",
       "last_commit": "2026-05-20",
       "summary": "Mad Tinker's Workshop public website. Deployed via Cloudflare Pages with auto-deploy from GitHub main branch. Hosts sub-paths for SkillForge20 web companion, the Kings Without Crowns private listening page, the NFC business card interface, and Search Operator Academy.",
-      "tags": ["website", "Cloudflare", "public"],
+      "tags": [
+        "website",
+        "Cloudflare",
+        "public"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Auto-deploys from Mad-Tinker-MTW/mtw-website on push to main."
     },
-
     {
       "id": "Arsenal",
       "name": "Arsenal",
@@ -469,14 +783,34 @@
       "division": null,
       "path": "Q:\\MTW\\Arsenal",
       "alt_path": "Q:\\ColdStorage\\wpn_inventory-ai_shelved",
-      "stack": ["Python", "FastAPI", "React", "Vite", "SQLite", "SQLAlchemy", "Whisper", "Anthropic API"],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "Vite",
+        "SQLite",
+        "SQLAlchemy",
+        "Whisper",
+        "Anthropic API"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:8000" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:8000"
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": true, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -485,12 +819,18 @@
       "last_worked": "2026-04-01",
       "last_commit": "2026-06-06",
       "summary": "Local-first firearms inventory tracker. Voice input via Whisper, photo-based item identification, smart prepopulation from a firearms knowledge base, and OCR for receipts. Previous attempt shelved due to AI council scope creep. v2 design fully captured, ready for clean rebuild.",
-      "tags": ["firearms", "inventory", "Python", "FastAPI", "AI", "voice"],
+      "tags": [
+        "firearms",
+        "inventory",
+        "Python",
+        "FastAPI",
+        "AI",
+        "voice"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Design doc at Q:\\MTW\\Arsenal\\design.md. Salvage CRUD/model code from ColdStorage reference. Do NOT copy council code."
     },
-
     {
       "id": "TinkerGuard",
       "name": "TinkerGuard",
@@ -500,12 +840,23 @@
       "alt_path": null,
       "stack": [],
       "package_manager": null,
-      "deployment": ["local-cli"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": true,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": true,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -514,12 +865,16 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Security gate layer for the TinkerCode platform ecosystem. Architecture fully documented, no code exists yet. Handles module quarantine, community review thresholds, and Guard Protocol for TinkerHub.",
-      "tags": ["TinkerCode", "security", "ecosystem", "pre-build"],
+      "tags": [
+        "TinkerCode",
+        "security",
+        "ecosystem",
+        "pre-build"
+      ],
       "blocked_by": "TinkerCode",
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "TinkerHub",
       "name": "TinkerHub",
@@ -529,12 +884,23 @@
       "alt_path": null,
       "stack": [],
       "package_manager": null,
-      "deployment": ["local-cli"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": true,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": true,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -543,12 +909,15 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Module repository and submission pipeline for the TinkerCode ecosystem. Architecture documented, no code exists. Blocked on TinkerCode Phase completion and TinkerGuard Phase 1.",
-      "tags": ["TinkerCode", "ecosystem", "pre-build"],
+      "tags": [
+        "TinkerCode",
+        "ecosystem",
+        "pre-build"
+      ],
       "blocked_by": "TinkerGuard",
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "TinkerPal",
       "name": "TinkerPal",
@@ -556,14 +925,28 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerPal",
       "alt_path": null,
-      "stack": ["Python", "Anthropic API"],
+      "stack": [
+        "Python",
+        "Anthropic API"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-cli"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": true,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": true,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -572,12 +955,16 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "AI assistant companion in the TinkerCode ecosystem. Python wrapper around tinkercode.exe with AI dispatch via Anthropic API. Architecture documented, no code exists. Discovery and install surface for TinkerHub.",
-      "tags": ["TinkerCode", "AI", "ecosystem", "pre-build"],
+      "tags": [
+        "TinkerCode",
+        "AI",
+        "ecosystem",
+        "pre-build"
+      ],
       "blocked_by": "TinkerHub",
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "DaVinciMindScribe",
       "name": "DaVinci MindScribe (placeholder)",
@@ -588,11 +975,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -601,12 +997,13 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "Intentional empty placeholder. Live project is MindScribe on V: drive. This folder reserves the name in Q:\\MTW\\.",
-      "tags": ["placeholder"],
+      "tags": [
+        "placeholder"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Do not delete. See MindScribe record for live project."
     },
-
     {
       "id": "TinkersWebDivision",
       "name": "Tinker's Web Division",
@@ -614,14 +1011,36 @@
       "division": "WebDivision",
       "path": "Q:\\MTW\\TinkersWebDivision",
       "alt_path": null,
-      "stack": ["Python", "FastAPI", "React", "Vite", "TypeScript", "Tailwind v4", "Qwen3-8B", "Replicate", "Cloudflare Pages"],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "Vite",
+        "TypeScript",
+        "Tailwind v4",
+        "Qwen3-8B",
+        "Replicate",
+        "Cloudflare Pages"
+      ],
       "package_manager": "uv",
-      "deployment": ["cloudflare-pages", "local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:8000" },
+      "deployment": [
+        "cloudflare-pages",
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:8000"
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": true, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": true,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -630,12 +1049,17 @@
       "last_worked": "2026-04-28",
       "last_commit": "2026-06-06",
       "summary": "Professional web agency production system with two products: Tinker Branding (AI-powered brand identity) and TinkerWebGen (AI website generation). Planned for Divisions/WebDivision with modular plugin architecture.",
-      "tags": ["web", "AI", "branding", "FastAPI", "React"],
+      "tags": [
+        "web",
+        "AI",
+        "branding",
+        "FastAPI",
+        "React"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Needs migration to Q:\\MTW\\Divisions\\WebDivision. TinkerWebGenerator at root is earlier prototype, candidate for archive."
     },
-
     {
       "id": "HiddenCrek",
       "name": "Hidden Creek Detailing",
@@ -643,14 +1067,29 @@
       "division": null,
       "path": "Q:\\MTW\\HiddenCrek",
       "alt_path": null,
-      "stack": ["HTML", "CSS", "JavaScript"],
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "package_manager": null,
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -659,12 +1098,16 @@
       "last_worked": "2026-04-27",
       "last_commit": "2026-06-06",
       "summary": "Website prototype for client Colin Ambrose, owner of Hidden Creek Detailing in Altus OK. Dark luxury aesthetic with Playfair Display typography, three-step booking wizard, vehicle-size pricing, and owner dashboard. Delivered as prototype, production stack planned with Netlify, Supabase, Stripe.",
-      "tags": ["client", "website", "prototype", "complete"],
+      "tags": [
+        "client",
+        "website",
+        "prototype",
+        "complete"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Client work, delivered. Venmo handle still needs confirming for live build."
     },
-
     {
       "id": "SearchOperatorAcademy",
       "name": "Search Operator Academy",
@@ -672,9 +1115,15 @@
       "division": null,
       "path": "Q:\\MTW\\SearchOperatorAcademy",
       "alt_path": null,
-      "stack": ["React", "Vite", "TypeScript"],
+      "stack": [
+        "React",
+        "Vite",
+        "TypeScript"
+      ],
       "package_manager": "npm",
-      "deployment": ["netlify"],
+      "deployment": [
+        "netlify"
+      ],
       "urls": {
         "production": "https://madtinkersworkshop.com",
         "staging": null,
@@ -682,8 +1131,13 @@
       },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -692,12 +1146,17 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "OSINT search operator training tool deployed to Netlify. Interactive training for Google dork operators and OSINT search techniques. Monetized via Ko-fi.",
-      "tags": ["OSINT", "training", "React", "Netlify", "complete"],
+      "tags": [
+        "OSINT",
+        "training",
+        "React",
+        "Netlify",
+        "complete"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "FramgerRunner",
       "name": "Framger Runner",
@@ -708,11 +1167,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -721,12 +1189,15 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Filed provisional patent project (pro se, micro entity, USPTO). Physical invention — framing tool concept. Documentation and patent materials.",
-      "tags": ["patent", "physical", "invention"],
+      "tags": [
+        "patent",
+        "physical",
+        "invention"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Provisional patent filed. Needs triage to assess current state and next steps."
     },
-
     {
       "id": "MadTinkerRadio",
       "name": "MTW Pi Radio",
@@ -734,9 +1205,18 @@
       "division": null,
       "path": "Q:\\MTW\\MadTinkerRadio",
       "alt_path": null,
-      "stack": ["Node.js", "Express", "Spotify Web SDK", "Anthropic API", "Cloudflare Tunnel"],
+      "stack": [
+        "Node.js",
+        "Express",
+        "Spotify Web SDK",
+        "Anthropic API",
+        "Cloudflare Tunnel"
+      ],
       "package_manager": "npm",
-      "deployment": ["raspberry-pi", "cloudflare-tunnel"],
+      "deployment": [
+        "raspberry-pi",
+        "cloudflare-tunnel"
+      ],
       "urls": {
         "production": "https://radio.madtinkersworkshop.com",
         "staging": null,
@@ -744,8 +1224,13 @@
       },
       "github": "Mad-Tinker-MTW/mtw-pi-radio",
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -754,12 +1239,17 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "Raspberry Pi 5 music player with Spotify Web SDK, Claude API integration, and Cloudflare tunnel. Node/Express backend with systemd services. Deployed at radio.madtinkersworkshop.com.",
-      "tags": ["Raspberry Pi", "music", "Spotify", "Node", "hardware"],
+      "tags": [
+        "Raspberry Pi",
+        "music",
+        "Spotify",
+        "Node",
+        "hardware"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "HexVeridicae",
       "name": "Hex-Veridicae",
@@ -767,14 +1257,34 @@
       "division": null,
       "path": "Q:\\MTW\\HexVeridicae",
       "alt_path": null,
-      "stack": ["Python", "FastAPI", "SQLite", "SQLAlchemy", "faster-whisper", "Coqui XTTS", "LM Studio", "Qwen3-14B"],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "SQLAlchemy",
+        "faster-whisper",
+        "Coqui XTTS",
+        "LM Studio",
+        "Qwen3-14B"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": true, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": true
       },
       "pmp_ids": "HEXVER-PMD",
       "launch": null,
@@ -783,12 +1293,19 @@
       "last_worked": "2026-06-07",
       "last_commit": "2026-06-07",
       "summary": "Local-first six-persona AI council. Truth-Speaker personas: Angie (ops lead/overseer/synthesizer), Rose (cold analyst), Meghan (discipline), Sabrina (intuition), Lilly (chaos), Irene (grounding). Phone-reachable FastAPI text and voice chat (faster-whisper STT, Coqui XTTS), SQLite memory, self-aware auto-routing. Runs against a local LLM via LM Studio (Qwen3). v1 complete (MVP-1 text + MVP-2 voice).",
-      "tags": ["AI", "council", "LM Studio", "Python", "FastAPI", "voice", "local-first"],
+      "tags": [
+        "AI",
+        "council",
+        "LM Studio",
+        "Python",
+        "FastAPI",
+        "voice",
+        "local-first"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "v1 complete and committed (35d3d87): MVP-1 text council + MVP-2 voice, both built 2026-06-06..07. Full doc + focused PMP suite (HEXVER-PMD 5 docs) and Obsidian mirror generated 2026-06-07; coverage 0/10 -> 10/10. 55h logged (Stage 1 MVP-1, Stage 2 MVP-2, documentation pass) across architect/dev/QA/writer/PM roles. KEY DECISIONS (in CLAUDE.md Resolved Decisions): brain is LOCAL via LM Studio not Claude API; voice is Coqui XTTS not Piper (pivoted in 35d3d87); self-aware auto-routing added; HEX_LLM_MODEL is the model source (running Qwen3-14B). OPEN for next session (config reconciliation, WBS 1.2.7/1.2.8): pyproject.toml still lists piper-tts and omits the XTTS dep; .env.example still defaults qwen3-8b + documents HEX_PIPER_MODEL; leftover voices/en_US-amy-medium.onnx (a DELETE - guard active, get Francisco's OK before removing); then verify a fresh uv venv runs. Future Arsenal integration planned (quartermaster persona). Next audit 2026-06-21."
     },
-
     {
       "id": "TPE",
       "name": "Tinker Philosophy Engine",
@@ -796,9 +1313,15 @@
       "division": null,
       "path": "Q:\\MTW\\TPE",
       "alt_path": null,
-      "stack": ["React", "Vite", "TypeScript"],
+      "stack": [
+        "React",
+        "Vite",
+        "TypeScript"
+      ],
       "package_manager": "npm",
-      "deployment": ["netlify"],
+      "deployment": [
+        "netlify"
+      ],
       "urls": {
         "production": "https://tinker-philosophy-engine.netlify.app",
         "staging": null,
@@ -806,8 +1329,13 @@
       },
       "github": "Mad-Tinker-MTW/tinker-philosophy-engine",
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -816,12 +1344,16 @@
       "last_worked": "2026-04-08",
       "last_commit": null,
       "summary": "Live React/Vite philosophical web app deployed to Netlify. Companion to the Tinker Field Editions publishing pipeline.",
-      "tags": ["philosophy", "React", "Netlify", "TFE"],
+      "tags": [
+        "philosophy",
+        "React",
+        "Netlify",
+        "TFE"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "TFE",
       "name": "Tinker Field Editions",
@@ -829,9 +1361,17 @@
       "division": null,
       "path": "Q:\\MTW\\TFE",
       "alt_path": null,
-      "stack": ["Python", "WeasyPrint", "Jinja2", "Pillow", "uv"],
+      "stack": [
+        "Python",
+        "WeasyPrint",
+        "Jinja2",
+        "Pillow",
+        "uv"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-cli"],
+      "deployment": [
+        "local-cli"
+      ],
       "urls": {
         "production": null,
         "staging": null,
@@ -839,8 +1379,13 @@
       },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -849,12 +1394,17 @@
       "last_worked": "2026-04-08",
       "last_commit": null,
       "summary": "Philosophical book publishing pipeline. Generates PDFs and Ko-fi thumbnails for 12 books using WeasyPrint and Jinja2. Covers translations, interpretive editions, and MTW original content. Art of War submitted to Amazon KDP. GUI with Build, KDP Metadata, and Launch Checklist tabs.",
-      "tags": ["publishing", "Python", "books", "philosophy", "KDP"],
+      "tags": [
+        "publishing",
+        "Python",
+        "books",
+        "philosophy",
+        "KDP"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "11 content files need updating with new DOCUMENT field structure."
     },
-
     {
       "id": "MTCC",
       "name": "Mad Tinker Cruise Control",
@@ -862,14 +1412,29 @@
       "division": null,
       "path": "Q:\\MTW\\MTCC",
       "alt_path": null,
-      "stack": ["ESP32", "Arduino", "WebSocket"],
+      "stack": [
+        "ESP32",
+        "Arduino",
+        "WebSocket"
+      ],
       "package_manager": null,
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -878,12 +1443,16 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "ESP32-based ride-on toy remote control system for grandchild. WebSocket communication, voice commands, custom controller firmware.",
-      "tags": ["hardware", "ESP32", "Arduino", "IoT"],
+      "tags": [
+        "hardware",
+        "ESP32",
+        "Arduino",
+        "IoT"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "HardballSim",
       "name": "Hardball Sim",
@@ -891,14 +1460,29 @@
       "division": null,
       "path": "Q:\\MTW\\HardballSim",
       "alt_path": null,
-      "stack": ["Python", "FastAPI", "React"],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -907,12 +1491,17 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "Historical baseball draft and simulation game with FastAPI backend and React frontend.",
-      "tags": ["baseball", "simulation", "Python", "FastAPI", "React"],
+      "tags": [
+        "baseball",
+        "simulation",
+        "Python",
+        "FastAPI",
+        "React"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "BridgeOfEternalAscent",
       "name": "Bridge of Eternal Ascent",
@@ -920,14 +1509,29 @@
       "division": null,
       "path": "Q:\\MTW\\BridgeOfEternalAscent",
       "alt_path": null,
-      "stack": ["JavaScript", "AFINN sentiment", "epsilon-greedy bandit"],
+      "stack": [
+        "JavaScript",
+        "AFINN sentiment",
+        "epsilon-greedy bandit"
+      ],
       "package_manager": null,
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/The-Bridge-of-Eternal-Ascent",
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -936,12 +1540,15 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "Philosophical web app using epsilon-greedy bandit algorithm and AFINN sentiment analysis.",
-      "tags": ["philosophy", "AI", "JavaScript"],
+      "tags": [
+        "philosophy",
+        "AI",
+        "JavaScript"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": null
     },
-
     {
       "id": "FingerPrintTool",
       "name": "AI Doc Fingerprints",
@@ -949,14 +1556,33 @@
       "division": "Tools",
       "path": "Q:\\MTW\\FingerPrintTool",
       "alt_path": null,
-      "stack": ["Tauri v2", "React", "TypeScript", "Rust", "ExifTool", "OpenSSL"],
+      "stack": [
+        "Tauri v2",
+        "React",
+        "TypeScript",
+        "Rust",
+        "ExifTool",
+        "OpenSSL"
+      ],
       "package_manager": "npm",
-      "deployment": ["local-desktop", "nsis-installer"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-desktop",
+        "nsis-installer"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -965,12 +1591,17 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "Desktop tool that scans documents for AI-origin fingerprints across 10+ providers, strips EXIF/XMP metadata via ExifTool, signs files with RSA-SHA256, and exports forensic ZIP bundles. v1.2 with NSIS installer.",
-      "tags": ["AI-detection", "forensics", "Tauri", "Rust", "desktop"],
+      "tags": [
+        "AI-detection",
+        "forensics",
+        "Tauri",
+        "Rust",
+        "desktop"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Requires ExifTool and OpenSSL placed in src-tauri/resources/ before build."
     },
-
     {
       "id": "TinkerWebGenerator",
       "name": "TinkerWebGenerator",
@@ -981,11 +1612,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -994,12 +1634,14 @@
       "last_worked": null,
       "last_commit": null,
       "summary": "Earlier standalone prototype for the website generator concept. Superseded by TinkersWebDivision which combined generator and branding tool. Candidate for cold storage.",
-      "tags": ["archived", "prototype"],
+      "tags": [
+        "archived",
+        "prototype"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Superseded by TinkersWebDivision. Move to Q:\\ColdStorage when ready."
     },
-
     {
       "id": "AetherScope",
       "name": "AetherScope",
@@ -1010,11 +1652,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1028,7 +1679,6 @@
       "triage_needed": true,
       "notes": null
     },
-
     {
       "id": "Cardcam",
       "name": "Cardcam",
@@ -1039,11 +1689,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1057,7 +1716,6 @@
       "triage_needed": true,
       "notes": null
     },
-
     {
       "id": "FirstAidAndInventory",
       "name": "First Aid and Inventory",
@@ -1068,11 +1726,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1086,7 +1753,6 @@
       "triage_needed": true,
       "notes": null
     },
-
     {
       "id": "Docs",
       "name": "MTW Docs",
@@ -1097,11 +1763,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1110,12 +1785,15 @@
       "last_worked": null,
       "last_commit": "2026-06-06",
       "summary": "MTW-wide documentation folder. Likely contains internal process docs including the LM Studio Dev Workflow README. Not a project, an organizational folder.",
-      "tags": ["docs", "internal", "organizational"],
+      "tags": [
+        "docs",
+        "internal",
+        "organizational"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Not a buildable project. Should be excluded from dashboard project list or shown as organizational folder."
     },
-
     {
       "id": "Tools",
       "name": "MTW Tools",
@@ -1123,14 +1801,28 @@
       "division": "Tools",
       "path": "Q:\\MTW\\Tools",
       "alt_path": null,
-      "stack": ["Python", "uv"],
+      "stack": [
+        "Python",
+        "uv"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-cli"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-cli"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Tools",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "MTWTOOLS-PMD",
       "launch": null,
@@ -1139,12 +1831,16 @@
       "last_worked": "2026-06-08",
       "last_commit": "2026-06-08",
       "summary": "Collection of MTW utility scripts. Contains at minimum SF20-json2md (converts SkillForge20 JSON exports to markdown reports). Likely contains other one-off tools.",
-      "tags": ["tools", "utilities", "Python", "organizational"],
+      "tags": [
+        "tools",
+        "utilities",
+        "Python",
+        "organizational"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "2026-06-08 /doc-project (audit->doc double pass): generated the full MTW doc suite (README/CLAUDE/STATUS + docs BUGS/CHANGELOG/ROADMAP/SPEC/VISION) + 5-doc focused PMP (MTWTOOLS-PMD) + Obsidian mirror; coverage 1/10 -> 10/10; status raised triage -> active. SPEC modules table enumerates SF20-json2md, chat-export2md (+ helpers mail_export2md/analyze_overlap/regen_index/etc.), and the prompts library. Flagged in BUGS: chat-export2md has no README/pyproject of its own (run via uv run), _demo_ask.py is scratch. Organizational folder containing multiple sub-tools. Each sub-tool may warrant its own registry entry. 2026-06-07: chat-export2md (the TinkerBrain ingestion worker, sibling to SF20-json2md) gained an LM Studio adapter (reads a folder of *.conversation.json -> clean per-chat .md; handles versions[currentlySelected] + assistant steps[], drops tool/debug noise). Exported all 37 LM Studio chats to Tools/chat-export2md/Output/LMStudio (one cosmetic 1970-date file from a missing createdAt, fixed in-tool via epoch-ms filename fallback for future runs). Ready for TinkerBrain ingest. Change uncommitted."
     },
-
     {
       "id": "TinkerPipeline",
       "name": "TinkerPipeline",
@@ -1152,14 +1848,32 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerPipeline",
       "alt_path": null,
-      "stack": ["Python", "uv", "LM Studio", "gemma-4-12b-qat", "Qwen3", "Git"],
+      "stack": [
+        "Python",
+        "uv",
+        "LM Studio",
+        "gemma-4-12b-qat",
+        "Qwen3",
+        "Git"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/TinkerPipeline",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "TPIPE-PMD",
       "launch": "start.ps1",
@@ -1168,12 +1882,17 @@
       "last_worked": "2026-06-08",
       "last_commit": "2026-06-08",
       "summary": "Local LLM execution pipeline that splits Claude Code planning and auditing from local-model boilerplate execution, using Git as the handoff layer. Claude Code writes PLAN.md, a local-model runner executes and commits each task, and Claude Code audits the diff. Default execution model gemma-4-12b-qat (runner sends reasoning_effort=none); qwen3-8b also supported. Born from TinkerOps to cut frontier token cost on boilerplate.",
-      "tags": ["pipeline", "llm", "local-execution", "internal", "dev-ops"],
+      "tags": [
+        "pipeline",
+        "llm",
+        "local-execution",
+        "internal",
+        "dev-ops"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "PRODUCTION-READY as of 2026-06-05: end-to-end smoke test passed on a real project (SmokeProbe), browser-confirmed, full plan-project to plan-guard to runner to audit-diff to dashboard loop plus a working generated CLI. All four stages and three agents (plan-project, plan-guard, audit-diff) built. OBS-002 agent hardening applied to audit/doc/session-close. 82.5h logged through 2026-06-05 session-close-5 (Stage 4: /smoke-test agent, write/git retry hardening, OBS-002 agent hardening validated, OBS-003 resolved). Stage 4 complete except 1.5.4 VS Code + Continue in-editor check (operator-driven). SmokeProbe kept as the canonical reference fixture (status complete, vault mirror) so the evidence does not deadhead. Stage 4 open: /smoke-test driver skill (1.5.1), write/git retry coverage (1.5.2), OBS-002 agent-validation pass (1.5.3), VS Code + Continue integration smoke test (1.5.4). Execution model Qwen3-8B Q6_K (WBS 1.2.0). Runner package: config, llm, plan, git_ops, executor, main, diff, pipeline_state, orchestrator. 41 unit tests passing. Stage 2 delivered commit hygiene (BUG-001 closed, [PREFIX-task_id] format), audit-diff reader, plan writeback, error handling with retries, dry-run reporting. Stage 3 delivered: pipeline-state.json written by the runner at phase transitions, read by the TinkerOps dashboard (PipelinePill + detail section, v1.0.4); multi-project orchestration via --projects manifest; /audit-diff and /plan-guard global slash command agents at Q:\\MTW\\.claude\\commands\\; and a live end-to-end testing pass (plan-guard PASS, runner executed, audit-diff PASS). Decision: pipeline state lives in a separate pipeline-state.json, never in registry.json (schema at Data/PIPELINE_STATE.schema.json). OBS-001 open (model over-reach; the audit stage and tight plan-guard scoping address it). 64h logged total through 2026-06-05 session-close-3 (Stage 0-3 actuals; lands at the original 64h estimate, scope grew to 66h). OBS-002 logged: doc process gap, recommended audit/doc/session-close agent improvements. PENDING NEXT SESSION (first item): TinkerOps doc reconciliation, the 1.3.2 dashboard added pipeline-state features that may not be in TinkerOps own SPEC, README, CHANGELOG, Charter. Also pending: WBS 1.3.8, build a /plan-project agent that scaffolds PLAN.md (confirmed distinct from plan-guard; plan-project was an orphaned Stage 0 design, OBS-002 gap 4). Estimate now 68h. Pushed to Mad-Tinker-MTW/TinkerPipeline main (c1e5327). Optional next: retry hardening for write/git failures, artifact cleanup, adopt pipeline for a second project. Next audit 2026-06-19. 2026-06-07: added a 4th pipeline agent /integrate (brownfield front-end) at Q:\\MTW\\.claude\\commands\\integrate.md, registered in TinkerPipeline CLAUDE.md. It reads an existing project, proposes ranked improvements, and authors a pipeline-safe PLAN.md (model-safe new-file/context-embedded tasks) while routing surgical edits to Claude-direct. Born from the TinkerArchivist dogfood where the runner's blind full-file regen broke 8/9 tasks on existing-file edits. CLAUDE.md edit is uncommitted (last_commit stays 2026-06-05)."
     },
-
     {
       "id": "SmokeProbe",
       "name": "SmokeProbe",
@@ -1181,14 +1900,28 @@
       "division": "Tools",
       "path": "Q:\\MTW\\SmokeProbe",
       "alt_path": null,
-      "stack": ["Python", "uv"],
+      "stack": [
+        "Python",
+        "uv"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "SMOKE-PMD",
       "launch": null,
@@ -1197,12 +1930,16 @@
       "last_worked": "2026-06-05",
       "last_commit": "2026-06-05",
       "summary": "Minimal CLI health-check utility and the canonical TinkerPipeline reference fixture. Scaffolded via the new-project workflow and implemented through the pipeline (plan-project, plan-guard, runner, audit-diff). Kept as the stable example the pipeline's production-ready evidence and the /smoke-test driver point at.",
-      "tags": ["pipeline-validation", "reference-fixture", "Python", "CLI"],
+      "tags": [
+        "pipeline-validation",
+        "reference-fixture",
+        "Python",
+        "CLI"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "TinkerPipeline reference fixture, created and implemented 2026-06-05 through the full pipeline. Kept (not throwaway) so docs referencing it do not deadhead and the /smoke-test driver (TinkerPipeline 1.5.1) has a stable example. Obsidian vault mirror created. PMP at minimum (Charter + WBS); full 5-doc suite via /doc-project if the fixture is expanded. uv run python -m smokeprobe prints SmokeProbe OK."
     },
-
     {
       "id": "MessageBurst",
       "name": "MessageBurst 180",
@@ -1210,14 +1947,36 @@
       "division": null,
       "path": "Q:\\MTW\\MessageBurst",
       "alt_path": null,
-      "stack": ["Python", "uv", "keyring", "openai", "LM Studio", "React", "TypeScript", "Vite", "Tailwind", "bun"],
+      "stack": [
+        "Python",
+        "uv",
+        "keyring",
+        "openai",
+        "LM Studio",
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind",
+        "bun"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "MB-PMD",
       "launch": null,
@@ -1226,12 +1985,17 @@
       "last_worked": "2026-06-05",
       "last_commit": "2026-06-06",
       "summary": "Communication launcher and message optimizer. Type a messy thought, the G.I.S.T. engine (Grammar, Intent, Style, Trim) compresses it to a 180-char burst on the local model, you approve it, and it routes to email, SMS, social, or the encrypted BRST Direct layer. Second TinkerPipeline dogfood. Phase 1 MVP complete and live-verified: G.I.S.T. engine, preview/edit gate, route framework, real SMTP email route, local-first storage, and a minimal web UI (Vite plus React/TS over a thin Python API). SMS reassigned to the self-hosted gateway track (Phase 3).",
-      "tags": ["messaging", "communication-launcher", "local-llm", "privacy", "pipeline-built"],
+      "tags": [
+        "messaging",
+        "communication-launcher",
+        "local-llm",
+        "privacy",
+        "pipeline-built"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Built 2026-06-05 as the 2nd TinkerPipeline dogfood (Spike 0 routing-core, orchestrated alongside SmokeProbe; audit-diff caught and fixed a config-API mismatch). Re-architected the same day into MessageBurst 180, a G.I.S.T.-centered communication launcher: VISION/SPEC/ROADMAP rewritten, Charter/WBS phased (Phase 0 Spike done; Phase 1 MVP = G.I.S.T. on local model + email/SMS + preview/approve; Phase 2 breadth; Phase 3 BRST Direct encrypted layer + sunburst display). Two concept notes added: BRST-DIRECT-SECURITY.md (deposit-only/skiff crypto model with honest dissolve/metadata/anti-capture boundaries) and BURST-DISPLAY.md (sunburst morphing display). G.I.S.T. runs locally so raw thoughts never leave the device. MVP stack recommended Tauri v2 + React/TS. Phase 1 started 2026-06-05: the G.I.S.T. engine (WBS 1.1.1) is built and live-verified against LM Studio/Qwen3 (gist.py: grammar/intent/style/trim to 180, local-only endpoint guard, deterministic 180 backstop, output cleaning; `burst` CLI preview-only with --style; 13 tests via injected fake client; added openai dep + pytest). Engine is Python (reuses the TinkerPipeline LM Studio integration) and stays headless until the UI task (1.1.7). Also fixed MB-001: wizard.py stored settings/secrets under the field name instead of the channel (config.set_setting/set_secret called with 2 args, need 3), so configured channels could not resolve at send time; latent since Phase 0, now fixed with a round-trip test. Phase 1 Chunk A done (1.1.2 preview/edit gate, 1.1.3 route+capability framework): routes.py advertises capabilities and a kind, preview.py is the mandatory approve/edit trust gate, CLI `compose` runs think->G.I.S.T.->preview->route and `routes` lists capabilities; 33 tests, compose live-verified. Chunk B done: 1.1.4 email route now sends for real over SMTP (stdlib smtplib, _open_smtp seam, resolves host/port/from/use_tls/password from config at send time, degrades to labeled dry-run when unconfigured or --dry-run); compose takes --recipient/--dry-run and validates recipient early via route.requires_recipient. 1.1.5 SMS provider decision deferred (Twilio vs email-gateway), route kept as a labeled dry-run stub (Open). Chunk C done: 1.1.6 local-first storage (storage.py) with save/metadata-only/dissolve retention; raw thought never stored (not a parameter), metadata kept separately from the burst artifact, save is local plaintext (encryption later); compose stores per --retain/config and a history command lists records. Phase 1 MVP COMPLETE and live-verified end to end (CLI and web UI): added the minimal web UI (1.1.7, Vite+React/TS in ui/ over a thin stdlib HTTP API src/messageburst/api.py exposing /api/gist|routes|send|history, plus a serve command; the preview gate is an explicit UI step so nothing auto-sends; the full think->burst->preview->email->store->history loop was driven live in the browser). Charter/WBS reconciled: UI is in the MVP, SMS (1.1.5) reassigned to the self-hosted gateway track (docs/BRST-TRANSPORT.md, a Phase 3 design note: native burst message, one-envelope-many-transports onion/relay/SMS, SPA dark relay + Pico hardware key + phone egress, TinkerVault for at-rest only). 53 tests. Remaining: Phase 2, or the parked gateway/BRST-transport project. 4th session close logged 15h (BRST transport research and design note, MVP scope regroup and Charter/WBS reconciliation, web UI build and live verification); running total 52.5h. 3rd session close logged 15.5h across the three chunks (each through its own audit+doc loop); running total 37.5h. 2nd session close logged 16h (8.5h G.I.S.T.+wizard fix this session, 7.5h OBS-002 catch-up for the earlier re-architecture); running total 22h; Schedule re-cast to the four-phase structure (110h budget). No GitHub repo yet (local-only). PMP suite now complete (5 of 5 focused standard): added MB-PMD-003-RiskStakeholder (7 risks + 7 stakeholders) and MB-PMD-004-Scope, closing the 003/004 gap the audits had flagged. 2026-06-07: a 'Text-to-Email app' the user prototyped against a local model (type message + recipient -> send via Nodemailer/SMTP, Bun/Vite/Svelte) is FOLDED INTO MessageBurst as a simple type-and-send entry mode in the prototyping/planning phase, not a separate project - MessageBurst already has a working SMTP email route, so this is a subset. The local-model scaffold attempt was buggy (Svelte4/5 mix, wrong vite plugin name, JSX-in-Svelte, missing express/cors deps) and never written to disk; rebuild correctly if pursued."
     },
-
     {
       "id": "TinkerArchivist",
       "name": "Tinker Archivist",
@@ -1239,14 +2003,34 @@
       "division": "Tools",
       "path": "Q:\\MTW\\TinkerArchivist",
       "alt_path": null,
-      "stack": ["Python", "uv", "FastAPI", "SQLite", "httpx", "React", "Vite", "bun"],
+      "stack": [
+        "Python",
+        "uv",
+        "FastAPI",
+        "SQLite",
+        "httpx",
+        "React",
+        "Vite",
+        "bun"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": "http://localhost:5183" },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://localhost:5183"
+      },
       "github": "Mad-Tinker-MTW/TinkerArchivist",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": "TARCH-PMD",
       "launch": null,
@@ -1255,12 +2039,19 @@
       "last_worked": "2026-06-07",
       "last_commit": "2026-06-07",
       "summary": "Local research-vault web app for historical and podcast research. Create projects, run a Research Scout against free public archives (Internet Archive, Library of Congress, Wikidata), generate source-backed story cards, and export a research packet (markdown plus source-log CSV plus HTML) as a ZIP. FastAPI plus SQLite backend, React/Vite frontend. Rule-based story logic, no paid AI. Complements TinkerWire (current news/feeds) with historical-archive coverage.",
-      "tags": ["research", "archive", "OSINT", "podcast", "history", "FastAPI", "React"],
+      "tags": [
+        "research",
+        "archive",
+        "OSINT",
+        "podcast",
+        "history",
+        "FastAPI",
+        "React"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Found and moved into Q:\\MTW 2026-06-06 (from tinker-archivist-mvp.zip). Converted to MTW standards: backend Python to uv (pyproject.toml, requirements.txt removed), frontend npm to bun, added the missing frontend/vite.config.js (the React plugin was unwired, so it had never run). Dedicated ports 8083 (API) and 5183 (UI), moved off the contested 5173/8000 and wired through CORS, the frontend API const, the start scripts, and the README. Live-tested: Research Scout pulled 23 real records (Internet Archive 10, Library of Congress 9, Wikidata 4), 23 story cards, zero errors. Fixed a Wikidata 403 by adding a descriptive User-Agent to all three connectors. git-init done 2026-06-06 (commit 45e6a48). Backlog: backend uses the deprecated @app.on_event (swap to lifespan); a few test projects sit in the local SQLite db (under backend/data/, gitignored); could later share a connector/export layer with TinkerWire. 2026-06-07 resilience+hygiene pass (committed 5bd36e8, c2ec7c3): added a shared resilient fetch helper (retry/backoff, per-host rate limit, offline cache) and routed all three connectors through it (descriptive User-Agents preserved), DB reset path (maintenance.py + scripts/reset_db.py), migrated startup to lifespan, FIXED a real SQLite connection leak in db.connect() (was committing but never closing), added pytest + 4 connector/fetch tests. Full doc + PMP suite (TARCH-PMD, 5 docs) and Obsidian mirror generated; coverage 1/10 -> 10/10. Then redesigned the web UI as an old-newspaper broadsheet (blackletter masthead, dateline, figures bar, article-style story cards with drop cap, sepia source ledger; browser-verified end to end with live data, commit 9482c2c) and added FastAPI route-level tests (TestClient, isolated temp DB), a 4th connector Chronicling America (historic newspapers via the loc.gov collections API; fetch helper now follows redirects), and fixed the masthead font (Fraktur -> Playfair Didone). 11 tests pass. Pushed to GitHub Mad-Tinker-MTW/TinkerArchivist (PRIVATE, commit 6cc43bc). 28h logged this session. Open (Stage 3/4): further connectors, move blocking SQLite off the event loop, shared connector/export layer with TinkerWire. NOTE: a TinkerPipeline Qwen3-8B run produced broken code (non-returning helper, hallucinated httpx/connector APIs, fabricated User-Agents, Path+str crash); rejected at /audit-diff (report in Docs/TinkerOps/audits/TinkerArchivist-diffaudit-2026-06-07.md) and reimplemented directly by Claude (fix-forward; the 9 broken ARCH commits remain in history below the fix since the delete-guard blocked git reset). Next audit 2026-06-21."
     },
-
     {
       "id": "TinkerBrain",
       "name": "TinkerBrain",
@@ -1268,14 +2059,33 @@
       "division": null,
       "path": "Q:\\MTW\\TinkerBrain",
       "alt_path": "V:\\TinkerBrain",
-      "stack": ["Python", "uv", "ChromaDB", "sentence-transformers", "LM Studio", "Qwen3-8B", "Ollama (legacy)"],
+      "stack": [
+        "Python",
+        "uv",
+        "ChromaDB",
+        "sentence-transformers",
+        "LM Studio",
+        "Qwen3-8B",
+        "Ollama (legacy)"
+      ],
       "package_manager": "uv",
-      "deployment": ["local-only"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/TinkerBrain",
       "docs": {
-        "readme": true, "claude_md": true, "status_md": true,
-        "pmp": true, "handoff_md": false, "design_md": true, "obsidian_note": true
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": true
       },
       "pmp_ids": "TBRAIN-PMD",
       "launch": null,
@@ -1284,12 +2094,20 @@
       "last_worked": "2026-06-08",
       "last_commit": "2026-06-08",
       "summary": "The keystone knowledge/memory layer: a fully-local RAG second-brain. Ingests raw inputs (ChatGPT/Claude exports, notes, pdf, docx), cleans/chunks/tags and routes them into a PARA vault (Inbox/Projects/Ideas/Reference/Ephemera/Archive), vector-indexes with ChromaDB (sentence-transformers all-MiniLM-L6-v2), and answers grounded questions via a local LLM (LM Studio / Qwen3-8B by default, env-driven; Ollama still supported). This is TinkerPal's knowledge base and the intended memory for the Hex-Veridicae overseer. Code home Q:, data home V:.",
-      "tags": ["knowledge-base", "RAG", "second-brain", "local-llm", "Ollama", "ChromaDB", "memory", "keystone"],
+      "tags": [
+        "knowledge-base",
+        "RAG",
+        "second-brain",
+        "local-llm",
+        "Ollama",
+        "ChromaDB",
+        "memory",
+        "keystone"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md. 2026-06-08 INGEST: full clean-markdown corpus ingested via new scripts/tb_ingest_batch.py (one-shot batch ingester that extends ingest.py without touching the blocking watcher) - 1,574 files into 13,334 chunks; vault now 13,561 chunks (Projects 9900 / Reference 2283 / Ideas 770 / Inbox 588 / Ephemera 19). FIXED vector_index.rebuild_index: it added all docs in one collection.add and hit Chroma's 5461 max-batch on 13.5k docs; now batches at 5000. ask_vault verified live on qwen3-8b (answered a space-western query with sources). Routing skews ~73% to Projects (cosmetic; the planned embed+cluster curation is the real fix). NEXT: PDFs/Drive docs need the file-ingest path and the 2.2GB mbox needs mail_export2md before ingest; add a DECISIONS file (6 architecture decisions still unwritten); run /plan-project + /doc-project (no WBS/docs yet, hence no Obsidian Projects mirror). Summary still says Ollama/llama3 but runtime is now LM Studio qwen3-8b - fix at /doc-project."
     },
-
     {
       "id": "WoodWright",
       "name": "Tinker's WoodWright",
@@ -1297,14 +2115,32 @@
       "division": "Foundry",
       "path": "Q:\\Workshop\\WoodWright",
       "alt_path": null,
-      "stack": ["Tauri v2", "React", "TypeScript", "Vite", "Tailwind CSS", "pdf-lib"],
+      "stack": [
+        "Tauri v2",
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "pdf-lib"
+      ],
       "package_manager": "npm",
-      "deployment": ["local-desktop"],
-      "urls": { "production": null, "staging": null, "local": null },
+      "deployment": [
+        "local-desktop"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1313,12 +2149,18 @@
       "last_worked": "2026-04-23",
       "last_commit": "2026-04-23",
       "summary": "Tinker's WoodWright, a lumber cut optimization desktop app (Tauri v2 + React/TypeScript + Vite + Tailwind). Cut-list input with quantities, stock board management, a bin-packing optimizer, visual cut diagrams, project save/load, and PDF BOM export via pdf-lib. v1.0.0 built in a single LM Studio / MCP-filesystem session and audited via local models (Qwen3-8B, TeichAI).",
-      "tags": ["woodworking", "desktop", "Tauri", "optimization", "bin-packing", "Foundry"],
+      "tags": [
+        "woodworking",
+        "desktop",
+        "Tauri",
+        "optimization",
+        "bin-packing",
+        "Foundry"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Discovered 2026-06-07 in Q:\\Workshop (LM Studio dev scratch space); absent from the registry until now, surfaced from ~15 LM Studio chats. Built across one session (commits through e8b8a2f, 2026-04-23): v0.1 then v1.0.0, with multiple local-model audits (docs/AUDIT_*.md, TeichAI + Qwen3-8B eval) plus pm_hours/project_log/decisions/project_plan docs. ANOMALY: uses npm (package-lock.json) against the MTW bun standard; meta/project.json lists Tauri ^1.0.0 but package.json pins @tauri-apps/api ^2.0.0, so the real build is Tauri v2. NEXT: migrate Q:\\Workshop\\WoodWright -> Q:\\MTW\\WoodWright (Foundry division), convert npm -> bun, generate MTW-standard docs via /doc-project, add an Obsidian mirror. last_worked reflects git last-commit (2026-04-23) to keep the dormancy clock honest. MTW-DevWorkflow alongside it in Q:\\Workshop is an empty docs/meta/tasks scaffold (template), not a project."
     },
-
     {
       "id": "LastBloodline",
       "name": "The Last Bloodline",
@@ -1329,11 +2171,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1342,12 +2193,17 @@
       "last_worked": "2026-06-06",
       "last_commit": null,
       "summary": "Post-apocalyptic supernatural survival story: a novel plus a video-game concept, with a Codex Bestiarium and Codex Personae. Protagonist Atlas (hidden Wraithborn heritage), shadow entity Erebus, monsters the Vrykolakas. Found in full as two PDF drafts.",
-      "tags": ["creative", "novel", "game-concept", "codex", "Creative"],
+      "tags": [
+        "creative",
+        "novel",
+        "game-concept",
+        "codex",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Cleaner 2nd draft Book.pdf, 1st draft Book Idea.pdf (both in the phone Download folder); emailed Feb 2025. Vault note at Obsidian Vault\\Creative IP. Possible shared universe with Noir Guardian (shared 'Elias')."
     },
-
     {
       "id": "NoirGuardian",
       "name": "Noir Guardian",
@@ -1358,11 +2214,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1371,12 +2236,15 @@
       "last_worked": "2026-06-06",
       "last_commit": null,
       "summary": "Comic-book project (The Sentinel Initiative). A roughly 980-word series bible plus concept art. Protagonist Elias Mercer, a veteran with a norepinephrine neural implant turned night vigilante; antagonist Victor Aldric, an old-money corporate-dynasty power broker beaten only by exposure.",
-      "tags": ["creative", "comic", "Creative"],
+      "tags": [
+        "creative",
+        "comic",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Bible at _extracted\\002_NOIR GUARDIAN.docx, concept art 000_Noir.png. Confirmed NOT the mega-corp novel (Aldric is only thematically adjacent). Shares 'Elias' with The Last Bloodline."
     },
-
     {
       "id": "BusinessBushido",
       "name": "Business Bushido (working title - real title unknown)",
@@ -1387,11 +2255,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1400,12 +2277,18 @@
       "last_worked": "2026-06-07",
       "last_commit": null,
       "summary": "Nonfiction business book on handling business situations using several philosophies. Bushido is one, Buddhism another, plus a likely third Franky does not currently recall. A multi-philosophy business-decision book, NOT Bushido-only and NOT Tinker Field Editions / Tinker Philosophy Engine. 'Business Bushido' is a working label only; real title unknown. Manuscript UNFOUND digitally.",
-      "tags": ["creative", "nonfiction", "management", "philosophy", "unfound", "Creative"],
+      "tags": [
+        "creative",
+        "nonfiction",
+        "management",
+        "philosophy",
+        "unfound",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "NAME CORRECTED by Franky 2026-06-08: not Bushido-only; it is a multi-philosophy (Bushido + Buddhism + a forgotten third) business-decision book, real title unknown. MOST LIKELY on an old computer hard drive Franky will reconnect when he has time (that resolves this triage). Not located in any chat export or the Q:/V: docx/pdf sweep (only a 'where's my book' reference). Also check Google Docs and pre-AI files. (Perplexity scratched as a deadend 2026-06-08.) Linked twin of MegaCorpDynasties (same timeframe, one idea in two forms)."
     },
-
     {
       "id": "MegaCorpDynasties",
       "name": "Mega-Corp Dynasties (working title)",
@@ -1416,11 +2299,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1429,12 +2321,17 @@
       "last_worked": "2026-06-07",
       "last_commit": null,
       "summary": "Novel where world powers are major corporation family dynasties, with hackers and assassins (corporate houses as samurai clans). The fiction twin of Business Bushido. Manuscript UNFOUND digitally.",
-      "tags": ["creative", "novel", "fiction", "unfound", "Creative"],
+      "tags": [
+        "creative",
+        "novel",
+        "fiction",
+        "unfound",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Registered as a placeholder for tracking in the 2026-06-08 deep-dive catch pass; not located in any export or the drive sweep (keyword search collides with cyber-ops coursework; may sit under a codename). MOST LIKELY on an old computer hard drive Franky will reconnect when he has time (that resolves this triage). Old HDD is the only remaining lead (Perplexity scratched as a deadend 2026-06-08). Linked twin of BusinessBushido. Ask Franky for working titles/codenames."
     },
-
     {
       "id": "SpaceWestern",
       "name": "Space Western (untitled)",
@@ -1445,11 +2342,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1458,12 +2364,16 @@
       "last_worked": "2026-06-06",
       "last_commit": null,
       "summary": "Early fully-chaptered space-western story with a game concept. Characters Rylan, Luna, Valen; ship the Nomad; chapters The Trap / Luna's Secret / Ghosts of the Past / Unlikely Alliances / The Showdown. Exists as drafted chapters inside the 2023 ChatGPT archive.",
-      "tags": ["creative", "story", "game-concept", "Creative"],
+      "tags": [
+        "creative",
+        "story",
+        "game-concept",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Origin chat 2023-11-17_create-space-western-game in the ChatGPT-full export. Never assembled into a standalone manuscript."
     },
-
     {
       "id": "AALanguageKit",
       "name": "Axis & Allies WWII Languages Fluency Kit",
@@ -1474,11 +2384,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1487,12 +2406,17 @@
       "last_worked": "2026-06-06",
       "last_commit": null,
       "summary": "A Conversational Fluency Kit for WWII-era languages built around an Axis & Allies framing: two volumes plus a generation playbook. A substantial, mostly-complete reference/creative project that was invisible to TinkerOps before this pass.",
-      "tags": ["creative", "language", "reference", "WWII", "Creative"],
+      "tags": [
+        "creative",
+        "language",
+        "reference",
+        "WWII",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Source files are Google AI Studio exports (Conversational Fluency Kit, WWII Languages Fluency Kit Generated, Allied Languages French/Russian/Spanish, Axis and Allies Traslation.pdf) under V:\\Google Import takeout 9-001 and 9-002. File-ingest fodder for TinkerBrain."
     },
-
     {
       "id": "Songbook",
       "name": "Songwriting Lead Sheets",
@@ -1503,11 +2427,20 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": true
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": true
       },
       "pmp_ids": null,
       "launch": null,
@@ -1516,12 +2449,16 @@
       "last_worked": "2026-06-06",
       "last_commit": null,
       "summary": "A batch of original songwriting lead-sheet text files (titles include Velvet Circuitry, Gravity Has Teeth, A Gnome Walks Into a Flame, The Silence That Followed). The creative-writing/music output, distinct from the SkaldForge AI music-station app.",
-      "tags": ["creative", "music", "songwriting", "Creative"],
+      "tags": [
+        "creative",
+        "music",
+        "songwriting",
+        "Creative"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Creative IP surfaced and registered in the 2026-06-08 deep-dive catch pass. Lead-sheet .txt files in the phone Download dump. Distinct from SkaldForge (code project). File-ingest fodder for TinkerBrain (Writing + Music cluster)."
     },
-
     {
       "id": "ESP32CardInventory",
       "name": "ESP32 Card Inventory System",
@@ -1529,14 +2466,27 @@
       "division": "Foundry",
       "path": "Q:\\MTW\\ESP32CardInventory",
       "alt_path": null,
-      "stack": ["ESP32", "local-LLM", "inventory"],
+      "stack": [
+        "ESP32",
+        "local-LLM",
+        "inventory"
+      ],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1545,12 +2495,18 @@
       "last_worked": "2026-06-08",
       "last_commit": null,
       "summary": "An ESP32 plus local-AI inventory system for a collectible-card / HackerBox collection. Hardware build with local-AI cataloging. Concept stage, surfaced from Claude Chat, not yet a built project.",
-      "tags": ["hardware", "ESP32", "inventory", "local-ai", "Foundry", "discovered"],
+      "tags": [
+        "hardware",
+        "ESP32",
+        "inventory",
+        "local-ai",
+        "Foundry",
+        "discovered"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Discovered in the 2026-06-08 Claude Chat discovery pass (conversations: esp32-collectible-card-inventory-system, local-ai-inventory-system-for-hackerbox-collection). VERIFY overlap with the existing Cardcam project (card scanning) before building - may be the same idea or distinct. Path is prospective (not yet created). See Docs/TinkerOps/claude-chat-discovery-2026-06-08.md."
     },
-
     {
       "id": "WatchRepairVoice",
       "name": "Hands-Free Watch Repair Voice Control",
@@ -1558,14 +2514,27 @@
       "division": "TimeWorks",
       "path": "Q:\\MTW\\WatchRepairVoice",
       "alt_path": null,
-      "stack": ["voice", "Whisper", "TTS"],
+      "stack": [
+        "voice",
+        "Whisper",
+        "TTS"
+      ],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": null,
       "docs": {
-        "readme": false, "claude_md": false, "status_md": false,
-        "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
       },
       "pmp_ids": null,
       "launch": null,
@@ -1574,12 +2543,17 @@
       "last_worked": "2026-06-08",
       "last_commit": null,
       "summary": "A hands-free voice-control assistant for watch repair: voice in and out while hands are occupied at the bench. HexVeridicae-adjacent (could reuse the same local voice stack). Concept stage, surfaced from Claude Chat.",
-      "tags": ["TimeWorks", "voice", "watch-repair", "assistant", "discovered"],
+      "tags": [
+        "TimeWorks",
+        "voice",
+        "watch-repair",
+        "assistant",
+        "discovered"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "notes": "Discovered in the 2026-06-08 Claude Chat discovery pass (conversation: hands-free-voice-control-for-watch-repair). Could reuse the HexVeridicae voice stack (faster-whisper + Coqui XTTS) and a local LLM. Path is prospective (not yet created). See Docs/TinkerOps/claude-chat-discovery-2026-06-08.md."
     },
-
     {
       "id": "portfolio",
       "name": "UAT Portfolio (SIP & Boards)",
@@ -1590,9 +2564,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/portfolio",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1600,13 +2586,16 @@
       "last_worked": null,
       "last_commit": "2026-05-13",
       "summary": "UAT Portfolio SIP and Boards. University coursework portfolio. GitHub-only, no local MTW folder tracked.",
-      "tags": ["UAT", "coursework", "portfolio"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "portfolio"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. HYGIENE: this repo committed a tinkercode-win64.zip build artifact - move it to a GitHub Release and add *.zip to its .gitignore (low priority). Registered 2026-06-09 GitHub/registry reconciliation; uat:true groups it under the UAT toggle."
     },
-
     {
       "id": "FirstProject",
       "name": "First Project",
@@ -1617,9 +2606,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/FirstProject",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1627,13 +2628,16 @@
       "last_worked": null,
       "last_commit": "2026-04-16",
       "summary": "Initial Git learning/test repository. Effectively empty (1 KB). GitHub-only.",
-      "tags": ["UAT", "coursework", "throwaway"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "throwaway"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework / first-Git test (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "Program_Boards",
       "name": "UAT Degrees Board Requirements",
@@ -1644,9 +2648,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Program_Boards",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1654,13 +2670,15 @@
       "last_worked": null,
       "last_commit": "2026-03-18",
       "summary": "UAT Degrees Board Requirements coursework. GitHub-only.",
-      "tags": ["UAT", "coursework"],
+      "tags": [
+        "UAT",
+        "coursework"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "Potluck-Signup",
       "name": "Potluck Signup (CSC 5.1)",
@@ -1671,9 +2689,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Potluck-Signup",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1681,13 +2711,16 @@
       "last_worked": null,
       "last_commit": "2026-03-09",
       "summary": "CSC assignment 5.1 (two arrays). GitHub-only.",
-      "tags": ["UAT", "coursework", "CSC"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "CSC"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "World_Capitals_Quiz",
       "name": "World Capitals Quiz (CSC202 6.1)",
@@ -1695,12 +2728,26 @@
       "division": null,
       "path": "https://github.com/Mad-Tinker-MTW/World_Capitals_Quiz",
       "alt_path": null,
-      "stack": ["C#"],
+      "stack": [
+        "C#"
+      ],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/World_Capitals_Quiz",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1708,13 +2755,17 @@
       "last_worked": null,
       "last_commit": "2026-03-09",
       "summary": "CSC202 assignment 6.1, C# world capitals quiz. GitHub-only.",
-      "tags": ["UAT", "coursework", "CSC", "C#"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "CSC",
+        "C#"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "MTW_AlchemyDivision",
       "name": "MTW Alchemy Division (Assign 4.1)",
@@ -1725,9 +2776,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/MTW_AlchemyDivision",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1735,13 +2798,15 @@
       "last_worked": null,
       "last_commit": "2026-03-02",
       "summary": "Assignment 4.1 (MTW-themed name but coursework, not an actual MTW division). GitHub-only.",
-      "tags": ["UAT", "coursework"],
+      "tags": [
+        "UAT",
+        "coursework"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). Despite the name this is a class assignment, not a real MTW division. GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "Cell_Architect",
       "name": "Cell Architect (Sci 201)",
@@ -1752,9 +2817,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Cell_Architect",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1762,13 +2839,16 @@
       "last_worked": null,
       "last_commit": "2026-02-28",
       "summary": "Cell designer for Sci 201. GitHub-only.",
-      "tags": ["UAT", "coursework", "science"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "science"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "CSC202_Assign2.1",
       "name": "CSC202 Assignment 2.1",
@@ -1776,12 +2856,26 @@
       "division": null,
       "path": "https://github.com/Mad-Tinker-MTW/CSC202_Assign2.1",
       "alt_path": null,
-      "stack": ["C#"],
+      "stack": [
+        "C#"
+      ],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/CSC202_Assign2.1",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1789,13 +2883,16 @@
       "last_worked": null,
       "last_commit": "2026-01-23",
       "summary": "CSC202 assignment 2.1. GitHub-only.",
-      "tags": ["UAT", "coursework", "CSC"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "CSC"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "CSC202_Assign1.1",
       "name": "CSC202 Assignment 1.1 (GUI)",
@@ -1803,12 +2900,26 @@
       "division": null,
       "path": "https://github.com/Mad-Tinker-MTW/CSC202_Assign1.1",
       "alt_path": null,
-      "stack": ["C#"],
+      "stack": [
+        "C#"
+      ],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/CSC202_Assign1.1",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1816,13 +2927,16 @@
       "last_worked": null,
       "last_commit": "2026-01-17",
       "summary": "CSC202 assignment 1.1, GUI front end. GitHub-only.",
-      "tags": ["UAT", "coursework", "CSC"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "CSC"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "Assignment-4.3-Using-CNC-to-manufacture-a-PCB",
       "name": "Assignment 4.3: CNC-Manufactured PCB",
@@ -1833,9 +2947,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Assignment-4.3-Using-CNC-to-manufacture-a-PCB",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1843,13 +2969,17 @@
       "last_worked": null,
       "last_commit": "2025-12-29",
       "summary": "Assignment 4.3, using CNC to manufacture a PCB. Foundry-adjacent topic but coursework. GitHub-only.",
-      "tags": ["UAT", "coursework", "CNC", "PCB"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "CNC",
+        "PCB"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). Topic overlaps the Foundry division but this is a class assignment. GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "RBT205-4.2",
       "name": "RBT205 Assignment 4.2 (Robotics)",
@@ -1860,9 +2990,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/RBT205-4.2",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1870,13 +3012,16 @@
       "last_worked": null,
       "last_commit": "2025-12-22",
       "summary": "RBT205 robotics assignment 4.2. GitHub-only.",
-      "tags": ["UAT", "coursework", "robotics"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "robotics"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "Two-Link-Robotic-Arm-Kinematics",
       "name": "Two-Link Robotic Arm Kinematics",
@@ -1887,9 +3032,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Two-Link-Robotic-Arm-Kinematics",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1897,13 +3054,16 @@
       "last_worked": null,
       "last_commit": "2025-11-24",
       "summary": "Two-link robotic arm kinematics learning tool. GitHub-only.",
-      "tags": ["UAT", "coursework", "robotics"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "robotics"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework / learning tool (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "UAT-IR-SIM-Playground",
       "name": "UAT IR-SIM Playground",
@@ -1914,9 +3074,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/UAT-IR-SIM-Playground",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1924,13 +3096,15 @@
       "last_worked": null,
       "last_commit": "2025-08-24",
       "summary": "UAT IR-SIM playground coursework. GitHub-only.",
-      "tags": ["UAT", "coursework"],
+      "tags": [
+        "UAT",
+        "coursework"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "Ai-Showcase",
       "name": "AI Showcase (Assign 5.1)",
@@ -1941,9 +3115,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/Ai-Showcase",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1951,13 +3137,16 @@
       "last_worked": null,
       "last_commit": "2025-08-10",
       "summary": "Assignment 5.1 AI showcase. GitHub-only.",
-      "tags": ["UAT", "coursework", "AI"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "AI"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PUBLIC). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "CSC275",
       "name": "CSC275 Projects",
@@ -1968,9 +3157,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/CSC275",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -1978,13 +3179,16 @@
       "last_worked": null,
       "last_commit": "2025-08-07",
       "summary": "CSC275 course projects. GitHub-only (PRIVATE repo).",
-      "tags": ["UAT", "coursework", "CSC"],
+      "tags": [
+        "UAT",
+        "coursework",
+        "CSC"
+      ],
       "blocked_by": null,
       "triage_needed": false,
       "uat": true,
       "notes": "UAT coursework (PRIVATE). GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     },
-
     {
       "id": "MuseumProject",
       "name": "Museum Project",
@@ -1995,9 +3199,21 @@
       "stack": [],
       "package_manager": null,
       "deployment": [],
-      "urls": { "production": null, "staging": null, "local": null },
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
       "github": "Mad-Tinker-MTW/MuseumProject",
-      "docs": { "readme": false, "claude_md": false, "status_md": false, "pmp": false, "handoff_md": false, "design_md": false, "obsidian_note": false },
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
       "pmp_ids": null,
       "launch": null,
       "launch_cmd": null,
@@ -2005,12 +3221,14 @@
       "last_worked": null,
       "last_commit": "2025-08-09",
       "summary": "Museum project (30 MB, PRIVATE). Most likely UAT coursework. GitHub-only.",
-      "tags": ["UAT", "coursework"],
+      "tags": [
+        "UAT",
+        "coursework"
+      ],
       "blocked_by": null,
       "triage_needed": true,
       "uat": true,
       "notes": "Probable UAT coursework (PRIVATE, 30 MB). triage_needed: confirm whether this is a class project or a personal/MTW project before leaving it under the UAT toggle. GitHub-only; path is the repo URL. Registered 2026-06-09 reconciliation; uat:true."
     }
-
   ]
 }
