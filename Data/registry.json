@@ -114,7 +114,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "2026-06-11: added tunnel hostname to vite.config.ts server.allowedHosts (skillforge20.madtinkersworkshop.com) so the Cloudflare tunnel can serve the dev server on :3000 without a 403; committed to main (2e2d7a0). Tunnel being migrated laptop->PC. See Docs/TinkerOps/sessions/TinkerOps-session-2026-06-11.md."
+      "notes": "2026-06-11: added tunnel hostname to vite.config.ts server.allowedHosts (skillforge20.madtinkersworkshop.com) so the Cloudflare tunnel can serve the dev server on :3000 without a 403; committed to main (2e2d7a0). Tunnel migrated laptop->PC and verified live 2026-06-11: tunnel f4329cfe now runs from the PC cloudflared LocalSystem service (config at C:\\Windows\\System32\\config\\systemprofile\\.cloudflared\\config.yml, NOT the user .cloudflared - the LocalSystem-config gotcha); credentials rebuilt on the PC from the tunnel token; single PC connector, public URL returns 200. Run SkillForge with bun run dev (frontend :3000 + API :3001) for the tunnel to serve. See Docs/TinkerOps/sessions/TinkerOps-session-2026-06-11.md."
     },
     {
       "id": "KageMiru",
