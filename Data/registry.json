@@ -49,8 +49,8 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "port": 5175,
-      "last_worked": "2026-06-08",
-      "last_commit": "2026-06-08",
+      "last_worked": "2026-06-11",
+      "last_commit": "2026-06-11",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
       "tags": [
         "dashboard",
@@ -59,7 +59,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. 2026-06-08 also: Wiring view landed (src/views/Wiring.tsx, commit f630bc7, build green) ported from PR #1 which was closed as superseded (its stale-base registry would have clobbered the 21 unpushed commits; local main pushed to origin first as backup). Stage 2 wiring view 2.6 now complete. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md."
+      "notes": "v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. 2026-06-08 also: Wiring view landed (src/views/Wiring.tsx, commit f630bc7, build green) ported from PR #1 which was closed as superseded (its stale-base registry would have clobbered the 21 unpushed commits; local main pushed to origin first as backup). Stage 2 wiring view 2.6 now complete. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md. 2026-06-11 remote-access infrastructure recovery work block (21.0h): restored PC remote access after an RDP lockout. Root cause was Windows Hello PIN/passkey not working over RDP, plus a stale cached MS-account password the PC had never validated locally. Fixed by refreshing the cached credential via LogonUser, then stood up OpenSSH Server + Tailscale passwordless key auth (laptop MTW.bat one-click into Q:\\MTW). Provisioned laptop travel environment (GitHub Desktop, LM Studio, new Brave key, 10 repo clones+branches). Cleaned up 9 redundant Travel branches. Staged TinkerBrain ChatGPT export (2GB) to V:\\TinkerBrain\\ingest\\incoming. SkillForge20 tunnel fix committed to main (2e2d7a0). See Docs/TinkerOps/sessions/TinkerOps-session-2026-06-11.md."
     },
     {
       "id": "SkillForge20",
@@ -102,8 +102,8 @@
       "launch": null,
       "launch_cmd": "bun run dev",
       "port": 3000,
-      "last_worked": "2026-06-01",
-      "last_commit": "2026-06-03",
+      "last_worked": "2026-06-11",
+      "last_commit": "2026-06-11",
       "summary": "Personal rapid skill acquisition tracker built on Josh Kaufman's First 20 Hours method. Deconstructs skills into subskills, generates 7-week plans, runs practice sessions, and tracks progress. Used for UAT RSA coursework. v2.2 with NSIS installer and web companion.",
       "tags": [
         "UAT",
@@ -114,7 +114,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": null
+      "notes": "2026-06-11: added tunnel hostname to vite.config.ts server.allowedHosts (skillforge20.madtinkersworkshop.com) so the Cloudflare tunnel can serve the dev server on :3000 without a 403; committed to main (2e2d7a0). Tunnel being migrated laptop->PC. See Docs/TinkerOps/sessions/TinkerOps-session-2026-06-11.md."
     },
     {
       "id": "KageMiru",
