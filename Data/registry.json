@@ -1018,7 +1018,7 @@
         "Vite",
         "TypeScript",
         "Tailwind v4",
-        "Qwen3-8B",
+        "gemma-4-12b-qat",
         "Replicate",
         "Cloudflare Pages"
       ],
