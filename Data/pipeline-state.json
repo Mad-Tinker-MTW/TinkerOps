@@ -63,5 +63,18 @@
     "tasks_skipped": 0,
     "last_task": "TEST-001",
     "last_commit": "d780b643a2e60f27220ed72103e734e4268ce7d8"
+  },
+  "TinkerWebGen": {
+    "phase": "awaiting-audit",
+    "status": "ok",
+    "plan_file": "Q:\\MTW\\TinkersWebDivision\\PLAN.md",
+    "tasks_total": 6,
+    "last_run": "2026-06-16T00:24:25Z",
+    "runner_version": "0.1.0",
+    "tasks_complete": 6,
+    "tasks_failed": 0,
+    "tasks_skipped": 0,
+    "last_task": "WEBGEN-06",
+    "last_commit": "15ed77b068b69d36336f0d4a4374b157d2fbf1c2"
   }
 }
