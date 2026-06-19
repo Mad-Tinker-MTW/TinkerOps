@@ -49,8 +49,8 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "port": 5175,
-      "last_worked": "2026-06-14",
-      "last_commit": "2026-06-11",
+      "last_worked": "2026-06-19",
+      "last_commit": "2026-06-19",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
       "tags": [
         "dashboard",
