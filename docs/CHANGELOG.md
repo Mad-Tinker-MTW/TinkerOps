@@ -2,6 +2,26 @@
 
 ---
 
+## [1.0.6] — 2026-06-09
+
+### Added
+
+- Wiring view: blocked-by dependency chains in build order (root blocker → leaf, flags when a blocker is complete) plus division grouping with an Unassigned group. Ported from PR #1 (f630bc7).
+- Copy-to-clipboard button on the launch command in the project detail panel.
+- Workers: `scripts/mtw_vcs.py`, a stdlib-only VCS-hygiene worker (scan / protect / snapshot / refresh) that keeps every project's git state honest and the registry's last_commit fields in sync. Never commits secrets, skips files >20 MB and `.obsidian`, never pushes.
+- Creative division and 7 creative-IP project records; TinkerBrain (RAG second-brain) and TinkerArchivist registered. Registry now tracks 53 projects with `_meta` in sync.
+
+### Fixed
+
+- Cross-platform build break: registry/pipeline imports referenced `../data/` while the directory is `Data/` (only resolved on case-insensitive Windows; tsc/CI failed on Linux). Imports now match the actual `Data/` case.
+- Division drift: the `Creative` division existed in the registry and schema but was missing from the TypeScript `Division` type and the Wiring view's division order, so the 7 Creative projects were silently dropped from the Wiring grouping. Both now include `Creative`; all 53 projects group.
+
+### Changed
+
+- Doc reconciliation: SPEC (v1.0.6, Triage/Wiring marked Complete, search documented, Workers section added), STATUS, ROADMAP (Stage 2/3 checked off), and Charter (Stage 2/3 Complete, Workers in scope) brought in line with the shipped code.
+
+---
+
 ## [1.0.5] — 2026-06-05
 
 ### Changed

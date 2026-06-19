@@ -40,7 +40,7 @@ import sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-REGISTRY = SCRIPT_DIR.parent / "data" / "registry.json"
+REGISTRY = SCRIPT_DIR.parent / "Data" / "registry.json"
 
 SECRET_RE = re.compile(
     r"(^\.env$)|(^\.env\.)|(^\.npmrc$)|(^\.pypirc$)|(secret)|(credential)|(password)|"

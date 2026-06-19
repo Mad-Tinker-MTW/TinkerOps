@@ -26,8 +26,8 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 ## Objectives
 
 1. Deliver a functional project dashboard reading from registry.json by Stage 1 completion (2026-06-03)
-2. Complete all views and components — triage and wiring views — by Stage 2 (TBD)
-3. Add search, launch shortcuts, and wiring view completion by Stage 3 (TBD)
+2. Complete all views and components — triage and wiring views — by Stage 2 (Complete 2026-06-09)
+3. Add search, launch shortcuts, and wiring view completion by Stage 3 (Complete 2026-06-09)
 4. Serve as the authoritative session governance tool for all MTW Claude Code sessions going forward
 
 ---
@@ -41,6 +41,7 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 - Doc coverage indicators and deployment badges
 - Five Claude Code slash command agents (audit, new, doc, deploy, session-close)
 - Pipeline state view: reads pipeline-state.json written by the TinkerPipeline runner and surfaces per-project pipeline phase and status
+- Workers: stdlib-only Python automation in scripts/ (mtw_vcs.py VCS-hygiene sweeps) that keep the registry's bookkeeping honest
 - Local-only operation, no backend, no auth, no external API calls
 - Dark-theme MTW aesthetic
 
@@ -59,8 +60,8 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 | Deliverable | Target Date |
 |---|---|
 | Stage 1: Core Infrastructure — registry, components, governance agents | Complete (2026-06-03) |
-| Stage 2: Views and Components — triage, wiring, detail panel | TBD |
-| Stage 3: Polish and Deployment — search, launch shortcuts | TBD |
+| Stage 2: Views and Components — triage, wiring, detail panel | Complete (2026-06-09) |
+| Stage 3: Polish and Deployment — search, launch shortcuts | Complete (2026-06-09) |
 | Pipeline state integration — reads pipeline-state.json, PipelinePill on cards and detail panel section | Complete (2026-06-05) |
 
 ---
@@ -110,7 +111,7 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 |---|---|
 | registry.json drift — sessions skip end-of-session checklist | Medium |
 | Schema violations from manual registry edits | Low |
-| Triage and wiring views incomplete before Stage 2 closes | Low |
+| Triage and wiring views incomplete before Stage 2 closes | Resolved (2026-06-09) |
 | WBS format deviations breaking TinkerScheduler parsing | Low |
 
 ---

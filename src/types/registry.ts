@@ -15,6 +15,7 @@ export type Division =
   | 'WebDivision'
   | 'Tools'
   | 'Docs'
+  | 'Creative'
   | null
 
 export type PackageManager = 'bun' | 'pnpm' | 'npm' | 'uv' | 'cargo' | 'scoop' | null
