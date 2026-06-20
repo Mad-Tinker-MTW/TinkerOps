@@ -11,6 +11,9 @@ __pycache__/
 # Registry backup snapshots (kept on disk, not versioned)
 Data/backups/
 
+# Dashboard UI state (per-server card order; kept on disk, not versioned)
+Data/ui-order.json
+
 # MCP configs and API keys (Brave key lives in ~/.lmstudio/mcp.json — never commit a copy)
 mcp.json
 *.mcp.json
