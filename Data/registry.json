@@ -4,11 +4,11 @@
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
     "total": 73,
-    "active": 17,
+    "active": 18,
     "dormant": 20,
     "pre_build": 6,
     "placeholder": 1,
-    "complete": 20,
+    "complete": 19,
     "archived": 1,
     "triage": 8
   },
@@ -178,7 +178,7 @@
     {
       "id": "TinkerOps",
       "name": "TinkerOps",
-      "status": "complete",
+      "status": "active",
       "division": null,
       "path": "Q:\\MTW\\TinkerOps",
       "alt_path": null,
@@ -211,6 +211,7 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "clean_cmd": "pwsh -File scripts/clean.ps1",
+      "release": "Ares 1.1.0",
       "port": 5175,
       "last_worked": "2026-06-20",
       "last_commit": "2026-06-20",
@@ -222,7 +223,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "COMPLETE — shipped as release Ares (v1.1.0), feature-complete 2026-06-20. TinkerOps is the MTW dev console: registry-driven cards with launch/clean/logs/health/ordering, Triage and Wiring views, in-app log viewer, Windows autostart. 86.5h across 8 WBS sessions. Full history in Docs/TinkerOps/logs/TinkerOps-LOG.md. Optional backlog parked in docs/ROADMAP.md; revisit only if a real need surfaces."
+      "notes": "Shipped as release Ares (v1.1.0), feature-complete 2026-06-20; kept in the Active list intentionally (operator will handle completed-project routing later). The done indicator is the release tag on the card, not a status change. Registry-driven cards with launch/clean/logs/health/ordering, Triage and Wiring views, in-app log viewer, Windows autostart. 86.5h across 8 WBS sessions. History in Docs/TinkerOps/logs/TinkerOps-LOG.md; optional backlog in docs/ROADMAP.md."
     },
     {
       "id": "SkillForge20",

@@ -4,7 +4,7 @@
 
 ## [1.1.0] "Ares" — 2026-06-20
 
-Feature-complete release. TinkerOps is shipped and marked complete in the registry; this is the Ares milestone.
+Feature-complete release. TinkerOps is shipped as the Ares milestone. It stays in the Active list intentionally; the release tag on the card (Ares 1.1.0) is the done indicator, not a status change.
 
 ### Added
 

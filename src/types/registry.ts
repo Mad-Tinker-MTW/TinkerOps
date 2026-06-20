@@ -67,6 +67,7 @@ export interface Project {
   launch: string | null
   launch_cmd: string | null
   clean_cmd?: string | null
+  release?: string | null
   port: number | null
   last_worked: string | null
   last_commit: string | null

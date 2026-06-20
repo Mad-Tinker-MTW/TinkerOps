@@ -1,7 +1,8 @@
 # TinkerOps — Status
 
 ## Current State
-complete — shipped as release **Ares** (v1.1.0), feature-complete 2026-06-20
+Active (shipped) — release **Ares** (v1.1.0), feature-complete 2026-06-20. Kept in the
+Active list intentionally; the release tag on the card is the done indicator, not a status change.
 
 ## Last Updated
 2026-06-20
@@ -29,5 +30,5 @@ briefing, dependency-clear alerts, quick-edit mode, registry diff view, doc-drif
 alerts) for a future revisit if the need arises.
 
 ## Next Session
-None planned. Ares (v1.1.0) is the finished release. Revisit only if a real need
-surfaces; otherwise this project is complete and the operator can move on.
+None planned. Ares (v1.1.0) is the finished release. The project stays in the Active
+list (operator will route completed projects later); revisit only if a real need surfaces.

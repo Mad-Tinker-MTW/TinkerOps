@@ -123,6 +123,7 @@ export function ProjectCard({
     docs,
     launch_cmd,
     clean_cmd,
+    release,
     urls,
     last_worked,
     summary,
@@ -255,6 +256,14 @@ export function ProjectCard({
         </div>
         <div className="flex flex-col items-end gap-1 shrink-0">
           <StatusBadge status={status} />
+          {release && (
+            <span
+              title={`Release ${release}`}
+              className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 whitespace-nowrap"
+            >
+              ⬡ {release}
+            </span>
+          )}
           {pipeline && <PipelinePill state={pipeline} />}
           {isUat && <UATToggle id={project.id} />}
         </div>

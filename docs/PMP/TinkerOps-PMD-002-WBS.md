@@ -214,6 +214,6 @@ Stage 4: 13h (complete) — server-mode features added post-v1, beyond the origi
 
 ## Release
 
-**Ares (v1.1.0)** — feature-complete 2026-06-20. TinkerOps is shipped and marked complete in the registry. All four stages done; sessions 1-8 sum to 86.5h. Optional enhancements remain parked in ROADMAP.md "Beyond Stage 4" for a future revisit, but nothing is outstanding.
+**Ares (v1.1.0)** — feature-complete 2026-06-20. TinkerOps is shipped as the Ares release. It stays in the Active list intentionally (the release tag on the card is the done indicator, not a registry status change). All four stages done; sessions 1-8 sum to 86.5h. Optional enhancements remain parked in ROADMAP.md "Beyond Stage 4" for a future revisit, but nothing is outstanding.
 
 Resolved 2026-06-20 (/audit-project, L-013): the 2026-06-14 skill-migration work block (5.0h) was recovered and inserted as Session 4 above. It had been displaced when the 2026-06-20 checkpoint reused the "Session 4" label for different work; the 06-20 blocks are now Sessions 5 and 6. Sessions 1-7 sum to 85h (31 + 19 + 4 + 5 + 8 + 5 + 13).
