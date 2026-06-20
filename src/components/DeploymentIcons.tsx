@@ -12,7 +12,10 @@ const ICONS: Record<DeploymentTarget, { icon: string; label: string; color: stri
   'github-pages':     { icon: '🐙', label: 'GitHub Pages',       color: 'text-white' },
   'android-termux':   { icon: '📱', label: 'Android/Termux',     color: 'text-green-400' },
   'nsis-installer':   { icon: '📦', label: 'NSIS Installer',     color: 'text-amber-400' },
+  'esp32-firmware':   { icon: '🔌', label: 'ESP32 Firmware',     color: 'text-cyan-400' },
 }
+
+const UNKNOWN = { icon: '❓', label: 'Unknown target', color: 'text-gray-500' }
 
 interface Props {
   targets: DeploymentTarget[]
@@ -23,7 +26,7 @@ export function DeploymentIcons({ targets }: Props) {
   return (
     <div className="flex items-center gap-1">
       {targets.map(t => {
-        const cfg = ICONS[t]
+        const cfg = ICONS[t] ?? UNKNOWN
         return (
           <span
             key={t}

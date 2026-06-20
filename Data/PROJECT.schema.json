@@ -100,7 +100,8 @@
           "raspberry-pi",
           "github-pages",
           "android-termux",
-          "nsis-installer"
+          "nsis-installer",
+          "esp32-firmware"
         ]
       }
     },

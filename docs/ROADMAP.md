@@ -45,7 +45,19 @@ Search, launch shortcuts, and completion.
 
 ---
 
-## Beyond Stage 3
+## Stage 4: Server-Mode Features
+Features for running TinkerOps as an always-on local server (2026-06-20).
+
+- [x] esp32-firmware deployment-target crash fix and unknown-target fallback
+- [x] Folder launcher (Launch TinkerOps.bat) and Windows logon autostart task
+- [x] In-app Logs feature: dated session viewer and curated master log per project
+- [x] Live URL and reachability status dots on cards (server-side health probe)
+- [x] Editable per-section card ordering, persisted to Data/ui-order.json
+- [x] Registry notes consolidated to a single newest-note with history in the master log
+
+---
+
+## Beyond Stage 4
 
 - [ ] PMP log surface — pull actual hours from WBS logs, show project time totals per role
 - [ ] Session briefing — pre-session summary generated from registry state

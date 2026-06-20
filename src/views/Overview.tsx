@@ -3,6 +3,8 @@ import type { Project, Registry, Status, PipelineStateMap } from '../types/regis
 import { StatCards } from '../components/StatCards'
 import { ProjectCard } from '../components/ProjectCard'
 import { useUATMoved } from '../hooks/useUATFlags'
+import { useOrder } from '../hooks/useOrder'
+import { useHealthMap } from '../hooks/useHealth'
 
 const STATUS_ORDER: Status[] = [
   'active',
@@ -13,15 +15,6 @@ const STATUS_ORDER: Status[] = [
   'triage',
   'archived',
 ]
-
-function sortProjects(projects: Project[]): Project[] {
-  return [...projects].sort((a, b) => {
-    const ai = STATUS_ORDER.indexOf(a.status)
-    const bi = STATUS_ORDER.indexOf(b.status)
-    if (ai !== bi) return ai - bi
-    return a.name.localeCompare(b.name)
-  })
-}
 
 interface Props {
   registry: Registry
@@ -34,6 +27,7 @@ export function Overview({ registry, pipelineState, search, onSelect }: Props) {
   const query = search.toLowerCase().trim()
   const [showUat, setShowUat] = useState(true)
   const { movedCount } = useUATMoved()
+  const { getRank, reorder } = useOrder()
 
   const uatCount = registry.projects.filter(p => p.uat === true).length
 
@@ -50,13 +44,26 @@ export function Overview({ registry, pipelineState, search, onSelect }: Props) {
     )
   })
 
-  const sorted = sortProjects(filtered)
+  // Live reachability for every project that exposes a local URL.
+  const localUrls = filtered.map(p => p.urls.local).filter((u): u is string => !!u)
+  const health = useHealthMap(localUrls)
 
-  // Group by status for section headers
+  // Manual order is only editable on the full, unfiltered board: positions must
+  // reflect the real section, not a search subset.
+  const editable = !query
+
+  // Group by status; within each section sort by manual rank, then name.
   const groups = STATUS_ORDER
     .map(status => ({
       status,
-      projects: sorted.filter(p => p.status === status),
+      projects: filtered
+        .filter(p => p.status === status)
+        .sort((a, b) => {
+          const ra = getRank(a.id)
+          const rb = getRank(b.id)
+          if (ra !== rb) return ra - rb
+          return a.name.localeCompare(b.name)
+        }),
     }))
     .filter(g => g.projects.length > 0)
 
@@ -106,12 +113,20 @@ export function Overview({ registry, pipelineState, search, onSelect }: Props) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-            {projects.map(p => (
+            {projects.map((p, i) => (
               <ProjectCard
                 key={p.id}
                 project={p}
                 pipeline={pipelineState[p.id]}
                 onClick={onSelect}
+                position={i + 1}
+                sectionSize={projects.length}
+                health={p.urls.local ? (health[p.urls.local] ?? 'unknown') : undefined}
+                onReorder={
+                  editable
+                    ? newPos => reorder(projects.map(x => x.id), p.id, newPos)
+                    : undefined
+                }
               />
             ))}
           </div>

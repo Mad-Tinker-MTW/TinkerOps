@@ -45,3 +45,23 @@ body {
   transition-duration: 100ms;
   transition-timing-function: ease;
 }
+
+/* In-app markdown log viewer (LogViewer.tsx) */
+.log-md h1, .log-md h2, .log-md h3 { color: #fff; font-weight: 600; line-height: 1.25; }
+.log-md h1 { font-size: 1.25rem; margin: 1.2rem 0 0.6rem; }
+.log-md h2 { font-size: 1.05rem; margin: 1.1rem 0 0.5rem; border-bottom: 1px solid #2c3140; padding-bottom: 0.3rem; }
+.log-md h3 { font-size: 0.95rem; margin: 0.9rem 0 0.4rem; color: #fbbf24; }
+.log-md p { margin: 0.5rem 0; }
+.log-md ul, .log-md ol { margin: 0.5rem 0; padding-left: 1.4rem; }
+.log-md li { margin: 0.2rem 0; }
+.log-md code { background: #13151a; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.85em; color: #fbbf24; }
+.log-md pre { background: #13151a; padding: 0.8rem; border-radius: 6px; overflow-x: auto; margin: 0.6rem 0; }
+.log-md pre code { background: none; padding: 0; color: #e5e7eb; }
+.log-md a { color: #60a5fa; text-decoration: none; }
+.log-md a:hover { text-decoration: underline; }
+.log-md strong { color: #f3f4f6; }
+.log-md hr { border: none; border-top: 1px solid #2c3140; margin: 1rem 0; }
+.log-md blockquote { border-left: 3px solid #3d4456; padding-left: 0.8rem; color: #9ca3af; margin: 0.6rem 0; }
+.log-md table { border-collapse: collapse; margin: 0.6rem 0; font-size: 0.85em; width: 100%; }
+.log-md th, .log-md td { border: 1px solid #2c3140; padding: 0.35rem 0.6rem; text-align: left; }
+.log-md th { background: #13151a; color: #f3f4f6; }

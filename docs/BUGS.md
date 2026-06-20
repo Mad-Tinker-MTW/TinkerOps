@@ -10,6 +10,10 @@ None currently tracked.
 
 ## Closed
 
+**DeploymentIcons crash on unknown deployment target**
+A project record listed `esp32-firmware` as a deployment target, which was absent from the `ICONS` map. `DeploymentIcons` dereferenced `cfg.label` on `undefined`, and with no error boundary the single bad value crashed the entire Overview.
+Fixed: added the `esp32-firmware` icon, the `DeploymentTarget` type member, the schema enum value, and an unknown-target fallback so any unmapped value renders a placeholder instead of throwing. 2026-06-20.
+
 **CLAUDE.md stale data path**
 CLAUDE.md referenced `src/data/registry.json` as the data source path. The actual path is `Data/registry.json`.
 Fixed: corrected path in CLAUDE.md. 2026-06-04.

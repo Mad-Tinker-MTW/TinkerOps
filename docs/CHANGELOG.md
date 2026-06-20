@@ -2,6 +2,28 @@
 
 ---
 
+## [1.1.0] — 2026-06-20
+
+### Added
+
+- Card launchers: a double-click `Launch TinkerOps.bat` folder launcher and a Windows logon autostart task ("TinkerOps Dev Console" + `scripts/autostart.ps1`) that starts the dev server hidden on port 5175 at boot, so the dashboard is available server-style on login.
+- In-app Logs feature: read-only dev endpoints `/api/logs` and `/api/logfile`, a `LogViewer` markdown panel, and a Logs section in every card's detail view. Reports are read from the shared `Docs/TinkerOps` report dir; each project can also have a curated master log at `Docs/TinkerOps/logs/<id>-LOG.md`.
+- Live URL and reachability status on card faces: the local URL with a green dot when the server answers, red when refused, via a server-side `POST /api/health` batch probe polled every 15s (`useHealth` hook).
+- Editable per-section card ordering on the Overview board: a click-to-edit position badge with insert-and-shift reordering, persisted server-side in `Data/ui-order.json` via `GET/POST /api/order` (`useOrder` hook).
+- `marked` dependency for in-app markdown rendering.
+
+### Fixed
+
+- Dashboard-wide crash: a project's `esp32-firmware` deployment target was missing from the app, so `DeploymentIcons` dereferenced `undefined` and took down the entire Overview. Added the icon, the `DeploymentTarget` type member, the schema enum value, and an unknown-target fallback so one bad value can never crash the board again.
+- Residual path-casing: the launch endpoint in `vite.config.ts` read `./data/registry.json` (lowercase) while the directory is `Data/`; normalized to `./Data/` to match the 1.0.6 case fix.
+
+### Changed
+
+- Registry `notes` for TinkerOps consolidated to a single current-state newest-note; full dated history moved to the master `Docs/TinkerOps/logs/TinkerOps-LOG.md`.
+- WBS reconciled (L-013): recovered the displaced 2026-06-14 skill-migration session as Session 4, renumbered the 06-20 blocks to 5/6, added Stage 4 (Server-Mode Features) and Session 7; running total 85h, estimate revised to 88-92h. Stage 2/3 task rows corrected to Complete.
+
+---
+
 ## [1.0.6] — 2026-06-09
 
 ### Added
@@ -94,7 +116,7 @@
 
 ### Infrastructure
 
-- bun install run — node_modules rebased from pnpm to bun
+- bun install run: node_modules rebased from pnpm to bun
 - git initialized and pushed to Mad-Tinker-MTW/TinkerOps
 
 ### Docs layout and format fixes

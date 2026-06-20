@@ -26,7 +26,7 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 ## Objectives
 
 1. Deliver a functional project dashboard reading from registry.json by Stage 1 completion (2026-06-03)
-2. Complete all views and components — triage and wiring views — by Stage 2 (Complete 2026-06-09)
+2. Complete all views and components (triage and wiring views) by Stage 2 (Complete 2026-06-09)
 3. Add search, launch shortcuts, and wiring view completion by Stage 3 (Complete 2026-06-09)
 4. Serve as the authoritative session governance tool for all MTW Claude Code sessions going forward
 

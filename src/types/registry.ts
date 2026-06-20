@@ -32,6 +32,7 @@ export type DeploymentTarget =
   | 'github-pages'
   | 'android-termux'
   | 'nsis-installer'
+  | 'esp32-firmware'
 
 export interface Docs {
   readme: boolean

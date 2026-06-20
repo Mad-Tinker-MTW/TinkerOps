@@ -3,16 +3,178 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 70,
-    "active": 10,
-    "dormant": 13,
-    "pre_build": 4,
-    "placeholder": 2,
-    "complete": 20,
+    "total": 73,
+    "active": 18,
+    "dormant": 20,
+    "pre_build": 6,
+    "placeholder": 1,
+    "complete": 19,
     "archived": 1,
-    "triage": 20
+    "triage": 8
   },
   "projects": [
+    {
+      "id": "MischiefNode",
+      "name": "MischiefNode",
+      "status": "dormant",
+      "division": null,
+      "path": "Q:\\MTW\\MischiefNode",
+      "alt_path": null,
+      "stack": [
+        "ESP32",
+        "Arduino",
+        "PlatformIO",
+        "TFT_eSPI",
+        "Python",
+        "FastAPI",
+        "Uvicorn",
+        "WebSockets",
+        "faster-whisper",
+        "Kokoro TTS",
+        "LM Studio"
+      ],
+      "package_manager": "uv",
+      "deployment": [
+        "local-only"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "ws://localhost:8765"
+      },
+      "github": null,
+      "docs": {
+        "readme": true,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": "cd Q:\\MTW\\MischiefNode\\pc-brain; uv run uvicorn app.main:app --host 0.0.0.0 --port 8765",
+      "port": 8765,
+      "last_worked": "2026-06-17",
+      "last_commit": null,
+      "summary": "Local-AI desk companion: an ESP32 NerdMiner acts as an animated face and status display while a local PC brain (FastAPI + WebSockets) handles speech recognition (Whisper), personality, TTS (Kokoro with Piper fallback), system and project status monitoring, and roleplay scenes via LM Studio. ESP32 is the face, the PC is the brain. Intended as a companion for TinkerWire, TinkerPad Alpha, NovaMentis and future MTW projects, running fully local on existing hardware.",
+      "tags": [
+        "esp32",
+        "local-ai",
+        "companion",
+        "voice",
+        "websocket",
+        "fastapi"
+      ],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Registered 2026-06-19 from a day-search reconcile (worked 2026-06-17, previously untracked in both registry and journals). Structured project: README + docs (BATTLEPLAN, ESP32_PROTOCOL, ESP32_FLASHING, PERSONALITY, ROADMAP, ROLEPLAY_SYSTEM, MEMORY), pc-brain/app (brain, character, esp32_bridge, main, memory, scenarios, system_status), esp32-face (MischiefFace.ino, face_renderer, sprites), dashboard/future-ui. Tooling rule: uv for pc-brain Python, bun for the dashboard. Not yet a git repo. MVP build order starts at ESP32 display bring-up. NEXT: confirm division, run /doc-project for the PMP suite, git init. PARKED per Franky 2026-06-19 as a return-later exploration (worked 2026-06-17 then set aside; status dormant, the docs are the breadcrumb to resume)."
+    },
+    {
+      "id": "HaleHound-CYD",
+      "name": "HaleHound (CYD)",
+      "status": "dormant",
+      "division": null,
+      "path": "Q:\\MTW\\HaleHound-CYD",
+      "alt_path": null,
+      "stack": [
+        "ESP32",
+        "CYD (Cheap Yellow Display)",
+        "Arduino",
+        "ESP32 Marauder (fork)",
+        "esptool"
+      ],
+      "package_manager": null,
+      "deployment": [
+        "esp32-firmware"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
+      "github": null,
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": false,
+        "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": "flash-halehound.ps1",
+      "launch_cmd": "powershell -File Q:\\MTW\\HaleHound-CYD\\flash-halehound.ps1 [-Port COMx]",
+      "port": null,
+      "last_worked": "2026-06-17",
+      "last_commit": null,
+      "summary": "Franky's own Marauder-type WiFi and Bluetooth security-testing firmware for the CYD (Cheap Yellow Display) ESP32, a custom rebranded ESP32 Marauder build (HaleHound v3.6.1). Ships as a prebuilt full bin plus flash-halehound.ps1, which auto-detects the CYD serial port (CH340/CP210x), erases, and flashes at 0x0 via esptool. For authorized security testing and learning.",
+      "tags": [
+        "esp32",
+        "cyd",
+        "marauder",
+        "wifi",
+        "security-tool",
+        "firmware"
+      ],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "Registered 2026-06-19 from a day-search reconcile (worked 2026-06-17, previously untracked). Derivative of the upstream ESP32 Marauder; the reference clones ESP32Marauder-CYD and ESP32Marauder-official live alongside at Q:\\MTW and are intentionally NOT registered (vendored upstream). Current artifact: bins/HaleHound-CYD-FULL_v3.6.1.bin + flash-halehound.ps1. The flasher depends on Q:\\MTW\\ESP32Marauder-official\\FlashFiles\\esptool.exe. Not a git repo. Sibling ESP32 exploration to MischiefNode (companion) and MTCC (ride-on). NEXT: decide whether to vendor the build pipeline or keep binary-only; consider a README + git init. PARKED per Franky 2026-06-19 as a return-later exploration (status dormant; the working v3.6.1 bin already flashes, resume when ready)."
+    },
+    {
+      "id": "TinkerBenchAI",
+      "name": "TinkerBench AI",
+      "status": "pre-build",
+      "division": null,
+      "path": "Q:\\MTW\\TinkerBenchAI",
+      "alt_path": null,
+      "stack": [
+        "Svelte 5",
+        "TypeScript",
+        "Tauri v2",
+        "Rust",
+        "Bun",
+        "SQLite"
+      ],
+      "package_manager": "bun",
+      "deployment": [
+        "local-desktop"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
+      "github": null,
+      "docs": {
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": true
+      },
+      "pmp_ids": "TBAI-PMD",
+      "launch": null,
+      "launch_cmd": "bun run tauri dev",
+      "port": 1420,
+      "last_worked": "2026-06-20",
+      "last_commit": null,
+      "summary": "Local-first desktop multi-model AI workbench built on Tauri v2 and Svelte 5. Four tabs (LM Studio, Claude, OpenAI/Codex, and a Compare board) let the user chat with each model family separately or send one prompt to two or three models and compare answers side by side, with local SQLite history and saved winners. Built for coding, planning, debugging, school work, and model comparison.",
+      "tags": [
+        "AI",
+        "desktop",
+        "multi-model",
+        "compare",
+        "workbench"
+      ],
+      "blocked_by": null,
+      "triage_needed": false,
+      "notes": "2026-06-20 CONCEPT REVISED (cockpit, not compare-app): TinkerBench is now scoped as a cockpit / control plane (See, Direct, Capture) on an always-on PC service plus thin clients (web/desktop/phone), device-agnostic, capturing every exchange into TinkerBrain. The compare board drops from centerpiece to a feature. See docs\\CONCEPT-COCKPIT.md (read before BATTLE_PLAN) and the ecosystem north star Q:\\MTW\\Docs\\MTW-ECOSYSTEM.md. STALE in this record pending /doc-project reconcile: summary, tags, launch_cmd (bun run tauri dev), and port 1420 still describe the old desktop-Tauri compare app; the service-first shape supersedes them. Coding deferred a few days per operator. Created 2026-06-19. Renamed from working title 'TinkerCode AI Alpha' to avoid collision with the existing TinkerCode editor project; lives at its own folder Q:\\MTW\\TinkerBenchAI and does not touch Q:\\MTW\\TinkerCode. Authoritative spec captured verbatim at docs\\GUIDELINE.md. Battle plan (architecture decision, v1 WBS, risk register, acceptance criteria) authored via a multi-agent ultraplan, output to docs\\BATTLE_PLAN.md. v1 scope: four tabs, three single-model chats plus a Compare board, provider/model pickers, send-to-selected, side-by-side responses, local chat and comparison history, copy and save-winner, settings for API keys and LM Studio URL. Stack: Svelte 5 + Bun + Tauri 2 + SQLite, Windows 11. Next: PMP Charter + WBS from the battle plan, then scaffold app/ per the folder structure. Decision style for this project: make best assumption, no dangling questions."
+    },
     {
       "id": "TinkerOps",
       "name": "TinkerOps",
@@ -49,7 +211,7 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "port": 5175,
-      "last_worked": "2026-06-19",
+      "last_worked": "2026-06-20",
       "last_commit": "2026-06-19",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
       "tags": [
@@ -59,7 +221,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "2026-06-14 workspace-infrastructure work block (5.0h logged in TinkerOps WBS Session 4): migrated all 10 .claude/commands to new SKILL.md folder format at Q:\\MTW\\.claude\\skills\\ (11 total skills: /standup new + 10 migrated verbatim with trigger-phrase frontmatter so they auto-fire on natural language not just slash). Built working-style memory framework: proves-then-disengages (theory-prover failure mode, Voynich canonical case), long-arc-dreams (decade-long visions with multi-path variations, STEM-for-at-risk-youth canonical case), net-fish-not-tunnel-fish (peripheral-vision research instruction). MEMORY.md index updated. Identified tools-not-guards reframe: many skill rules are scar tissue covering fixable tool problems (clobber-resistant report writer, em-dash linter hook, decision-drift detector); queued for follow-up. Old .claude/commands/*.md files left in place pending explicit deletion per Protected Operations. See Docs/TinkerOps/sessions/workspace-session-2026-06-14.md. v1.0.3. All docs at MTW standard. PMD files in docs\\PMP\\. Obsidian mirrors fully synced with source: frontmatter. 54h logged across three sessions. Next: Stage 2 completion pass (triage view 2.5, wiring view 2.6), then Stage 3 (search, launch shortcuts). 2026-06-08 deep-dive close: added a 'Creative' division to PROJECT.schema.json enum and registered 7 Creative-IP records (registry _meta 44->51); the dashboard now shows a Creative division. 2026-06-08 also: Wiring view landed (src/views/Wiring.tsx, commit f630bc7, build green) ported from PR #1 which was closed as superseded (its stale-base registry would have clobbered the 21 unpushed commits; local main pushed to origin first as backup). Stage 2 wiring view 2.6 now complete. See Docs/TinkerOps/sessions/deepdive-ingest-session-2026-06-08.md. 2026-06-11 remote-access infrastructure recovery work block (21.0h): restored PC remote access after an RDP lockout. Root cause was Windows Hello PIN/passkey not working over RDP, plus a stale cached MS-account password the PC had never validated locally. Fixed by refreshing the cached credential via LogonUser, then stood up OpenSSH Server + Tailscale passwordless key auth (laptop MTW.bat one-click into Q:\\MTW). Provisioned laptop travel environment (GitHub Desktop, LM Studio, new Brave key, 10 repo clones+branches). Cleaned up 9 redundant Travel branches. Staged TinkerBrain ChatGPT export (2GB) to V:\\TinkerBrain\\ingest\\incoming. SkillForge20 tunnel fix committed to main (2e2d7a0). See Docs/TinkerOps/sessions/TinkerOps-session-2026-06-11.md."
+      "notes": "2026-06-20: Shipped card launchers (Launch TinkerOps.bat + the \"TinkerOps Dev Console\" logon autostart task on port 5175), the in-app Logs feature (curated master log at Docs/TinkerOps/logs/TinkerOps-LOG.md plus a dated session-report viewer), live URL + green/red health dot on card faces (server-side /api/health probe), and editable per-section card ordering persisted to Data/ui-order.json. Fixed the esp32-firmware deployment-target crash (icon + DeploymentTarget type + schema enum + unknown-target fallback). Full work history now lives in the master LOG, not in this field. Open: L-013 phantom 2026-06-14 Session 4 5.0h not yet in the WBS (reconcile at /audit-project); two stale Obsidian mirror files need manual deletion (guard blocks tool deletes); pending /audit-project, /doc-project, and a folder cleanup pass."
     },
     {
       "id": "SkillForge20",
@@ -711,7 +873,7 @@
       "launch": null,
       "launch_cmd": "uv run tinkerwire",
       "port": null,
-      "last_worked": "2026-06-15",
+      "last_worked": "2026-06-16",
       "last_commit": "2026-06-15",
       "summary": "Desktop research and dispatch tool AND the engine behind The TinkerWire, a live old-school text-only newspaper at newswire.madtinkersworkshop.com (Cloudflare Pages, auto-deploys from main). Python + uv + customtkinter console; Astro static site under press/. Six providers (news/shop/finance/sports/edu/tutor), grounded composition (summary/post/article/export/publish) via local LM Studio (gemma-4-12b-qat, reasoning_effort=none, today's-date anchored), default-on grounded synthesis across multiple outlet bodies (Lever A) and multi-event roundup (Lever B; D014). Edition Builder: 2x candidate slate from multi-beat fetches (front/offwire/sports/finance) -> editor controls (edit slide-out: headline/source-mix/kill/notes; review trim-only post-publish editor with word-count enforcement; pin queue promoting news: finds into next edition; JSONL audit log at press/edits.log) -> approve grounds and publishes only approved picks -> auto commit+push for Cloudflare redeploy. Corroboration L1 (lean + amplified-claim flag), L2 (article-body fetch + JSON-LD extract + cache), L3 (shingle-Jaccard heuristic + local-LLM independent/echo/aggregator/uncertain classifier surfaced in front-matter + StoryList badge). LM Studio per-app profile layer (registry, per-request param merge, warn-on-drift; runtime model load is out of scope per D015). Finance page Market Wire topper + 20-item movers ticker (build-time Yahoo fetch, no API key). SMTP send + browser open. Secrets in OS keyring. Stages 1, 2, 3, 4, 6, 7 complete; Stage 5 (Hardening and Reach) in progress (only 1.5.1 done). v0.1.34.",
       "tags": [
@@ -1046,7 +1208,7 @@
       "launch": null,
       "launch_cmd": "uv run fastapi dev main.py",
       "port": 8000,
-      "last_worked": "2026-06-16",
+      "last_worked": "2026-06-17",
       "last_commit": "2026-06-16",
       "summary": "Professional web agency production system with two products: Tinker Branding (AI-powered brand identity) and TinkerWebGen (AI website generation). Planned for Divisions/WebDivision with modular plugin architecture.",
       "tags": [
@@ -2091,7 +2253,7 @@
       "launch": null,
       "launch_cmd": "python scripts/ask_vault.py (ask) | python scripts/ingest.py (ingest+route); run from Q:\\MTW\\TinkerBrain, data root via TINKERBRAIN_ROOT (default V:\\TinkerBrain)",
       "port": null,
-      "last_worked": "2026-06-14",
+      "last_worked": "2026-06-20",
       "last_commit": "2026-06-13",
       "summary": "The keystone knowledge/memory layer: a fully-local RAG second-brain. Ingests raw inputs (ChatGPT/Claude exports, notes, pdf, docx), cleans/chunks/tags and routes them into a PARA vault (Inbox/Projects/Ideas/Reference/Ephemera/Archive), vector-indexes with ChromaDB (sentence-transformers all-MiniLM-L6-v2), and answers grounded questions via a local LLM (LM Studio / Qwen3-8B by default, env-driven; Ollama still supported). This is TinkerPal's knowledge base and the intended memory for the Hex-Veridicae overseer. Code home Q:, data home V:.",
       "tags": [
@@ -2106,7 +2268,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "2026-06-14 PASS 1 DEEP-READ (5.0h logged in WBS): autonomous + interactive Pass 1 of the multi-session TinkerBrain deep-read. Seven-layer architectural framework developed for next-gen TinkerBrain matching Franky's actual cognition: substrate-aware tools (TinkerBrain + Obsidian + GitHub as federated layer, registry as cache), per-conversation topic decomposition, temporal co-occurrence Venn algorithm (Franky-derived in conversation; family-resembles frequent-itemset mining over temporal partitions + persistent homology at concept scale), trigger-phrase + proto-spec detection (chaos-dance is engineering, not musing), prove-and-disengage gap rescue. Vault probes: confirmed Voynich research recoverable (78 files, origin at vault/Reference/america-before-us-part-032 2025-02-24, AI-class anchor at vault/Projects/ai-class-motivation-part-001 2025-07-04 - exactly as Franky's memory said, found by anchor co-occurrence not keyword 'voynich'). Confirmed current MTW project family (TinkerCourier/Mail/Vault/Wire/MessageBurst) invisible to TinkerBrain because conversation-capture spec at docs/CONVERSATION-CAPTURE-SPEC.md not yet built; until built, all MTW Code work since Apr 2025 is missing from the brain. Router-skew bug (1.2.5) surfaces in production: military-leadership-to-stem-education conversation routed to both Reference and Projects buckets. Six-pass deep-read ordering decided: Pass 2 Voynich methodology + entity-structure; Pass 3 abandoned-projects inventory; Pass 4 TinkerBrain redesign plan; Pass 5 conversation-capture build; Pass 6 substrate-aware tool redesign. Pass 1 artifact at Q:\\MTW\\Docs\\TinkerOps\\sessions\\tinkerbrain-deep-read-pass1-2026-06-14.md; workspace checkpoint at Q:\\MTW\\Docs\\TinkerOps\\sessions\\workspace-session-2026-06-14.md. 2026-06-14 RECALL VALIDATED IN USE (not dev work, last_worked unchanged): during a TinkerWire session the ingested vault was searched and surfaced the exact pre-newspaper origin thread (vault/Projects/working-on-tinkerwire, from the ChatGPT export) on demand, which was used to backfill TinkerWire's VISION Origin. Confirms the keystone purpose -- recall across the archive -- works in production: the ChatGPT export is ingested, routed (Projects/Ideas/Reference), and semantically findable. Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md. 2026-06-08 INGEST: full clean-markdown corpus ingested via new scripts/tb_ingest_batch.py (one-shot batch ingester that extends ingest.py without touching the blocking watcher) - 1,574 files into 13,334 chunks; vault now 13,561 chunks (Projects 9900 / Reference 2283 / Ideas 770 / Inbox 588 / Ephemera 19). FIXED vector_index.rebuild_index: it added all docs in one collection.add and hit Chroma's 5461 max-batch on 13.5k docs; now batches at 5000. ask_vault verified live on qwen3-8b (answered a space-western query with sources). Routing skews ~73% to Projects (cosmetic; the planned embed+cluster curation is the real fix). NEXT: PDFs/Drive docs need the file-ingest path and the 2.2GB mbox needs mail_export2md before ingest; add a DECISIONS file (6 architecture decisions still unwritten); run /plan-project + /doc-project (no WBS/docs yet, hence no Obsidian Projects mirror). Summary still says Ollama/llama3 but runtime is now LM Studio qwen3-8b - fix at /doc-project. 2026-06-11 CHATGPT INGEST: ingested the long-awaited ChatGPT export. Transferred 2.3GB over SSH to V:\\TinkerBrain\\ingest\\incoming; it nested two exports (apr = standard Export-data, OpenAI-export = full GDPR dump). Deduped by conversation_id: apr (742) is a perfect subset of the GDPR dump (743), same archive bar 1 conversation, used apr. Sensitive data stripped (financial/contact/payment CSVs from the GDPR dump were never extracted). Converted 742 conversations to per-conversation markdown via Tools/chat-export2md, then tb_ingest_batch: 742 new files, 0 dup, 0 fail, 4,169 chunks; vault reindexed to 18,922 documents. Verified searchable (TinkerVault/TinkerWire queries return relevant chunks). Mention scan: TinkerVault 766, TinkerBrain 715, TinkerWire 713, SkaldForge 434, AetherScope 234, SkillForge 222, TinkerEnv 208. Staged dirs under V:\\TinkerBrain\\ingest\\incoming (apr-conversations, openai-conversations, chatgpt-md, openai-sanitized); backup chatgpt-export.zip left intact (still holds the GDPR sensitive CSVs; the data also lives in the OpenAI account). NEXT: embed+cluster curation layer to collapse redundancy across this larger corpus. 2026-06-13 CLEANUP: discovered the original apr export bundle (1.39GB raw, 8-shard conversations-*.json) had been misfiled at Q:\\MTW\\tinkerbrain\\ingest\\incoming\\apr (never ingested from there - watch mode never picked it up). Moved to Tools/chat-export2md/Input/apr, converted to 742 markdown (uv had a Windows trust issue on its managed Python, fell back to .venv python directly). Dedup confirmed 100% overlap with the 2026-06-11 ingest (chatgpt-md staging produced identical filenames + content-hashes - apr was the source ingested yesterday under a different folder name). Deleted 7.35GB redundant staging across both drives: Q: Tools/chat-export2md/Input+Output/apr, V: chatgpt-export.zip, unpacked/, openai-conversations/, openai-sanitized/, apr-conversations/, chatgpt-md/. Survivors in V:/TinkerBrain/ingest/incoming: _md_test/, _ingest_run.log. Vault untouched, 18,921 chunks confirmed intact (Projects 13744, Reference 3285, Ideas 973, Inbox 892, Ephemera 27). HF_HUB_OFFLINE=1 silences the sentence-transformers Hub-probe noise during reindex."
+      "notes": "2026-06-19 CAPTURE PIPELINE FIX (infra, not feature work): found the daily conversation-capture had been silently broken for ~2 days. Both scheduled tasks (TinkerBrain-Sweep, TinkerBrain-Reindex on host TINKERSWORKSHOP, run as MadTi, Interactive only) launched bare pwsh.exe, which on this machine is ONLY the Microsoft Store app-execution alias (no C:\\Program Files\\PowerShell\\7 install) and does not resolve under Task Scheduler, so every scheduled run died at launch with 0x80070002 while manual interactive runs worked. Repointed both tasks to C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe (5.1, always resolves under the scheduler; scripts are 5.1-compatible). Sweep verified 0x0. Reindex then surfaced a second bug: its inline -Command used pwsh-style sys.path.insert quote-escaping that 5.1 strips (NameError: name scripts is not defined); fixed by adding scripts\\reindex.ps1 (quoting in a file, calling rebuild_index) and pointing the task at -File reindex.ps1, verified it launches into the rebuild. Ran a manual catch-up sweep via 5.1: 13 ingested, 69 dedup-skipped, 0 failed, the June 17-20 gap is backfilled. LATENT BUG flagged: sweep_and_ingest.ps1 -Reindex branch runs uv run python scripts\\vector_index.py but that file has no __main__, so it is a silent no-op; real reindex only happens by calling rebuild_index(). Capture scope (docs/CAPTURE-GAPS.md): sweep covers Code .jsonl only; Cowork and Chat are cloud-only and need the manual chat-export2md import. 2026-06-14 PASS 1 DEEP-READ (5.0h logged in WBS): autonomous + interactive Pass 1 of the multi-session TinkerBrain deep-read. Seven-layer architectural framework developed for next-gen TinkerBrain matching Franky's actual cognition: substrate-aware tools (TinkerBrain + Obsidian + GitHub as federated layer, registry as cache), per-conversation topic decomposition, temporal co-occurrence Venn algorithm (Franky-derived in conversation; family-resembles frequent-itemset mining over temporal partitions + persistent homology at concept scale), trigger-phrase + proto-spec detection (chaos-dance is engineering, not musing), prove-and-disengage gap rescue. Vault probes: confirmed Voynich research recoverable (78 files, origin at vault/Reference/america-before-us-part-032 2025-02-24, AI-class anchor at vault/Projects/ai-class-motivation-part-001 2025-07-04 - exactly as Franky's memory said, found by anchor co-occurrence not keyword 'voynich'). Confirmed current MTW project family (TinkerCourier/Mail/Vault/Wire/MessageBurst) invisible to TinkerBrain because conversation-capture spec at docs/CONVERSATION-CAPTURE-SPEC.md not yet built; until built, all MTW Code work since Apr 2025 is missing from the brain. Router-skew bug (1.2.5) surfaces in production: military-leadership-to-stem-education conversation routed to both Reference and Projects buckets. Six-pass deep-read ordering decided: Pass 2 Voynich methodology + entity-structure; Pass 3 abandoned-projects inventory; Pass 4 TinkerBrain redesign plan; Pass 5 conversation-capture build; Pass 6 substrate-aware tool redesign. Pass 1 artifact at Q:\\MTW\\Docs\\TinkerOps\\sessions\\tinkerbrain-deep-read-pass1-2026-06-14.md; workspace checkpoint at Q:\\MTW\\Docs\\TinkerOps\\sessions\\workspace-session-2026-06-14.md. 2026-06-14 RECALL VALIDATED IN USE (not dev work, last_worked unchanged): during a TinkerWire session the ingested vault was searched and surfaced the exact pre-newspaper origin thread (vault/Projects/working-on-tinkerwire, from the ChatGPT export) on demand, which was used to backfill TinkerWire's VISION Origin. Confirms the keystone purpose -- recall across the archive -- works in production: the ChatGPT export is ingested, routed (Projects/Ideas/Reference), and semantically findable. Brought into Q:\\MTW 2026-06-06. The keystone of the AI layer: TinkerPal's named knowledge base and the memory substrate Hex-Veridicae would use; ingesting chat logs and idea dumps is expected to surface dozens of latent projects (could feed the registry toward 100+). Full pipeline operational: ingest -> clean -> chunk -> tag -> route -> Chroma vector index -> semantic search -> ask (Ollama llama3, localhost:11434). Established Q: as the single code home and externalized the hardcoded V:\\TinkerBrain ROOT into scripts/tb_config.py (override via TINKERBRAIN_ROOT env, default V:); added pyproject.toml; .gitignore keeps the personal vault/db/ingest/logs out of git. git-init 2026-06-06 (commit 7e0f4c6, code only). Open: retire the now-duplicate code at V:\\TinkerBrain\\scripts once a run from Q: is confirmed; mid-dedup work (three ingest.py variants stable/debug/backup); limitations per docs (no dedup yet, no noise scoring, no conversational memory, no UI); uses Ollama where the rest of MTW uses LM Studio/Qwen3 (runtime-consolidation question); 'Web Site/' is a separate landing-page git repo (gitignored). Design lives in docs/TinkerBrain - Master Prompt.md and docs/build_status.md. 2026-06-08 INGEST: full clean-markdown corpus ingested via new scripts/tb_ingest_batch.py (one-shot batch ingester that extends ingest.py without touching the blocking watcher) - 1,574 files into 13,334 chunks; vault now 13,561 chunks (Projects 9900 / Reference 2283 / Ideas 770 / Inbox 588 / Ephemera 19). FIXED vector_index.rebuild_index: it added all docs in one collection.add and hit Chroma's 5461 max-batch on 13.5k docs; now batches at 5000. ask_vault verified live on qwen3-8b (answered a space-western query with sources). Routing skews ~73% to Projects (cosmetic; the planned embed+cluster curation is the real fix). NEXT: PDFs/Drive docs need the file-ingest path and the 2.2GB mbox needs mail_export2md before ingest; add a DECISIONS file (6 architecture decisions still unwritten); run /plan-project + /doc-project (no WBS/docs yet, hence no Obsidian Projects mirror). Summary still says Ollama/llama3 but runtime is now LM Studio qwen3-8b - fix at /doc-project. 2026-06-11 CHATGPT INGEST: ingested the long-awaited ChatGPT export. Transferred 2.3GB over SSH to V:\\TinkerBrain\\ingest\\incoming; it nested two exports (apr = standard Export-data, OpenAI-export = full GDPR dump). Deduped by conversation_id: apr (742) is a perfect subset of the GDPR dump (743), same archive bar 1 conversation, used apr. Sensitive data stripped (financial/contact/payment CSVs from the GDPR dump were never extracted). Converted 742 conversations to per-conversation markdown via Tools/chat-export2md, then tb_ingest_batch: 742 new files, 0 dup, 0 fail, 4,169 chunks; vault reindexed to 18,922 documents. Verified searchable (TinkerVault/TinkerWire queries return relevant chunks). Mention scan: TinkerVault 766, TinkerBrain 715, TinkerWire 713, SkaldForge 434, AetherScope 234, SkillForge 222, TinkerEnv 208. Staged dirs under V:\\TinkerBrain\\ingest\\incoming (apr-conversations, openai-conversations, chatgpt-md, openai-sanitized); backup chatgpt-export.zip left intact (still holds the GDPR sensitive CSVs; the data also lives in the OpenAI account). NEXT: embed+cluster curation layer to collapse redundancy across this larger corpus. 2026-06-13 CLEANUP: discovered the original apr export bundle (1.39GB raw, 8-shard conversations-*.json) had been misfiled at Q:\\MTW\\tinkerbrain\\ingest\\incoming\\apr (never ingested from there - watch mode never picked it up). Moved to Tools/chat-export2md/Input/apr, converted to 742 markdown (uv had a Windows trust issue on its managed Python, fell back to .venv python directly). Dedup confirmed 100% overlap with the 2026-06-11 ingest (chatgpt-md staging produced identical filenames + content-hashes - apr was the source ingested yesterday under a different folder name). Deleted 7.35GB redundant staging across both drives: Q: Tools/chat-export2md/Input+Output/apr, V: chatgpt-export.zip, unpacked/, openai-conversations/, openai-sanitized/, apr-conversations/, chatgpt-md/. Survivors in V:/TinkerBrain/ingest/incoming: _md_test/, _ingest_run.log. Vault untouched, 18,921 chunks confirmed intact (Projects 13744, Reference 3285, Ideas 973, Inbox 892, Ephemera 27). HF_HUB_OFFLINE=1 silences the sentence-transformers Hub-probe noise during reindex."
     },
     {
       "id": "WoodWright",

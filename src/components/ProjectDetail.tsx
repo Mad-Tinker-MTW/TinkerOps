@@ -5,6 +5,78 @@ import { DocCoverage } from './DocCoverage'
 import { DeploymentIcons } from './DeploymentIcons'
 import { StackPill } from './StackPill'
 import { PipelinePill } from './PipelinePill'
+import { LogViewer } from './LogViewer'
+
+interface LogEntry {
+  name: string
+  rel: string
+  date?: string
+  size?: number
+}
+
+// Logs section: pulls the project's dated session reports + master LOG.md from
+// the dev-server /api/logs endpoint and opens any of them in the in-app viewer.
+function LogsSection({ projectId }: { projectId: string }) {
+  const [master, setMaster] = useState<LogEntry | null>(null)
+  const [entries, setEntries] = useState<LogEntry[]>([])
+  const [state, setState] = useState<'loading' | 'ok' | 'err'>('loading')
+  const [open, setOpen] = useState<LogEntry | null>(null)
+
+  useEffect(() => {
+    let alive = true
+    setState('loading')
+    fetch(`/api/logs?id=${encodeURIComponent(projectId)}`)
+      .then(r => r.json())
+      .then(j => {
+        if (!alive) return
+        if (!j.ok) return setState('err')
+        setMaster(j.master ?? null)
+        setEntries(j.entries ?? [])
+        setState('ok')
+      })
+      .catch(() => alive && setState('err'))
+    return () => { alive = false }
+  }, [projectId])
+
+  const hasAny = master || entries.length > 0
+
+  return (
+    <div>
+      <span className="text-[10px] font-mono text-gray-500 tracking-widest uppercase block mb-2">
+        Logs {state === 'ok' && entries.length > 0 && <span className="text-gray-600">({entries.length})</span>}
+      </span>
+
+      {state === 'loading' && <p className="text-xs font-mono text-gray-600">loading…</p>}
+      {state === 'err' && <p className="text-xs font-mono text-gray-600">logs unavailable (dev server only).</p>}
+      {state === 'ok' && !hasAny && <p className="text-xs font-mono text-gray-600">no logs yet.</p>}
+
+      {state === 'ok' && hasAny && (
+        <div className="flex flex-col gap-1">
+          {master && (
+            <button
+              onClick={() => setOpen(master)}
+              className="text-left text-xs font-mono px-2.5 py-1.5 rounded border border-amber-500/30 bg-amber-500/5 text-amber-300 hover:border-amber-500/60 transition-colors"
+            >
+              📘 {master.name} <span className="text-amber-500/50">· master log</span>
+            </button>
+          )}
+          {entries.map(e => (
+            <button
+              key={e.rel}
+              onClick={() => setOpen(e)}
+              className="text-left text-xs font-mono px-2.5 py-1.5 rounded border border-gray-700/50 text-gray-400 hover:border-gray-600 hover:text-gray-200 transition-colors flex items-center justify-between gap-2"
+            >
+              <span className="truncate">📄 {e.name}</span>
+              {e.date && <span className="text-gray-600 shrink-0">{e.date}</span>}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {open && <LogViewer rel={open.rel} title={open.name} onClose={() => setOpen(null)} />}
+    </div>
+  )
+}
 
 interface Props {
   project: Project
@@ -324,6 +396,9 @@ export function ProjectDetail({ project, registry, pipeline, onClose }: Props) {
               <p className="text-xs text-amber-200/70 leading-relaxed font-mono">{project.notes}</p>
             </div>
           )}
+
+          {/* Logs */}
+          <LogsSection projectId={project.id} />
 
         </div>
       </div>
