@@ -68,6 +68,7 @@
 | 4.6 | Registry notes consolidation to a single newest-note + master LOG history | Complete |
 | 4.7 | Per-card clean button: /api/clean endpoint + clean_cmd registry field | Complete |
 | 4.8 | On-card release tag (release field) + Ares stamp + mythology codename convention | Complete |
+| 4.9 | Card local + live status rows + start-server button; health-probe 5xx-as-down fix | Complete |
 
 ---
 
@@ -222,7 +223,19 @@ Stage 4: 13h (complete) — server-mode features added post-v1, beyond the origi
 
 ---
 
-**Running Total: 88h of 88-92h estimated**
+### Session 10 — 2026-06-20 (local + live status, probe fix)
+
+| ID | Task | Role | Hours |
+|---|---|---|---|
+| 4.9 | Card local + live status rows + start-server button (ProjectCard, Overview, useHealth dual-URL) | Lead Developer | 1.0h |
+| 4.9 | Health-probe 5xx-as-down fix (Cloudflare 502 = tunnel origin down) | Lead Developer | 0.5h |
+| — | Reboot durability verification via the dashboard status dots | QA Engineer | 0.5h |
+
+**Session 10 Total: 2h**
+
+---
+
+**Running Total: 90h of 88-92h estimated**
 
 ## Release
 
