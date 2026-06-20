@@ -1,14 +1,16 @@
 # TinkerOps — Specification
 **MTW Workshop Dev Console**
-Version: 1.0.6
+Version: 1.1.0
 
 ---
 
 ## What It Is
 
-A local React dashboard that reads registry.json as its single source of truth and gives the workshop operator a unified view of every MTW project. No backend. No auth. No external calls. Loads in seconds, reflects reality on reload, and never gets in the way.
+A local React dashboard that reads registry.json as its single source of truth and gives the workshop operator a unified view of every MTW project. No auth, no external calls. Loads in seconds, reflects reality on reload, and never gets in the way.
 
-Paired with five Claude Code slash command agents that govern project auditing, documentation, deployment, and session logging across the entire workshop.
+The build artifact has no backend. The one deliberate exception is a set of localhost-only middleware endpoints that exist only under `bun run dev` (Vite `configureServer`): project launch, log reading, health probing, and card-order persistence. They never run in a production build and never bind to a non-localhost host. See Dev-Server Endpoints below.
+
+Paired with the Claude Code slash-command agents (now SKILL.md skills at `Q:\MTW\.claude\skills\`) that govern project auditing, documentation, deployment, and checkpoint logging across the entire workshop.
 
 ---
 
@@ -22,7 +24,9 @@ Paired with five Claude Code slash command agents that govern project auditing, 
 | Build tool | Vite |
 | Data source | Data/registry.json (local JSON, read at runtime) |
 | Pipeline data | Data/pipeline-state.json (written by the TinkerPipeline runner, read at runtime) |
-| Backend | None |
+| UI state | Data/ui-order.json (manual card order, written by the dev-server /api/order endpoint) |
+| Markdown | marked (in-app log rendering) |
+| Backend | None in build; localhost dev-server middleware under bun run dev only |
 | Auth | None |
 | Port | 5175 |
 
@@ -91,29 +95,51 @@ Per-project entry:
 | Triage | Filtered view of triage_needed projects with missing-field flags | Complete |
 | Wiring | Division grouping (incl. Creative) and blocked-by dependency chains in build order | Complete |
 | StatCards | Active / dormant / pre-build / triage counts | Complete |
-| ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill | Complete |
+| ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill, live URL + health dot, editable order badge | Complete |
 | StatusBadge | Color-coded status indicator | Complete |
 | PipelinePill | Pipeline phase and status with task counts, color-coded, pulses while running | Complete |
 | DocCoverage | Visual doc coverage flags (readme, claude_md, status_md, pmp) | Complete |
 | StackPill | Technology tag pill | Complete |
-| DeploymentIcons | Deployment target icon set | Complete |
-| ProjectDetail | Full registry record panel: pipeline state, blocked-by/dependents, copy-able launch command | Complete |
+| DeploymentIcons | Deployment target icon set with unknown-target fallback | Complete |
+| ProjectDetail | Full registry record panel: pipeline state, blocked-by/dependents, copy-able launch command, Logs section | Complete |
+| LogViewer | In-app markdown viewer for a project's dated session reports and master log | Complete |
 
 ---
 
+## Dev-Server Endpoints
+
+Localhost-only middleware registered in `vite.config.ts` via Vite `configureServer`. These run only under `bun run dev`, never in a production build, and the dev server must stay bound to localhost while they are enabled (the launch endpoint spawns local processes). Each is the deliberate, scoped exception to the no-backend rule.
+
+| Endpoint | Method | Purpose |
+|---|---|---|
+| /api/launch | POST { id } | Spawn the project's own launch_cmd at its path in a new console. Never runs a client-supplied command string; looks the command up in registry.json by id. |
+| /api/logs | GET ?id | List a project's dated session reports (from Docs/TinkerOps/sessions) and its master log (Docs/TinkerOps/logs/<id>-LOG.md). |
+| /api/logfile | GET ?rel | Return the raw markdown of one log file. Path is sanitized to the Docs/TinkerOps base dir and limited to .md (no traversal). |
+| /api/health | POST { urls[] } | Server-side reachability probe of the given URLs (dodges browser CORS). A server that answers at all is up; a refused connection is down. |
+| /api/order | GET / POST | Read and persist the manual per-section card order to Data/ui-order.json. |
+
+## Hooks
+
+| Hook | Purpose |
+|---|---|
+| useHealth | Polls /api/health every 15s for a set of local URLs; returns an up/down/unknown map for the card status dots. |
+| useOrder | Loads and persists manual card order via /api/order; exposes per-project rank and an insert-and-shift reorder. |
+| useUATFlags | Per-browser localStorage store for the UAT coursework toggle. |
+
 ## Claude Code Agents
 
-Five slash command agents at `Q:\MTW\.claude\commands\`:
+The governance agents now live as SKILL.md skills at `Q:\MTW\.claude\skills\` (migrated 2026-06-14 from the old `.claude\commands\*.md` format; trigger-phrase frontmatter lets them fire on natural language, not just slash invocation):
 
 | Agent | Command | Purpose |
 |---|---|---|
+| Standup | /standup | Morning re-entry briefing: read journal + registry, return a prioritized agenda |
 | Audit | /audit-project | Scan project, assess doc coverage, flag anomalies, update registry |
 | New | /new-project | Scaffold a new MTW project from scratch |
 | Doc | /doc-project | Generate or catch up documentation including full PMP suite |
 | Deploy | /deploy-project | Handle deployment for any MTW deployment target |
-| Close | /session-close | Log hours, write journal entry, update registry, confirm commit |
+| Checkpoint | /checkpoint | Log hours, write journal entry, update registry, confirm commit (formerly /session-close) |
 
-The same commands path also holds TinkerPipeline agents (/audit-diff, /plan-guard, and the planned /plan-project). Those belong to the TinkerPipeline project, not TinkerOps governance, but share the global Q:\MTW\.claude\commands\ location.
+The same skills path also holds TinkerPipeline agents (/audit-diff, /plan-guard, /plan-project, /integrate, /smoke-test). Those belong to the TinkerPipeline project, not TinkerOps governance, but share the global skills location.
 
 ---
 
@@ -135,6 +161,8 @@ No environment variables required. Data/registry.json is fetched at runtime by V
 
 ## Known Limitations
 
-- No writes from the dashboard — registry updates happen in Claude Code sessions only
-- Desktop-only — no mobile or responsive layout planned
-- No real-time updates — changes appear on page reload
+- No registry writes from the dashboard: registry updates happen in Claude Code sessions only. The dev-server endpoints write only Data/ui-order.json (card order), never the registry.
+- Health dots cover local URLs only; production and staging URLs are not probed.
+- Desktop-only, no mobile or responsive layout planned.
+- No real-time updates; changes appear on page reload.
+- Dev-server endpoints are unavailable in a production build, so logs, health dots, ordering, and launch work only under bun run dev.

@@ -31,13 +31,14 @@ The schema is defined by PROJECT.schema.json. TypeScript types enforce it at bui
 
 ## The Governance Layer
 
-TinkerOps grew beyond a dashboard. Five slash command agents form a governance system that runs inside every Claude Code session:
+TinkerOps grew beyond a dashboard. Six governance skills form a system that runs inside every Claude Code session:
 
-- /audit-project — scans a project, assesses doc coverage, flags anomalies, updates registry
-- /new-project — scaffolds a new MTW project from scratch to MTW standard
-- /doc-project — generates or catches up documentation including the full PMP suite
-- /deploy-project — handles deployment for any MTW deployment target
-- /session-close — end-of-session logging: hours, journal, registry sync, commit
+- /standup, morning re-entry briefing: reads the journal and registry, returns a prioritized agenda
+- /audit-project, scans a project, assesses doc coverage, flags anomalies, updates registry
+- /new-project, scaffolds a new MTW project from scratch to MTW standard
+- /doc-project, generates or catches up documentation including the full PMP suite
+- /deploy-project, handles deployment for any MTW deployment target
+- /checkpoint, save-progress logging: hours, journal, registry sync, commit (formerly /session-close)
 
 These agents are not just tools. They are the enforcement mechanism that keeps the workshop organized across hundreds of sessions.
 

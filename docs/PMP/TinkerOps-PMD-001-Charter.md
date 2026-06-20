@@ -39,7 +39,7 @@ TinkerOps addresses this by centralizing the project record into a governed, ver
 - React + Vite + TypeScript + Tailwind dashboard reading registry.json locally
 - Project cards, overview stats, triage view, wiring view, and project detail panel
 - Doc coverage indicators and deployment badges
-- Five Claude Code slash command agents (audit, new, doc, deploy, session-close)
+- Six Claude Code governance agents (standup, audit, new, doc, deploy, checkpoint)
 - Pipeline state view: reads pipeline-state.json written by the TinkerPipeline runner and surfaces per-project pipeline phase and status
 - Workers: stdlib-only Python automation in scripts/ (mtw_vcs.py VCS-hygiene sweeps) that keep the registry's bookkeeping honest
 - Local-only operation, no backend, no auth, no external API calls

@@ -13,7 +13,7 @@ Initial build. Registry schema, data population, core components, governance age
 - [x] App shell and navigation structure
 - [x] StatCards — active, dormant, pre-build, triage counts
 - [x] ProjectCard — status badge, stack pills, doc coverage, deployment icons
-- [x] Agent design and documentation (audit, new, doc, deploy, session-close)
+- [x] Agent design and documentation (standup, audit, new, doc, deploy, checkpoint)
 - [x] Global CLAUDE.md and TinkerOps CLAUDE.md
 - [x] start.ps1 launcher
 - [x] bun rebase (node_modules clean install)
