@@ -257,12 +257,12 @@
         "readme": true,
         "claude_md": true,
         "status_md": true,
-        "pmp": false,
+        "pmp": true,
         "handoff_md": true,
         "design_md": false,
-        "obsidian_note": false
+        "obsidian_note": true
       },
-      "pmp_ids": null,
+      "pmp_ids": "SF20-PMD",
       "launch": null,
       "launch_cmd": "bun run dev",
       "clean_cmd": "pwsh -File scripts/clean.ps1",
