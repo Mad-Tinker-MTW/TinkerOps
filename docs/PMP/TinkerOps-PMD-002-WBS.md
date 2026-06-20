@@ -67,6 +67,7 @@
 | 4.5 | Editable per-section card ordering (/api/order, Data/ui-order.json) | Complete |
 | 4.6 | Registry notes consolidation to a single newest-note + master LOG history | Complete |
 | 4.7 | Per-card clean button: /api/clean endpoint + clean_cmd registry field | Complete |
+| 4.8 | On-card release tag (release field) + Ares stamp + mythology codename convention | Complete |
 
 ---
 
@@ -210,7 +211,18 @@ Stage 4: 13h (complete) — server-mode features added post-v1, beyond the origi
 
 ---
 
-**Running Total: 86.5h of 88-92h estimated**
+### Session 9 — 2026-06-20 (release indicator + Ares stamp)
+
+| ID | Task | Role | Hours |
+|---|---|---|---|
+| 4.8 | On-card release tag: release registry field + schema + type + card UI | Lead Developer | 1.0h |
+| 4.8 | Ares release stamping across STATUS, CHANGELOG, WBS; mythology codename convention | Technical Writer | 0.5h |
+
+**Session 9 Total: 1.5h**
+
+---
+
+**Running Total: 88h of 88-92h estimated**
 
 ## Release
 

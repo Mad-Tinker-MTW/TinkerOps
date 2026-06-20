@@ -162,8 +162,8 @@
 
     "release": {
       "type": ["string", "null"],
-      "description": "Release codename and version shown on the card as the shipped/done indicator, e.g. a finished project kept in the active list. Display only.",
-      "examples": ["Ares 1.1.0", "v2.0.0 Hephaestus"]
+      "description": "Release codename and version shown on the card as the shipped/done indicator (a finished project kept in the active list). Format: '<Codename> v<X.Y.Z>'. Codenames follow a mythology theme (TinkerOps started with Ares). Display only.",
+      "examples": ["Ares v1.1.0", "Hephaestus v1.2.0"]
     },
 
     "port": {
