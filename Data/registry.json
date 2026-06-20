@@ -212,7 +212,7 @@
       "launch_cmd": "bun run dev",
       "port": 5175,
       "last_worked": "2026-06-20",
-      "last_commit": "2026-06-19",
+      "last_commit": "2026-06-20",
       "summary": "MTW Workshop Dev Console. Single dashboard for tracking all projects, launching dev environments, monitoring doc coverage, and surfacing what needs attention. Reads from registry.json as source of truth.",
       "tags": [
         "dashboard",
@@ -221,7 +221,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "2026-06-20: Shipped card launchers (Launch TinkerOps.bat + the \"TinkerOps Dev Console\" logon autostart task on port 5175), the in-app Logs feature (curated master log at Docs/TinkerOps/logs/TinkerOps-LOG.md plus a dated session-report viewer), live URL + green/red health dot on card faces (server-side /api/health probe), and editable per-section card ordering persisted to Data/ui-order.json. Fixed the esp32-firmware deployment-target crash (icon + DeploymentTarget type + schema enum + unknown-target fallback). Full work history now lives in the master LOG, not in this field. Open: L-013 phantom 2026-06-14 Session 4 5.0h not yet in the WBS (reconcile at /audit-project); two stale Obsidian mirror files need manual deletion (guard blocks tool deletes); pending /audit-project, /doc-project, and a folder cleanup pass."
+      "notes": "2026-06-20 (v1.1.0, commit 917bab4): Shipped server-mode features, card launchers + Windows logon autostart, in-app Logs feature (master log at Docs/TinkerOps/logs/TinkerOps-LOG.md), live URL + health dots, and editable per-section card ordering. Fixed the esp32-firmware crash. Ran /audit-project (registry clean) and reconciled L-013 by recovering the displaced 2026-06-14 WBS session (running total 85h, Stage 4 added, sessions renumbered). This field is the newest-note; full history lives in the master log. Pending: /doc-project, a folder cleanup pass, and a decision on the PMD-003 numbering gap (close it or document the skip)."
     },
     {
       "id": "SkillForge20",
