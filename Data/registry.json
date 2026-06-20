@@ -4,11 +4,11 @@
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
     "total": 73,
-    "active": 18,
+    "active": 17,
     "dormant": 20,
     "pre_build": 6,
     "placeholder": 1,
-    "complete": 19,
+    "complete": 20,
     "archived": 1,
     "triage": 8
   },
@@ -178,7 +178,7 @@
     {
       "id": "TinkerOps",
       "name": "TinkerOps",
-      "status": "active",
+      "status": "complete",
       "division": null,
       "path": "Q:\\MTW\\TinkerOps",
       "alt_path": null,
@@ -222,7 +222,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "2026-06-20 (v1.1.0, commit 917bab4): Shipped server-mode features, card launchers + Windows logon autostart, in-app Logs feature (master log at Docs/TinkerOps/logs/TinkerOps-LOG.md), live URL + health dots, and editable per-section card ordering. Fixed the esp32-firmware crash. Ran /audit-project (registry clean) and reconciled L-013 by recovering the displaced 2026-06-14 WBS session (running total 85h, Stage 4 added, sessions renumbered). This field is the newest-note; full history lives in the master log. Pending: /doc-project, a folder cleanup pass, and a decision on the PMD-003 numbering gap (close it or document the skip)."
+      "notes": "COMPLETE — shipped as release Ares (v1.1.0), feature-complete 2026-06-20. TinkerOps is the MTW dev console: registry-driven cards with launch/clean/logs/health/ordering, Triage and Wiring views, in-app log viewer, Windows autostart. 86.5h across 8 WBS sessions. Full history in Docs/TinkerOps/logs/TinkerOps-LOG.md. Optional backlog parked in docs/ROADMAP.md; revisit only if a real need surfaces."
     },
     {
       "id": "SkillForge20",

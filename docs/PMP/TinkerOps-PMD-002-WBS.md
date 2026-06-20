@@ -66,6 +66,7 @@
 | 4.4 | Live URL + reachability status dots on cards (/api/health probe) | Complete |
 | 4.5 | Editable per-section card ordering (/api/order, Data/ui-order.json) | Complete |
 | 4.6 | Registry notes consolidation to a single newest-note + master LOG history | Complete |
+| 4.7 | Per-card clean button: /api/clean endpoint + clean_cmd registry field | Complete |
 
 ---
 
@@ -198,6 +199,21 @@ Stage 4: 13h (complete) — server-mode features added post-v1, beyond the origi
 
 ---
 
-**Running Total: 85h of 88-92h estimated**
+### Session 8 — 2026-06-20 (per-card clean button)
+
+| ID | Task | Role | Hours |
+|---|---|---|---|
+| 4.7 | Clean button: /api/clean endpoint, clean_cmd field, card UI, arm-then-run safety | Lead Developer | 1.0h |
+| 4.7 | Schema, SPEC, CHANGELOG updates and in-browser verification | Technical Writer | 0.5h |
+
+**Session 8 Total: 1.5h**
+
+---
+
+**Running Total: 86.5h of 88-92h estimated**
+
+## Release
+
+**Ares (v1.1.0)** — feature-complete 2026-06-20. TinkerOps is shipped and marked complete in the registry. All four stages done; sessions 1-8 sum to 86.5h. Optional enhancements remain parked in ROADMAP.md "Beyond Stage 4" for a future revisit, but nothing is outstanding.
 
 Resolved 2026-06-20 (/audit-project, L-013): the 2026-06-14 skill-migration work block (5.0h) was recovered and inserted as Session 4 above. It had been displaced when the 2026-06-20 checkpoint reused the "Session 4" label for different work; the 06-20 blocks are now Sessions 5 and 6. Sessions 1-7 sum to 85h (31 + 19 + 4 + 5 + 8 + 5 + 13).

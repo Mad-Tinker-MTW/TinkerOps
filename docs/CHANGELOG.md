@@ -2,7 +2,9 @@
 
 ---
 
-## [1.1.0] — 2026-06-20
+## [1.1.0] "Ares" — 2026-06-20
+
+Feature-complete release. TinkerOps is shipped and marked complete in the registry; this is the Ares milestone.
 
 ### Added
 
