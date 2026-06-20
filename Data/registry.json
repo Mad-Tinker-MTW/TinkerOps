@@ -248,7 +248,7 @@
         "nsis-installer"
       ],
       "urls": {
-        "production": "https://madtinkersworkshop.com/skillforge20",
+        "production": "https://skillforge20.madtinkersworkshop.com",
         "staging": null,
         "local": "http://localhost:3000"
       },
