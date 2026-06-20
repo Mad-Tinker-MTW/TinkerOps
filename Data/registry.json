@@ -268,7 +268,7 @@
       "clean_cmd": "pwsh -File scripts/clean.ps1",
       "release": "Hephaestus v2.2.0",
       "port": 3000,
-      "last_worked": "2026-06-11",
+      "last_worked": "2026-06-20",
       "last_commit": "2026-06-11",
       "summary": "Personal rapid skill acquisition tracker built on Josh Kaufman's First 20 Hours method. Deconstructs skills into subskills, generates 7-week plans, runs practice sessions, and tracks progress. Used for UAT RSA coursework. v2.2 with NSIS installer and web companion.",
       "tags": [
