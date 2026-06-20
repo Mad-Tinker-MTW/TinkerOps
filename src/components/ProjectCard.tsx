@@ -20,14 +20,42 @@ interface Props {
   position?: number
   /** Number of cards in this section, for clamping edits. */
   sectionSize?: number
-  /** Live reachability of the project's local URL, if it has one. */
-  health?: Health
+  /** Reachability map keyed by URL (local and/or production). */
+  health?: Record<string, Health>
   /** Commit a new 1-based position; omitted = not editable (e.g. while searching). */
   onReorder?: (newPos: number) => void
 }
 
 function prettyUrl(url: string): string {
   return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+}
+
+// One URL row on the card: status dot + label (local/live) + clickable link,
+// colored by reachability. Used for both the local dev server and the public
+// live site so a public-facing project shows both at a glance.
+function UrlStatusRow({ label, url, health }: { label: string; url: string; health?: Health }) {
+  const h = health ?? 'unknown'
+  return (
+    <div className="flex items-center gap-1.5 min-w-0">
+      <HealthDot health={h} />
+      <span className="text-[9px] font-mono text-gray-600 uppercase tracking-wide shrink-0 w-6">{label}</span>
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        onClick={e => e.stopPropagation()}
+        className={`text-[10px] font-mono truncate transition-colors ${
+          h === 'up'
+            ? 'text-green-400/90 hover:text-green-300'
+            : h === 'down'
+              ? 'text-red-400/80 hover:text-red-300'
+              : 'text-gray-500 hover:text-gray-300'
+        }`}
+      >
+        {prettyUrl(url)}
+      </a>
+    </div>
+  )
 }
 
 // Editable order number shown top-left of each card. Click (when editable) to
@@ -141,34 +169,39 @@ export function ProjectCard({
 
   async function handleRun(e: React.MouseEvent) {
     e.stopPropagation()
-    if (localUrl) return void window.open(localUrl, '_blank')
-    if (prodUrl) return void window.open(prodUrl, '_blank')
-    if (!launch_cmd) return
-    setLaunchState('launching')
-    try {
-      const r = await fetch('/api/launch', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: project.id }),
-      })
-      const j = await r.json()
-      setLaunchState(j.ok ? 'ok' : 'err')
-    } catch {
-      setLaunchState('err')
+    // Prefer starting the server (launch_cmd) over opening a URL: a public-facing
+    // project's live site only works while its local server is up, so the button
+    // brings the server up. The URL rows above open the running sites.
+    if (launch_cmd) {
+      setLaunchState('launching')
+      try {
+        const r = await fetch('/api/launch', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: project.id }),
+        })
+        const j = await r.json()
+        setLaunchState(j.ok ? 'ok' : 'err')
+      } catch {
+        setLaunchState('err')
+      }
+      setTimeout(() => setLaunchState('idle'), 2500)
+      return
     }
-    setTimeout(() => setLaunchState('idle'), 2500)
+    if (prodUrl) return void window.open(prodUrl, '_blank')
+    if (localUrl) return void window.open(localUrl, '_blank')
   }
 
   const runLabel =
     launchState === 'launching'
-      ? '· running…'
+      ? '· starting…'
       : launchState === 'ok'
-        ? '✓ launched'
+        ? '✓ started'
         : launchState === 'err'
           ? '✗ failed'
-          : localUrl || prodUrl
-            ? '↗ launch'
-            : '$ run'
+          : launch_cmd
+            ? '▶ start'
+            : '↗ open'
 
   // Clean button: arms on first click (delete safety), runs on second.
   const [cleanState, setCleanState] = useState<'idle' | 'armed' | 'cleaning' | 'done' | 'err'>('idle')
@@ -286,25 +319,11 @@ export function ProjectCard({
         </div>
       )}
 
-      {/* Live URL + status */}
-      {localUrl && (
-        <div className="flex items-center gap-1.5 mb-2 min-w-0">
-          {health && <HealthDot health={health} />}
-          <a
-            href={localUrl}
-            target="_blank"
-            rel="noreferrer"
-            onClick={e => e.stopPropagation()}
-            className={`text-[10px] font-mono truncate transition-colors ${
-              health === 'up'
-                ? 'text-green-400/90 hover:text-green-300'
-                : health === 'down'
-                  ? 'text-red-400/80 hover:text-red-300'
-                  : 'text-gray-500 hover:text-gray-300'
-            }`}
-          >
-            {prettyUrl(localUrl)}
-          </a>
+      {/* URL + status rows: local dev server and public live site */}
+      {(localUrl || prodUrl) && (
+        <div className="flex flex-col gap-1 mb-2 min-w-0">
+          {localUrl && <UrlStatusRow label="local" url={localUrl} health={health?.[localUrl]} />}
+          {prodUrl && <UrlStatusRow label="live" url={prodUrl} health={health?.[prodUrl]} />}
         </div>
       )}
 

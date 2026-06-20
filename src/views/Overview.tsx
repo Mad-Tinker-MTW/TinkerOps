@@ -44,9 +44,11 @@ export function Overview({ registry, pipelineState, search, onSelect }: Props) {
     )
   })
 
-  // Live reachability for every project that exposes a local URL.
-  const localUrls = filtered.map(p => p.urls.local).filter((u): u is string => !!u)
-  const health = useHealthMap(localUrls)
+  // Live reachability for every local dev URL and public live URL on the board.
+  const watchedUrls = filtered
+    .flatMap(p => [p.urls.local, p.urls.production])
+    .filter((u): u is string => !!u)
+  const health = useHealthMap(watchedUrls)
 
   // Manual order is only editable on the full, unfiltered board: positions must
   // reflect the real section, not a search subset.
@@ -121,7 +123,7 @@ export function Overview({ registry, pipelineState, search, onSelect }: Props) {
                 onClick={onSelect}
                 position={i + 1}
                 sectionSize={projects.length}
-                health={p.urls.local ? (health[p.urls.local] ?? 'unknown') : undefined}
+                health={health}
                 onReorder={
                   editable
                     ? newPos => reorder(projects.map(x => x.id), p.id, newPos)

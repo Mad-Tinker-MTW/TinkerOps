@@ -14,6 +14,7 @@ Feature-complete release. TinkerOps is shipped as the Ares milestone. It stays i
 - Editable per-section card ordering on the Overview board: a click-to-edit position badge with insert-and-shift reordering, persisted server-side in `Data/ui-order.json` via `GET/POST /api/order` (`useOrder` hook).
 - Card clean button: a per-project housekeeping action (`clean_cmd` registry field + `POST /api/clean`) that runs the project's own clean command server-side and reports freed space. Arms on first click, runs on second (delete safety); appears only on projects that define a `clean_cmd`. TinkerOps ships `scripts/clean.ps1` (removes dist/ and __pycache__).
 - On-card release tag: a `release` registry field (format `<Codename> v<X.Y.Z>`, mythology-themed codenames) rendered as a small tag on the card, used as a shipped/done indicator while the project stays in the Active list. TinkerOps ships as Ares v1.1.0.
+- Local + live status on cards: a card now shows both its local dev URL and its public production URL, each as its own row (labeled local / live) with an independent reachability dot. The footer button starts the server (runs `launch_cmd` via `/api/launch`) rather than opening a dead URL, so a public-facing project's live site comes up via its tunnel. Health polling watches both URLs.
 - `marked` dependency for in-app markdown rendering.
 
 ### Fixed
