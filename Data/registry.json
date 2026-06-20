@@ -211,7 +211,7 @@
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
       "clean_cmd": "pwsh -File scripts/clean.ps1",
-      "release": "Ares 1.1.0",
+      "release": "Ares v1.1.0",
       "port": 5175,
       "last_worked": "2026-06-20",
       "last_commit": "2026-06-20",

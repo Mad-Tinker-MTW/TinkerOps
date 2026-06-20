@@ -261,7 +261,7 @@ export function ProjectCard({
               title={`Release ${release}`}
               className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 whitespace-nowrap"
             >
-              ⬡ {release}
+              {release}
             </span>
           )}
           {pipeline && <PipelinePill state={pipeline} />}
