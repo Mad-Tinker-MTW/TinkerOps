@@ -66,6 +66,7 @@ export interface Project {
   pmp_ids: string | null
   launch: string | null
   launch_cmd: string | null
+  clean_cmd?: string | null
   port: number | null
   last_worked: string | null
   last_commit: string | null

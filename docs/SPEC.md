@@ -56,6 +56,7 @@ Each project record:
 | pmp_ids | string or null | PMP document ID prefix |
 | launch | string or null | Launch script filename |
 | launch_cmd | string or null | Command to run the project |
+| clean_cmd | string or null | Housekeeping command for the card clean button (removes regenerable artifacts) |
 | port | number or null | Dev server port |
 | last_worked | string or null | YYYY-MM-DD |
 | last_commit | string or null | YYYY-MM-DD |
@@ -95,7 +96,7 @@ Per-project entry:
 | Triage | Filtered view of triage_needed projects with missing-field flags | Complete |
 | Wiring | Division grouping (incl. Creative) and blocked-by dependency chains in build order | Complete |
 | StatCards | Active / dormant / pre-build / triage counts | Complete |
-| ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill, live URL + health dot, editable order badge | Complete |
+| ProjectCard | Status badge, stack pills, doc coverage, deployment icons, pipeline pill, live URL + health dot, editable order badge, launch + clean buttons | Complete |
 | StatusBadge | Color-coded status indicator | Complete |
 | PipelinePill | Pipeline phase and status with task counts, color-coded, pulses while running | Complete |
 | DocCoverage | Visual doc coverage flags (readme, claude_md, status_md, pmp) | Complete |
@@ -117,6 +118,7 @@ Localhost-only middleware registered in `vite.config.ts` via Vite `configureServ
 | /api/logfile | GET ?rel | Return the raw markdown of one log file. Path is sanitized to the Docs/TinkerOps base dir and limited to .md (no traversal). |
 | /api/health | POST { urls[] } | Server-side reachability probe of the given URLs (dodges browser CORS). A server that answers at all is up; a refused connection is down. |
 | /api/order | GET / POST | Read and persist the manual per-section card order to Data/ui-order.json. |
+| /api/clean | POST { id } | Run the project's own clean_cmd (from registry.json, never client-supplied) at its path, wait, and return the exit code, output tail, and any "freed X" the script reported. Surfaced as the card clean button. |
 
 ## Hooks
 

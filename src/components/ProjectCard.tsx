@@ -122,6 +122,7 @@ export function ProjectCard({
     deployment,
     docs,
     launch_cmd,
+    clean_cmd,
     urls,
     last_worked,
     summary,
@@ -167,6 +168,52 @@ export function ProjectCard({
           : localUrl || prodUrl
             ? '↗ launch'
             : '$ run'
+
+  // Clean button: arms on first click (delete safety), runs on second.
+  const [cleanState, setCleanState] = useState<'idle' | 'armed' | 'cleaning' | 'done' | 'err'>('idle')
+  const [freed, setFreed] = useState<string | null>(null)
+
+  async function handleClean(e: React.MouseEvent) {
+    e.stopPropagation()
+    if (!clean_cmd) return
+    if (cleanState === 'idle') {
+      setCleanState('armed')
+      setTimeout(() => setCleanState(s => (s === 'armed' ? 'idle' : s)), 3000)
+      return
+    }
+    if (cleanState !== 'armed') return
+    setCleanState('cleaning')
+    try {
+      const r = await fetch('/api/clean', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: project.id }),
+      })
+      const j = await r.json()
+      if (j.ok) {
+        setFreed(j.freed ?? null)
+        setCleanState('done')
+      } else {
+        setCleanState('err')
+      }
+    } catch {
+      setCleanState('err')
+    }
+    setTimeout(() => setCleanState('idle'), 3000)
+  }
+
+  const cleanLabel =
+    cleanState === 'armed'
+      ? 'clean? '
+      : cleanState === 'cleaning'
+        ? '· cleaning…'
+        : cleanState === 'done'
+          ? freed
+            ? `✓ ${freed}`
+            : '✓ clean'
+          : cleanState === 'err'
+            ? '✗ failed'
+            : '🧹 clean'
 
   const { isMoved } = useUATMoved()
   const isUat = project.uat === true
@@ -264,6 +311,23 @@ export function ProjectCard({
             <span className="text-[9px] font-mono text-gray-600 hidden sm:block">
               {last_worked}
             </span>
+          )}
+          {clean_cmd && (
+            <button
+              onClick={handleClean}
+              title={cleanState === 'armed' ? 'click again to confirm' : `clean: ${clean_cmd}`}
+              className={`px-2 py-0.5 rounded text-[9px] font-mono border transition-colors ${
+                cleanState === 'armed'
+                  ? 'bg-amber-500/15 text-amber-300 border-amber-500/50'
+                  : cleanState === 'done'
+                    ? 'bg-surface-500 text-green-400 border-green-500/40'
+                    : cleanState === 'err'
+                      ? 'bg-surface-500 text-red-400 border-red-500/40'
+                      : 'bg-surface-500 text-gray-400 border-gray-700/50 hover:border-amber-500/40 hover:text-amber-300'
+              }`}
+            >
+              {cleanLabel}
+            </button>
           )}
           {(launch_cmd || localUrl || prodUrl) && (
             <button

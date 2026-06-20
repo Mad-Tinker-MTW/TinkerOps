@@ -205,6 +205,43 @@ function healthOrderPlugin() {
           return json(res, 500, { ok: false, error: String(e) })
         }
       })
+
+      // POST /api/clean { id } runs the project's OWN clean_cmd (looked up in
+      // registry.json, never a client-supplied string) at its path, waits for it
+      // to finish, and returns the exit code, output tail, and any "freed X" the
+      // script reported. Same dev-server-only, localhost constraints as launch.
+      server.middlewares.use('/api/clean', async (req: any, res: any) => {
+        if (req.method !== 'POST') return json(res, 405, { ok: false, error: 'POST only' })
+        try {
+          const { id } = JSON.parse((await readBody(req)) || '{}')
+          if (!id) return json(res, 400, { ok: false, error: 'missing id' })
+          const regPath = fileURLToPath(new URL('./Data/registry.json', import.meta.url))
+          const reg = JSON.parse(readFileSync(regPath, 'utf8'))
+          const projects = reg.projects || reg
+          const p = Array.isArray(projects) ? projects.find((x: any) => x.id === id) : null
+          if (!p) return json(res, 404, { ok: false, error: `unknown project id: ${id}` })
+          if (!p.clean_cmd) return json(res, 400, { ok: false, error: `no clean_cmd for ${id}` })
+          if (!p.path) return json(res, 400, { ok: false, error: `no path for ${id}` })
+
+          const child = spawn(p.clean_cmd, { cwd: p.path, shell: true })
+          let out = ''
+          let sent = false
+          const finish = (code: number, payload: any) => {
+            if (sent) return
+            sent = true
+            json(res, code, payload)
+          }
+          child.stdout.on('data', (d: Buffer) => (out += d))
+          child.stderr.on('data', (d: Buffer) => (out += d))
+          child.on('error', (e: any) => finish(500, { ok: false, error: String(e) }))
+          child.on('close', (code: number) => {
+            const m = out.match(/freed\s+([\d.]+\s*[KMG]?B)/i)
+            finish(200, { ok: code === 0, exitCode: code, freed: m ? m[1] : null, output: out.trim().slice(-2000) })
+          })
+        } catch (e) {
+          return json(res, 500, { ok: false, error: String(e) })
+        }
+      })
     },
   }
 }

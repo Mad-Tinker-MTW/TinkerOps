@@ -154,6 +154,12 @@
       "examples": ["bun run tauri dev", "uv run python app.py", "pnpm dev"]
     },
 
+    "clean_cmd": {
+      "type": ["string", "null"],
+      "description": "Housekeeping command that removes regenerable artifacts; surfaced as the card clean button. Run server-side from the project path; must be safe and non-interactive.",
+      "examples": ["pwsh -File scripts\\clean.ps1"]
+    },
+
     "port": {
       "type": ["integer", "null"],
       "description": "Local dev server port if applicable",

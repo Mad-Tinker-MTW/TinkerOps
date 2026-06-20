@@ -210,6 +210,7 @@
       "pmp_ids": "TinkerOps-PMD",
       "launch": "start.ps1",
       "launch_cmd": "bun run dev",
+      "clean_cmd": "pwsh -File scripts/clean.ps1",
       "port": 5175,
       "last_worked": "2026-06-20",
       "last_commit": "2026-06-20",
