@@ -150,8 +150,11 @@ async function probe(url: string): Promise<'up' | 'down'> {
   const ctrl = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), 2000)
   try {
-    await fetch(url, { signal: ctrl.signal, redirect: 'manual' })
-    return 'up'
+    const res = await fetch(url, { signal: ctrl.signal, redirect: 'manual' })
+    // A reachable service answers 2xx/3xx/4xx (status 0 = opaque redirect, also
+    // alive). A 5xx is a gateway/proxy error, e.g. a Cloudflare 502 when a tunnel's
+    // origin (the local dev server) is down, so the real service is DOWN, not up.
+    return res.status === 0 || (res.status >= 200 && res.status < 500) ? 'up' : 'down'
   } catch {
     return 'down'
   } finally {
