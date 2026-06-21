@@ -23,7 +23,11 @@ interface Props {
 }
 
 export function StatCards({ registry }: Props) {
-  const { _meta, projects } = registry
+  const { projects } = registry
+  // Counts are derived LIVE from projects[], not the _meta snapshot (which is
+  // frozen at registry-generation time and drifts as projects are added/edited).
+  const totalCount = projects.length
+  const activeCount = projects.filter(p => p.status === 'active').length
   const triageCount = projects.filter(p => p.triage_needed || p.status === 'triage').length
   const coverage = docCoveragePercent(projects)
 
@@ -31,13 +35,13 @@ export function StatCards({ registry }: Props) {
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <StatCard
         label="Total Projects"
-        value={_meta.total}
+        value={totalCount}
         sub={`across ${projects.filter(p => p.division).map(p => p.division).filter((v, i, a) => a.indexOf(v) === i).length} divisions`}
         accent="border-gray-700/50"
       />
       <StatCard
         label="Active"
-        value={_meta.active}
+        value={activeCount}
         sub="currently in progress"
         accent="border-green-500/30"
       />

@@ -249,8 +249,40 @@ function healthOrderPlugin() {
   }
 }
 
+// Local-only registry endpoint. Read-only sibling of the launch/logs/health
+// exceptions above. GET /api/registry returns Data/registry.json read FRESH on
+// each request, so a project added or edited by an agent shows up on a plain
+// browser refresh without a dev-server rebuild or HMR. The client falls back to
+// the bundled import when this is absent (e.g. a production build), so the app
+// always renders. Dev-server only, localhost-bound, same constraints as launch.
+function registryPlugin() {
+  return {
+    name: 'tinkerops-registry',
+    configureServer(server: any) {
+      server.middlewares.use('/api/registry', (req: any, res: any) => {
+        if (req.method !== 'GET') {
+          res.statusCode = 405
+          res.setHeader('Content-Type', 'application/json')
+          return res.end(JSON.stringify({ ok: false, error: 'GET only' }))
+        }
+        try {
+          const regPath = fileURLToPath(new URL('./Data/registry.json', import.meta.url))
+          res.statusCode = 200
+          res.setHeader('Content-Type', 'application/json; charset=utf-8')
+          res.setHeader('Cache-Control', 'no-store')
+          res.end(readFileSync(regPath, 'utf8'))
+        } catch (e) {
+          res.statusCode = 500
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ ok: false, error: String(e) }))
+        }
+      })
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), launchPlugin(), logsPlugin(), healthOrderPlugin()],
+  plugins: [react(), launchPlugin(), logsPlugin(), healthOrderPlugin(), registryPlugin()],
   server: {
     port: 5175,
   },

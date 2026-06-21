@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import type { Project, Registry, PipelineStateMap } from './types/registry'
 import { Overview } from './views/Overview'
 import { Triage } from './views/Triage'
@@ -9,17 +9,28 @@ import pipelineData from '../Data/pipeline-state.json'
 
 type View = 'overview' | 'triage' | 'wiring'
 
-const registry = registryData as unknown as Registry
+// Bundled registry = instant render and the build-safe fallback. On mount we
+// re-fetch it fresh from /api/registry (dev endpoint) so a project added since
+// the last server start shows up on a plain refresh, not only after a rebuild.
+const bundledRegistry = registryData as unknown as Registry
 const pipelineState = pipelineData as unknown as PipelineStateMap
-
-const triageCount = registry.projects.filter(
-  p => p.triage_needed || p.status === 'triage'
-).length
 
 export default function App() {
   const [view, setView] = useState<View>('overview')
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<Project | null>(null)
+  const [registry, setRegistry] = useState<Registry>(bundledRegistry)
+
+  useEffect(() => {
+    fetch('/api/registry')
+      .then(r => (r.ok ? r.json() : null))
+      .then(d => { if (d && Array.isArray(d.projects)) setRegistry(d as Registry) })
+      .catch(() => { /* keep the bundled fallback */ })
+  }, [])
+
+  const triageCount = registry.projects.filter(
+    p => p.triage_needed || p.status === 'triage'
+  ).length
 
   const handleSelect = useCallback((p: Project) => setSelected(p), [])
   const handleClose = useCallback(() => setSelected(null), [])
@@ -74,7 +85,7 @@ export default function App() {
 
           {/* Registry meta */}
           <div className="ml-auto flex items-center gap-3 text-[10px] font-mono text-gray-600 shrink-0">
-            <span>{registry._meta.total} projects</span>
+            <span>{registry.projects.length} projects</span>
             <span className="text-gray-700">·</span>
             <span>v{registry._meta.version}</span>
             <span className="text-gray-700">·</span>
