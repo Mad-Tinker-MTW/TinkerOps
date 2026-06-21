@@ -894,7 +894,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "Chronos v0.1.91, 716.75h reconciled. Truth-engine hardening: per-front political-lean cap, durable event-id cooldown (kills duplicate and cross-edition repeats independent of the embedder), and a hard 48h recency cutoff. Autoedition publishing PAUSED pending a live edition dry-run. Hours = 310h ChatGPT-era foundation (TW-1 plus TW-2) + 406.75h logged, separate-worker, MEDIUM-confidence foundation. Full history in docs/PMP + audit 2026-06-20."
+      "notes": "TinkerWire (Chronos = version codename only; product is TinkerWire, console + paper). 2026-06-20 EOD: 731.0h logged ($62,135). Today: truth-engine hardening (per-front lean cap, durable event-id cooldown, 48h recency) + back-room/paper unify merge; hours reconciled to 716.75h then +14.25h evening (310h ChatGPT-era foundation + 421h logged); cli.py UTF-8 crash fix (likely the 06-16 edition crash, committed unversioned); X1 audit/checkpoint skill fix (OBS-004); 3 live editions self-published; NEWSROOM-ARCHITECTURE.md authored. NEXT (OPEN-LOOPS L-017): build the newsroom agent-roles paper (facts-only copy + our headline + primary-source anchor). Open: L-018 version-bump to 0.1.92, L-019 publishing/cron handoff (MadTi tasks DISABLED, self-loop session-bound), L-020 fallback-ignores-cooldown bug, L-021 housekeeping. New session: /standup -> OPEN-LOOPS.md + audit TWIRE-audit-2026-06-20b.md."
     },
     {
       "id": "mtw-website",
@@ -3451,6 +3451,73 @@
       "blocked_by": null,
       "triage_needed": false,
       "notes": "Scaffolded 2026-06-14. PMP suite (TCRR-PMD 001-005, TinkerScheduler 5-doc style) written. Obsidian mirror in place. Local git initialized, pushed to private Mad-Tinker-MTW/TinkerCourier at f32d230. Checkpoint at 08:02 UTC logged 2.25h (2.0 PM scaffold + 0.25 Deployment for git/push). Next session: Stage 1 - payload schema v1, repo poller, SMTP dispatch via TinkerWire mailer, receipt commit."
+    },
+    {
+      "id": "TinkerCast",
+      "name": "TinkerCast",
+      "status": "pre-build",
+      "division": null,
+      "path": "Q:\\MTW\\TinkerCast",
+      "alt_path": null,
+      "stack": [
+        "Rust",
+        "axum",
+        "tokio",
+        "sqlx",
+        "SQLite",
+        "Tauri v2",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "ffmpeg",
+        "ffprobe",
+        "whisper.cpp",
+        "ollama"
+      ],
+      "package_manager": "cargo",
+      "deployment": [
+        "local-only",
+        "raspberry-pi",
+        "cloudflare-tunnel"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": "http://127.0.0.1:7878"
+      },
+      "github": null,
+      "docs": {
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": true
+      },
+      "pmp_ids": "TC-PMD",
+      "launch": "start.ps1",
+      "launch_cmd": "cd Q:\\MTW\\TinkerCast; cargo run -- serve",
+      "clean_cmd": null,
+      "release": null,
+      "port": 7878,
+      "last_worked": "2026-06-20",
+      "last_commit": "2026-06-20",
+      "summary": "Self-hosted personal media platform with semantic memory over the operator's A/V library. Rust axum server + Tauri v2 client. NovaMentis (v0.6) is the differentiator: Whisper transcripts, embeddings, chapters, summaries, semantic search with timestamp jump. AGPLv3 family-and-friends OSS today, TinkerCode ecosystem integration post-1.0.",
+      "tags": [
+        "media-server",
+        "ai-memory",
+        "semantic-search",
+        "rust",
+        "tauri-v2",
+        "agplv3",
+        "self-hosted",
+        "ralph-loopable"
+      ],
+      "blocked_by": null,
+      "triage_needed": false,
+      "uat": false,
+      "notes": "Scaffolded 2026-06-20. Canonical operator-owned files: BATTLE_PLAN.md (roadmap, 7 modules to v1.0) and docs/specs/v0.1.md (first Ralph-loopable build spec). 6-doc MTFN-standard PMP suite written. Git initialized locally, no GitHub remote yet (intentional). Stack frozen: Rust axum + Tauri v2, NO Python, bun + cargo only. EXPLICITLY OUT OF SCOPE: TinkerWire (separate news app, codename Chronos) and SkillForge. The 7 internal modules: TinkerCast core, TinkerTube, TinkerTV, TinkerStudio, TinkerGuide, NovaMentis, TinkerEnv. NEXT: begin v0.1 build against docs/specs/v0.1.md (hand-build or Ralph loop on branch ralph/v0.1). Codename intentionally TBD. FOUNDATION PASS 2026-06-20: tooling/conventions/schematics/Ralph harness/skills landed; LICENSE/AUTHORS/Cargo deps pinned; ARCHITECTURE+CONVENTIONS+CONTRIBUTING+SECURITY+RALPH docs added; .github templates pre-placed; /tc-spec-new and /tc-ralph-run skills registered. Ready for v0.1 build. AUDIT+DOC+CHECKPOINT 2026-06-20: 17/17 coverage PASS, frontmatter added to 18 Obsidian mirror files, 19h logged across 4 roles (,615)."
     }
   ]
 }
