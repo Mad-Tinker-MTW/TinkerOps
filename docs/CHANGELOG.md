@@ -2,6 +2,22 @@
 
 ---
 
+## [Unreleased] — 2026-06-21
+
+### Fixed
+- **Dashboard counts went stale and new projects needed a rebuild (L-023).** The header and
+  StatCards read frozen `_meta.total`/`_meta.active` (snapshotted at registry-generation
+  time), so adding or editing a project drifted the counts, and `registry.json` was a static
+  bundle import, so a new project did not appear on a plain refresh. Counts now derive live
+  from `projects[]`; a dev-only `GET /api/registry` serves `Data/registry.json` fresh and the
+  app fetches it on mount with the bundled import as the instant, build-safe fallback.
+
+### Changed
+- **vite.config honors a `PORT` override** (default 5175), so the dev server can bind a free
+  port when a prior server left an orphaned socket on 5175.
+
+---
+
 ## [1.1.0] "Ares" — 2026-06-20
 
 Feature-complete release. TinkerOps is shipped as the Ares milestone. It stays in the Active list intentionally; the release tag on the card (Ares 1.1.0) is the done indicator, not a status change.

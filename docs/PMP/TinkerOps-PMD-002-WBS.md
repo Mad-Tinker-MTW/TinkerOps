@@ -235,7 +235,21 @@ Stage 4: 13h (complete) — server-mode features added post-v1, beyond the origi
 
 ---
 
-**Running Total: 90h of 88-92h estimated**
+### Session 11 — 2026-06-21 (L-023 live counts + runtime registry fetch)
+
+| ID | Task | Role | Hours |
+|---|---|---|---|
+| 4.10 | StatCards + header derive Total/Active live from projects[] (no more frozen _meta) | Lead Developer | 0.5h |
+| 4.10 | Dev-only GET /api/registry endpoint + App runtime fetch with bundled fallback | Lead Developer | 0.5h |
+| 4.10 | PORT-env override (vite.config) + orphaned-socket diagnosis | Solutions Architect | 0.5h |
+| 4.10 | Verification (typecheck, endpoint returns 76, browser snapshot 76/19) | QA Engineer | 0.5h |
+| — | BUGS close (static-import staleness) + OPEN-LOOPS L-023 + CHANGELOG | Technical Writer | 0.25h |
+
+**Session 11 Total: 2.25h**
+
+---
+
+**Running Total: 92.25h of 88-92h estimated**
 
 ## Release
 
