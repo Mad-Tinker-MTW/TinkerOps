@@ -4,7 +4,8 @@
 
 ## Open
 
-None currently tracked.
+**registry.json is statically imported, so edits during a dev session go stale**
+`src/App.tsx` does `import registryData from '../Data/registry.json'`. Vite bundles the JSON at server start and Vite's HMR for JSON imports is unreliable, so any registry edit during a live `bun run dev` session is invisible until the dev server is restarted AND `node_modules/.vite` is wiped. Repro: add or edit a project record in `Data/registry.json` while the dev server is running, hard-refresh the browser — the change does not appear. Filed 2026-06-21 when TinkerCast's freshly-added card did not render. Suggested fix: replace the static import with a runtime `fetch('/Data/registry.json')` (served as a public asset) on component mount; costs a sub-100ms request and ends the staleness problem permanently. Alternate fix: a dev-only Vite plugin watching Data/registry.json that triggers full reload on change.
 
 ---
 

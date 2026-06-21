@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "generated": "2026-06-03",
     "generated_by": "TinkerOps initial build — Mad Tinker's Workshop",
-    "total": 74,
-    "active": 18,
+    "total": 76,
+    "active": 19,
     "dormant": 20,
-    "pre_build": 7,
+    "pre_build": 8,
     "placeholder": 1,
     "complete": 19,
     "archived": 1,
@@ -877,10 +877,10 @@
       "pmp_ids": "TWIRE-PMD",
       "launch": null,
       "launch_cmd": "uv run tinkerwire",
-      "release": "Chronos v0.1.91",
+      "release": "Chronos v0.1.92",
       "port": null,
-      "last_worked": "2026-06-20",
-      "last_commit": "2026-06-20",
+      "last_worked": "2026-06-21",
+      "last_commit": "2026-06-21",
       "summary": "A personal, ad-free news and research console: pull the real reporting across six domains without the ad-choked sites, tell genuine corroboration from echo, and curate grounded posts and digests from what you find. It is also the engine behind The TinkerWire, a live old-school text-only newspaper at newswire.madtinkersworkshop.com (Astro on Cloudflare Pages). Local and no-fabrication: every line is grounded in real headlines or fetched bodies via a local LM Studio summarizer. Codename Chronos.",
       "tags": [
         "Python",
@@ -894,7 +894,7 @@
       ],
       "blocked_by": null,
       "triage_needed": false,
-      "notes": "TinkerWire (Chronos = version codename only; product is TinkerWire, console + paper). 2026-06-20 EOD: 731.0h logged ($62,135). Today: truth-engine hardening (per-front lean cap, durable event-id cooldown, 48h recency) + back-room/paper unify merge; hours reconciled to 716.75h then +14.25h evening (310h ChatGPT-era foundation + 421h logged); cli.py UTF-8 crash fix (likely the 06-16 edition crash, committed unversioned); X1 audit/checkpoint skill fix (OBS-004); 3 live editions self-published; NEWSROOM-ARCHITECTURE.md authored. NEXT (OPEN-LOOPS L-017): build the newsroom agent-roles paper (facts-only copy + our headline + primary-source anchor). Open: L-018 version-bump to 0.1.92, L-019 publishing/cron handoff (MadTi tasks DISABLED, self-loop session-bound), L-020 fallback-ignores-cooldown bug, L-021 housekeeping. New session: /standup -> OPEN-LOOPS.md + audit TWIRE-audit-2026-06-20b.md."
+      "notes": "TinkerWire (Chronos = version codename only; product is TinkerWire, console + paper). 2026-06-21 LAUNCH cutover (v0.1.92, commit 9865c78 pushed): cleared the pre-launch archive (281 test-era articles removed, only the live Morning edition kept), reset masthead issue number 6->2 so the first real edition reads Vol. I No. 2, dropped both dry-run stashes + cleared all cache stubs (incl. the reboot-locked .pytest_cache). Cut publishing from the session-bound self-loop to the 5 Windows scheduled tasks (4 editions + Stage ripener), enabled via scripts/enable-newsroom-cron.ps1 (needed admin; L-019 CLOSED). Versioned the cli.py UTF-8 fix as 0.1.92 (L-018 CLOSED). Cron live: Morning 6a, Midday 12p, Evening 6p, Overnight 12a; Stage every 30m. NEXT (OPEN-LOOPS L-017): build the newsroom agent-roles paper (facts-only copy + our headline + primary-source anchor); L-020 fallback-ignores-cooldown + L-022 under-fill fold into it. New session: /standup -> OPEN-LOOPS.md."
     },
     {
       "id": "mtw-website",
@@ -3501,7 +3501,7 @@
       "clean_cmd": null,
       "release": null,
       "port": 7878,
-      "last_worked": "2026-06-20",
+      "last_worked": "2026-06-21",
       "last_commit": "2026-06-20",
       "summary": "Self-hosted personal media platform with semantic memory over the operator's A/V library. Rust axum server + Tauri v2 client. NovaMentis (v0.6) is the differentiator: Whisper transcripts, embeddings, chapters, summaries, semantic search with timestamp jump. AGPLv3 family-and-friends OSS today, TinkerCode ecosystem integration post-1.0.",
       "tags": [
@@ -3517,7 +3517,118 @@
       "blocked_by": null,
       "triage_needed": false,
       "uat": false,
-      "notes": "Scaffolded 2026-06-20. Canonical operator-owned files: BATTLE_PLAN.md (roadmap, 7 modules to v1.0) and docs/specs/v0.1.md (first Ralph-loopable build spec). 6-doc MTFN-standard PMP suite written. Git initialized locally, no GitHub remote yet (intentional). Stack frozen: Rust axum + Tauri v2, NO Python, bun + cargo only. EXPLICITLY OUT OF SCOPE: TinkerWire (separate news app, codename Chronos) and SkillForge. The 7 internal modules: TinkerCast core, TinkerTube, TinkerTV, TinkerStudio, TinkerGuide, NovaMentis, TinkerEnv. NEXT: begin v0.1 build against docs/specs/v0.1.md (hand-build or Ralph loop on branch ralph/v0.1). Codename intentionally TBD. FOUNDATION PASS 2026-06-20: tooling/conventions/schematics/Ralph harness/skills landed; LICENSE/AUTHORS/Cargo deps pinned; ARCHITECTURE+CONVENTIONS+CONTRIBUTING+SECURITY+RALPH docs added; .github templates pre-placed; /tc-spec-new and /tc-ralph-run skills registered. Ready for v0.1 build. AUDIT+DOC+CHECKPOINT 2026-06-20: 17/17 coverage PASS, frontmatter added to 18 Obsidian mirror files, 19h logged across 4 roles (,615)."
+      "notes": "Scaffolded 2026-06-20. Canonical operator-owned files: BATTLE_PLAN.md (roadmap, 7 modules to v1.0) and docs/specs/v0.1.md (first Ralph-loopable build spec). 6-doc MTFN-standard PMP suite written. Git initialized locally, no GitHub remote yet (intentional). Stack frozen: Rust axum + Tauri v2, NO Python, bun + cargo only. EXPLICITLY OUT OF SCOPE: TinkerWire (separate news app, codename Chronos) and SkillForge. The 7 internal modules: TinkerCast core, TinkerTube, TinkerTV, TinkerStudio, TinkerGuide, NovaMentis, TinkerEnv. NEXT: begin v0.1 build against docs/specs/v0.1.md (hand-build or Ralph loop on branch ralph/v0.1). Codename intentionally TBD. FOUNDATION PASS 2026-06-20: tooling/conventions/schematics/Ralph harness/skills landed; LICENSE/AUTHORS/Cargo deps pinned; ARCHITECTURE+CONVENTIONS+CONTRIBUTING+SECURITY+RALPH docs added; .github templates pre-placed; /tc-spec-new and /tc-ralph-run skills registered. Ready for v0.1 build. AUDIT+DOC+CHECKPOINT 2026-06-20: 17/17 coverage PASS, frontmatter added to 18 Obsidian mirror files, 19h logged across 4 roles (,615). POST-CHECKPOINT 2026-06-21: TinkerOps dashboard cache surfaced (registry static-import + .vite dep-cache), filed as TinkerOps OPEN bug. WBS row 1.9 +1h (), project total 286h ,310."
+    },
+    {
+      "id": "CertForge",
+      "name": "CertForge",
+      "status": "active",
+      "division": "Tools",
+      "path": "Q:\\MTW\\CertForge",
+      "alt_path": null,
+      "stack": [
+        "Tauri v2",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "Vite",
+        "SQLite",
+        "Python",
+        "uv",
+        "LM Studio"
+      ],
+      "package_manager": "bun",
+      "deployment": [
+        "local-only",
+        "nsis-installer"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
+      "github": null,
+      "docs": {
+        "readme": true,
+        "claude_md": true,
+        "status_md": true,
+        "pmp": true,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": true
+      },
+      "pmp_ids": [
+        "CF-PMD-001",
+        "CF-PMD-003"
+      ],
+      "launch": null,
+      "launch_cmd": "cd Q:\\MTW\\CertForge; bun run tauri dev",
+      "port": null,
+      "last_worked": "2026-06-21",
+      "last_commit": "2026-06-21",
+      "summary": "Exam-driven certification prep tool: a grounded content engine (Python + uv + local LM Studio model, TinkerPipeline pattern) that generates original lessons and practice questions from public exam objectives, plus a local-first Tauri v2 study app (SQLite) with spaced-repetition drills, weighted mock exams, and an honest readiness estimate. First targets: CompTIA Security+ SY0-701, Project+ PK0-005, EC-Council CHFI.",
+      "tags": [
+        "cert-prep",
+        "content-engine",
+        "tauri-v2",
+        "sqlite",
+        "spaced-repetition",
+        "rag",
+        "tinkerarchitect-specimen"
+      ],
+      "blocked_by": null,
+      "triage_needed": false,
+      "uat": false,
+      "notes": "Scaffolded 2026-06-21 from a complete design spec at Q:\\MTW\\Docs\\TinkerOps\\sessions\\CertForge-design-2026-06-21.md (the source of record, read it first). Charter + WBS written (MTW minimum); remaining 4 PMP docs (Scope 002, Schedule 004, Risk 005, Stakeholder 006) and full Obsidian doc mirror deferred to /doc-project. KEY LOCKED DECISIONS: honest weighted percent-correct readiness (NOT a faked CompTIA 100-900 scaled score, which is IRT-underdetermined externally); question schema carries weight/difficulty/trap flags with two-mode reveal (practice shows hints, exam hides); drill (adaptive/SRS) vs mock (representative) split; confidence sampling loop with 80%/75% hysteresis, ceiling = exam_total x domain_weight%. Grounding is public objectives ONLY, never verbatim questions, never imply endorsement. Build order: Security+ first (has PBQs), Project+ (PMP synergy), CHFI last (thin EC-Council grounding). v1 scope = MC + multi + scenario; PBQ phase-2 Sec+ only. LONG-ARC: specimen #1 for TinkerArchitect (intent-to-battleplan engine); the system-design corpus becomes its grounding brain; eventual public systems-engineering tool. NEXT: define SQLite schema, build content engine on one Security+ domain, confirm house format holds. 9h logged (7h design + 2h scaffold) across PM/SA/TW roles."
+    },
+    {
+      "id": "TinkerArchitect",
+      "name": "TinkerArchitect",
+      "status": "pre-build",
+      "division": "Tools",
+      "path": "Q:\\MTW\\TinkerArchitect",
+      "alt_path": null,
+      "stack": [
+        "TBD"
+      ],
+      "package_manager": "TBD",
+      "deployment": [
+        "TBD"
+      ],
+      "urls": {
+        "production": null,
+        "staging": null,
+        "local": null
+      },
+      "github": null,
+      "docs": {
+        "readme": false,
+        "claude_md": false,
+        "status_md": false,
+        "pmp": false,
+        "handoff_md": false,
+        "design_md": true,
+        "obsidian_note": false
+      },
+      "pmp_ids": null,
+      "launch": null,
+      "launch_cmd": null,
+      "port": null,
+      "last_worked": "2026-06-21",
+      "last_commit": null,
+      "summary": "Plain-language systems-engineering battleplan engine: describe an intent and it returns a grounded architecture plan (stack with tradeoffs, architecture sketch, ordered build steps, risks). SkillForge-shaped generator; output is a PLAN.md that feeds the existing TinkerPipeline back half. The system-design cheat-sheet corpus is its intended grounding brain. Long-arc: a public systems-engineering automation tool.",
+      "tags": [
+        "concept",
+        "battleplan-engine",
+        "rag",
+        "planning-agent",
+        "long-arc",
+        "tinkerpipeline-frontend"
+      ],
+      "blocked_by": "CertForge",
+      "triage_needed": false,
+      "uat": false,
+      "notes": "CONCEPT ONLY, NOT yet buildable. Gated behind CertForge (the missing FRONT HALF of TinkerPipeline; the back half /plan-project, /plan-guard, runner, /audit-diff already exists). Do NOT scaffold or build before CertForge proves the content/generation engine; crystallize it later FROM what CertForge proves (dependency discipline). Concept doc and captured engine spec: Q:\\MTW\\TinkerArchitect\\CONCEPT.md (the CLARIFY -> GROUND -> SYNTHESIZE -> EMIT moves, the not-chicken-or-egg reasoning, the grounding-brain idea, the crystallize plan). Emerged 2026-06-21 in the CertForge design conversation. Engine already exists in MANUAL form (Claude + existing MTW skills). NEXT (only after CertForge): extract engine core, package the moves as a skill that emits PLAN.md, wire into the existing back half."
     }
   ]
 }
