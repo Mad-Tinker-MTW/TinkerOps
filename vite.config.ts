@@ -284,6 +284,8 @@ function registryPlugin() {
 export default defineConfig({
   plugins: [react(), launchPlugin(), logsPlugin(), healthOrderPlugin(), registryPlugin()],
   server: {
-    port: 5175,
+    // Default 5175; honor a PORT override so tooling can bind a free port when
+    // 5175 is held (e.g. a prior dev server left an orphaned socket).
+    port: Number(process.env.PORT) || 5175,
   },
 })
