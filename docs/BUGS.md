@@ -4,12 +4,15 @@
 
 ## Open
 
-**registry.json is statically imported, so edits during a dev session go stale**
-`src/App.tsx` does `import registryData from '../Data/registry.json'`. Vite bundles the JSON at server start and Vite's HMR for JSON imports is unreliable, so any registry edit during a live `bun run dev` session is invisible until the dev server is restarted AND `node_modules/.vite` is wiped. Repro: add or edit a project record in `Data/registry.json` while the dev server is running, hard-refresh the browser — the change does not appear. Filed 2026-06-21 when TinkerCast's freshly-added card did not render. Suggested fix: replace the static import with a runtime `fetch('/Data/registry.json')` (served as a public asset) on component mount; costs a sub-100ms request and ends the staleness problem permanently. Alternate fix: a dev-only Vite plugin watching Data/registry.json that triggers full reload on change.
+_None._
 
 ---
 
 ## Closed
+
+**registry.json statically imported (stale counts + new projects invisible until rebuild)**
+`src/App.tsx` did `import registryData from '../Data/registry.json'`, so Vite bundled the JSON at server start and a registry edit during a live session was invisible until a dev-server restart. Compounded by the header and StatCards reading `_meta.total`/`_meta.active`, which are frozen snapshots written at registry-generation time, so the counts drifted even when the data was current (TinkerCast 73-vs-74). Filed 2026-06-21 when TinkerCast's freshly-added card did not render.
+Fixed: added a dev-only `GET /api/registry` endpoint serving `Data/registry.json` fresh; `App.tsx` fetches it on mount with the bundled import as the instant, build-safe fallback. StatCards and the header now derive Total/Active live from `projects[]` instead of `_meta`. Commit 0b0fdd3. 2026-06-21.
 
 **DeploymentIcons crash on unknown deployment target**
 A project record listed `esp32-firmware` as a deployment target, which was absent from the `ICONS` map. `DeploymentIcons` dereferenced `cfg.label` on `undefined`, and with no error boundary the single bad value crashed the entire Overview.
